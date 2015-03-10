@@ -1,0 +1,7 @@
+/bin
+/core
+/src/plugins
+/src/uploads
+/src/languages
+/vendor
+/wp-config-custom.php
