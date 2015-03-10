@@ -1,0 +1,8 @@
+{
+  "name": "lin3s-theme",
+  "version": "3.3.0",
+  "private": "true",
+  "dependencies": {
+    "foundation": "zurb/bower-foundation"
+  }
+}
