@@ -7,16 +7,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{ site.title }}</title>
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
     {{function('wp_head')}}
 </head>
 <body {{function('body_class')}}>
     {% block body %}
         {% block header %}
-            {% include 'header.twig' %}
+            {% include 'layout/header.twig' %}
         {% endblock %}
         {% block content %}{% endblock %}
         {% block footer %}
-            {% include 'footer.twig' %}
+            {% include 'layout/footer.twig' %}
         {% endblock %}
     {% endblock %}
     {{function('wp_footer')}}

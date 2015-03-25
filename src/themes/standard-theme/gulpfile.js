@@ -9,6 +9,10 @@ var paths = {
     css: './css'
 };
 
+var watch = {
+    sass: './scss/**/*.scss'
+};
+
 gulp.task('sass', function() {
     return gulp.src(paths.sass)
         .pipe(sass())
@@ -27,5 +31,5 @@ gulp.task('sass:prod', ['sass'], function() {
 });
 
 gulp.task('watch', function() {
-    gulp.watch(assets.sass, ['sass']);
+    gulp.watch(watch.sass, ['sass']);
 });

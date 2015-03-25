@@ -1,5 +1,13 @@
-@import "settings";
-@import "wp";
+@import "base/reset";
+@import "base/colors";
+@import "base/foundation_settings";
+@import "base/wp";
 
-@import "header";
-@import "footer";
+@import "layout/header";
+@import "layout/content";
+@import "layout/footer";
+
+@import "components/buttons";
+
+@import "pages/404";
+@import "pages/index";
