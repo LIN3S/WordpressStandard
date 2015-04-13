@@ -1,5 +1,7 @@
 <?php
 
+namespace ClientName\Configuration;
+
 /**
  * Class ImageSizes
  *

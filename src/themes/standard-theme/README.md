@@ -13,6 +13,16 @@ To get theme dependencies Bower is required, run the following:
 
     bower install
 
+Replace all namespaces to match current clients name.
+
+To generate all required assets gulp is used. Run the following:
+
+    gulp
+    
+You can also watch the changes:
+    
+    gulp watch
+
 ##Overriding Wordpress behaviour
 
 Usually the features Wordpress has by default are not enough so new PostTypes, Walkers, Shortcodes, ImageSizes...
@@ -23,16 +33,5 @@ code.
 
 ##Stylesheets
 
-NvlTheme uses Compass together with Foundation to generate the `app.css` that will be used in the frontend. It is
-recommended to generate a new `.scss` file for each `.php` file. `header.php` for example will have its `header.scss`.
- 
-To keep consistent while creating stylesheets, mobile first strategy should be used and media queries should be placed 
-at the bottom of each file.
-
-`app.scss` will be used as the root file and all the `.scss` files should be imported there. If some generic styles can
-be extracted, those will be located bellow other files `@import`. 
-
-##Javascripts
-
-The same strategy as in stylesheets is used here. One javascript file for each file. All `.js` should be enqueued and 
-registered in `NvlScripts` class.
+Please mantain it simple and clean. Example folder structure has been created, follow it. Use mobile first approach 
+and don't use magic numbers. SCSS-Lint is used so please check your styles pass those tests.
