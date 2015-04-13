@@ -22,6 +22,8 @@ Check for references to `project-name` across the files and replace them with yo
 
 Copy `wp-config-custom-sample.php` to `wp-config-custom.php` and add database connection details
 
+Change autoload parameters in `composer.json` to match your theme's path and namespace.
+
 To start using the template read its `README.md` located in `src\themes\project-name`
 
 > To use capistrano check all gems have been installed
