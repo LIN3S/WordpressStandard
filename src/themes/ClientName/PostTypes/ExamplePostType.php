@@ -4,11 +4,6 @@ namespace ClientName\PostTypes;
 
 use ClientName\ClientNameTheme;
 
-/**
- * Class ExamplePostType
- *
- * Declares new post type with given configuration
- */
 class ExamplePostType
 {
     const NAME = 'example';
@@ -20,8 +15,8 @@ class ExamplePostType
      */
     public function __construct()
     {
-        add_action('init', array($this, 'registerPostType'));
-        add_action('init', array($this, 'categoryTypeTaxonomy'));
+        add_action('init', [$this, 'registerPostType']);
+        add_action('init', [$this, 'categoryTypeTaxonomy']);
     }
 
     /**
@@ -32,28 +27,28 @@ class ExamplePostType
     public function registerPostType()
     {
         register_post_type(self::NAME,
-            array(
-                'labels' => array(
-                    'name' => __('Example', ClientNameTheme::LANG),
+            [
+                'labels'      => [
+                    'name'          => __('Example', ClientNameTheme::LANG),
                     'singular_name' => __('Example', ClientNameTheme::LANG)
-                ),
-                'public' => true,
+                ],
+                'public'      => true,
                 'has_archive' => true,
-                'supports' => array( 'title', 'editor', 'thumbnail', 'excerpt')
-            )
+                'supports'    => ['title', 'editor', 'thumbnail', 'excerpt']
+            ]
         );
     }
 
     public function categoryTypeTaxonomy()
     {
-        $args = array(
-            'labels' => array(
-                'name' => __('Example category', ClientNameTheme::LANG),
+        $args = [
+            'labels'       => [
+                'name'          => __('Example category', ClientNameTheme::LANG),
                 'singular_name' => __('Example category', ClientNameTheme::LANG)
-            ),
-            'sort' => true,
+            ],
+            'sort'         => true,
             'hierarchical' => true
-        );
+        ];
 
         register_taxonomy(self::TAXONOMY_TYPE_CATEGORY, self::NAME, $args);
     }
