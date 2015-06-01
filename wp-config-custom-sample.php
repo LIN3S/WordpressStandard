@@ -72,5 +72,5 @@ define('NVL_SMTP_HOST', 'smtp.mandrillapp.com');
 define('NVL_SMTP_PORT', 587);
 define('NVL_SMTP_SECURE', 'tsl');
 
-// Si defines esta constante todos los emails enviados con wp_mail llegarán a esta dirección
-define('CALL_ME_EMAIL_TO', '');
+// If you define this constant, every sended emails will arrive to this address
+// define('CALL_ME_EMAIL_TO', 'email@email.com');

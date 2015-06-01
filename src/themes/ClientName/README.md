@@ -37,7 +37,7 @@ $ gulp
 Also, you can also watch the changes:
 ```
 $ gulp watch
-``
+```
 Overriding Wordpress behaviour
 ------------------------------
 Usually the features Wordpress has by default are not enough so new PostTypes, Walkers, ShortCodes, ImageSizes...
