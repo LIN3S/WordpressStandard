@@ -71,6 +71,3 @@ define('NVL_SMTP_PASS', 'pass');                    // Gmail user password
 define('NVL_SMTP_HOST', 'smtp.mandrillapp.com');
 define('NVL_SMTP_PORT', 587);
 define('NVL_SMTP_SECURE', 'tsl');
-
-// If you define this constant, every sended emails will arrive to this address
-// define('CALL_ME_EMAIL_TO', 'email@email.com');
