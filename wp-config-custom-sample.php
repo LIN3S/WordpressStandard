@@ -1,4 +1,5 @@
 <?php
+
 define('WP_MEMORY_LIMIT', '64M');
 
 // ** MySQL settings - You can get this info from your web host ** //
@@ -38,14 +39,15 @@ define('WPLANG', '');
  * in their development environments.
  */
 define('WP_DEBUG', true);
-define('WP_AUTO_UPDATE_CORE', false );
+define('WP_AUTO_UPDATE_CORE', false);
 
-/**#@+
+/**
  * Authentication Unique Keys and Salts.
  *
  * Change these to different unique phrases!
- * You can generate these using the {@link https://api.wordpress.org/secret-key/1.1/salt/ ordPress.org secret-key service}
- * You can change these at any point in time to invalidate all existing cookies. This will force all users to have to log in again.
+ * You can generate these using the {@link https://api.wordpress.org/secret-key/1.1/salt/ ordPress.org secret-key
+ * service} You can change these at any point in time to invalidate all existing cookies. This will force all users to
+ * have to log in again.
  *
  * @since 2.6.0
  */
@@ -59,16 +61,13 @@ define('LOGGED_IN_SALT', 'put your unique phrase here');
 define('NONCE_SALT', 'put your unique phrase here');
 
 /**
- * Configure email on dev enviroment
+ * Configure email on dev environment.
  */
-define('NVL_SMTP_FORCE', true); // Forzar a usar el SMTP
-define('NVL_SMTP_FROM_NAME',  'Gorka'); // Nombre del remitente
-define('NVL_SMTP_FROM_EMAIL', 'gorka@lin3s.com'); // Email del remitente
-define('NVL_SMTP_USER', 'igarcia@lin3s.com'); // Usuario de gmail para enviar los emails a través de SMTP
-define('NVL_SMTP_PASS', 'pass'); // Contraseña del usuario de Gmail
+define('NVL_SMTP_FORCE', true);                     // Force to use SMTP
+define('NVL_SMTP_FROM_NAME', 'Gorka');              // Sender name
+define('NVL_SMTP_FROM_EMAIL', 'gorka@lin3s.com');   // Sender email
+define('NVL_SMTP_USER', 'igarcia@lin3s.com');       // Gmail user to send email via SMTP
+define('NVL_SMTP_PASS', 'pass');                    // Gmail user password
 define('NVL_SMTP_HOST', 'smtp.mandrillapp.com');
 define('NVL_SMTP_PORT', 587);
 define('NVL_SMTP_SECURE', 'tsl');
-// Si defines esta constante todos los emails enviados con wp_mail
-// llegarán a esta dirección
-define('NVL_SMTP_FORCE_RECIPIENT', 'alberto@novisline.com');

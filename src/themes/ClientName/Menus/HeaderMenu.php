@@ -8,7 +8,7 @@ class HeaderMenu
 {
     public function __construct()
     {
-        add_action('init', array($this, 'registerMenu'));
+        add_action('init', [$this, 'registerMenu']);
     }
 
     public function registerMenu()

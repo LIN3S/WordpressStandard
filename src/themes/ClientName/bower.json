@@ -1,7 +1,7 @@
 {
-  "name": "lin3s-theme",
-  "version": "3.3.0",
+  "name": "client-name-theme",
   "private": "true",
+  "author": "LIN3S",
   "dependencies": {
     "foundation": "zurb/bower-foundation"
   }

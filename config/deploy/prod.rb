@@ -3,7 +3,7 @@
 ############################################
 
 server "", user: "", roles: %w{web}
-set :deploy_to, "/var/www/your-project.net"
+set :deploy_to, "/var/www/standard-wordpress.net"
 
 ############################################
 # Setup Git

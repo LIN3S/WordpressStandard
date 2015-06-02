@@ -2,6 +2,6 @@
 
 namespace ClientName\Walkers;
 
-class HeaderMenuWalker {
-
-} 
+class ExampleWalker
+{
+}
