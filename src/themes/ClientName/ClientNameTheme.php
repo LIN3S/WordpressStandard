@@ -28,24 +28,9 @@ class ClientNameTheme
      */
     public function __construct()
     {
-        // Ajax
-        new ExampleAjax();
-
         // Configuration
         new Scripts();
         new ImageSizes();
-
-        // Menus
-        new HeaderMenu();
-
-        // PostTypes
-        new ExamplePostType();
-
-        // ShortCodes
-        new ExampleShortCode();
-
-        // Walkers
-        new ExampleWalker();
 
         add_filter('timber_context', [$this, 'initializeContext']);
     }
