@@ -27,6 +27,7 @@
 
         "wordpress": "4.2.2",
         "wpackagist-plugin/timber-library": "~0.21",
+        "wpackagist-plugin/simple-fields": "~1.4",
         "wpackagist-theme/twentyeleven": "*"
     },
     "require-dev": {
