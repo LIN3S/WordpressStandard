@@ -28,7 +28,7 @@ set :composer_install_flags, '--no-dev --no-interaction --optimize-autoloader'
 
 set :theme_path, "src/themes/#{fetch(:theme_name)}"
 
-set :linked_files, %w{wp-config-custom.php}
+set :linked_files, %w{wp-config-custom.php robots.txt}
 set :linked_dirs, %w{src/uploads}
 
 namespace :sass do
