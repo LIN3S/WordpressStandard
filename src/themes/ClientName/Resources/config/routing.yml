@@ -1,0 +1,7 @@
+-
+  controller: \ClientName\Controller\DefaultController::indexAction
+  type: home
+
+-
+  controller: \ClientName\Controller\DefaultController::notFoundAction
+  type: 404
