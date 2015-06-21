@@ -38,6 +38,8 @@ Also, you can also watch the changes:
 ```
 $ gulp watch
 ```
+> Before activating the theme make sure all the plugins are active
+
 Overriding Wordpress behaviour
 ------------------------------
 Usually the features Wordpress has by default are not enough so new PostTypes, Walkers, ShortCodes, ImageSizes...
