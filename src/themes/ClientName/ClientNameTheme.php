@@ -2,13 +2,8 @@
 
 namespace ClientName;
 
-use ClientName\Ajax\ExampleAjax;
+use ClientName\Configuration\Assets;
 use ClientName\Configuration\ImageSizes;
-use ClientName\Configuration\Scripts;
-use ClientName\Menus\HeaderMenu;
-use ClientName\PostTypes\ExamplePostType;
-use ClientName\ShortCodes\ExampleShortCode;
-use ClientName\Walkers\ExampleWalker;
 use TimberMenu;
 
 /**
@@ -18,7 +13,7 @@ use TimberMenu;
  * If you need to add some customization create a class and call its constructor here.
  * For more info about how this theme is structured read README.md located in the theme root.
  */
-class ClientNameTheme
+final class ClientNameTheme
 {
     const VERSION = '0.1';
     const LANG = 'client-name';
@@ -28,8 +23,7 @@ class ClientNameTheme
      */
     public function __construct()
     {
-        // Configuration
-        new Scripts();
+        new Assets();
         new ImageSizes();
 
         add_filter('timber_context', [$this, 'initializeContext']);

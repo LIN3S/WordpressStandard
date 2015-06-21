@@ -13,4 +13,4 @@ class ExampleShortCode
     {
         return $content;
     }
-} 
+}

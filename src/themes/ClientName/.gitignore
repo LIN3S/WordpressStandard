@@ -1,4 +1,4 @@
 /node_modules
-/css
-/sprites
+/Resources/build
 /Resources/assets/vendor
+/style.css

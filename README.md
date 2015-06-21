@@ -25,9 +25,12 @@ Run composer to get all the dependencies:
 ```
 $ composer install
 ```
-Check for references to `standard-wordpress` across the files and replace them with your project-name
-Copy `wp-config-custom-sample.php` to `wp-config-custom.php` and add database connection details
-Do the same `.htaccess.dist` to `.htaccess` customizing what you need.
+
+1. Check for references to `standard-wordpress` across the files and replace them with your project-name
+
+2. Customize into `wp-config-custom.php` the database connection details
+
+3. Also, check the `.htaccess` customizing what you need.
 
 To start using the template read its [`README.md`][4] located in `src\themes\ClientName`
 

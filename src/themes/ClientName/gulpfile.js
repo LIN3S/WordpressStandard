@@ -6,6 +6,7 @@ var gulp = require('gulp'),
   minifyCSS = require('gulp-minify-css'),
   rename = require('gulp-rename'),
   scsslint = require('gulp-scss-lint'),
+  file = require('gulp-file'),
   concat = require('gulp-concat'),
   uglify = require('gulp-uglify');
 
@@ -20,7 +21,13 @@ var watch = {
   sass: './Resources/assets/scss/**/*.scss'
 };
 
-gulp.task('sass', ['scss-lint'], function () {
+gulp.task('wp-style', function () {
+  var content = '/*\n * Author: LIN3S\n * Author URI: http://www.lin3s.com/\n */';
+
+  return file('style.css', content, {src: true}).pipe(gulp.dest('.'));
+});
+
+gulp.task('sass', ['wp-style', 'scss-lint'], function () {
   return gulp.src(paths.sass + '/app.scss')
     .pipe(sass({
       errLogToConsole: true
@@ -44,7 +51,7 @@ gulp.task('sass:prod', ['sass'], function () {
 });
 
 gulp.task('js:prod', function () {
-  return gulp.src(paths.js + '/*.js')
+  return gulp.src([paths.js + '/*.js'])
     .pipe(concat('app.min.js'))
     .pipe(uglify())
     .pipe(gulp.dest(paths.buildJs));

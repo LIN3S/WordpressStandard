@@ -10,20 +10,12 @@ class ExamplePostType
 
     const TAXONOMY_TYPE_CATEGORY = 'example_category';
 
-    /**
-     * Calls the actions related to the post type
-     */
     public function __construct()
     {
         add_action('init', [$this, 'registerPostType']);
         add_action('init', [$this, 'categoryTypeTaxonomy']);
     }
 
-    /**
-     * Registers post type.
-     *
-     * More info about registering custom post types: http://codex.wordpress.org/Function_Reference/register_post_type
-     */
     public function registerPostType()
     {
         register_post_type(self::NAME,
@@ -52,4 +44,4 @@ class ExamplePostType
 
         register_taxonomy(self::TAXONOMY_TYPE_CATEGORY, self::NAME, $args);
     }
-} 
+}

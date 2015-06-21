@@ -1,4 +1,4 @@
 <?php
 
-$context = Timber::get_context();
-Timber::render('pages/index.twig', $context);
+$router = new \LIN3S\WPRouting\Router();
+$router->resolve();

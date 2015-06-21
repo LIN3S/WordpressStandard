@@ -13,4 +13,4 @@ class ExampleAjax
     public function callbackExample()
     {
     }
-} 
+}

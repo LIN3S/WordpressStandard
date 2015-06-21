@@ -2,7 +2,7 @@
 
 namespace ClientName\Configuration;
 
-class Scripts
+class Assets
 {
     public function __construct()
     {
@@ -13,4 +13,4 @@ class Scripts
     {
         wp_enqueue_script('app', get_template_directory_uri() . '/Resources/assets/js/app.js', ['jquery'], '1.0.0', true);
     }
-} 
+}
