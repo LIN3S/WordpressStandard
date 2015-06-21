@@ -1,6 +1,8 @@
 {
-    "name": "standard-wordpress",
-    "license": "proprietary",
+    "name": "lin3s/wordpress-standard-edition",
+    "license": "MIT",
+    "type": "project",
+    "description": "The \"Wordpress Standard Edition\" distribution",
     "repositories": [
         {
             "type": "package",
@@ -26,7 +28,7 @@
         }
     ],
     "require": {
-        "php": ">=5.4.0",
+        "php": ">=5.4",
 
         "wordpress": "4.2.2",
         "lin3s/wp-routing": "dev-master",

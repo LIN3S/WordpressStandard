@@ -1,7 +1,6 @@
 {
   "name": "client-name-theme",
   "author": "Lin3s",
-  "private": "true",
   "dependencies": {
     "foundation": "zurb/bower-foundation"
   }
