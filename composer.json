@@ -1,70 +1,60 @@
 {
-    "name": "lin3s/wordpress-standard-edition",
-    "license": "MIT",
-    "type": "project",
-    "description": "The \"Wordpress Standard Edition\" distribution",
-    "repositories": [
-        {
-            "type": "package",
-            "package": {
-                "name": "wordpress",
-                "type": "webroot",
-                "version": "4.2.2",
-                "dist": {
-                    "type": "zip",
-                    "url": "https://github.com/WordPress/WordPress/archive/4.2.2.zip"
-                },
-                "require": {
-                    "fancyguy/webroot-installer": "1.0.0"
-                }
-            }
+  "name": "standard-wordpress",
+  "license": "proprietary",
+  "repositories": [
+    {
+      "type": "package",
+      "package": {
+        "name": "wordpress",
+        "type": "webroot",
+        "version": "4.2.2",
+        "dist": {
+          "type": "zip",
+          "url": "https://github.com/WordPress/WordPress/archive/4.2.2.zip"
         },
-        {
-            "type": "composer",
-            "url": "http://wpackagist.org"
-        }, {
-            "type": "vcs",
-            "url": "git@gitlab.novisline.es:lin3s/wp-routing.git"
+        "require": {
+          "fancyguy/webroot-installer": "1.0.0"
         }
-    ],
-    "require": {
-        "php": ">=5.4",
-
-        "wordpress": "4.2.2",
-        "lin3s/wp-routing": "dev-master",
-
-        "wpackagist-plugin/timber-library": "~0.21",
-        "wpackagist-theme/twentyeleven": "*"
+      }
     },
-    "require-dev": {
-        "behat/behat": "~3.0",
-        "behat/mink-extension": "~2.0",
-        "behat/mink-browserkit-driver": "~1.2"
+    {
+      "type": "composer",
+      "url": "http://wpackagist.org"
     },
-    "scripts": {
-        "post-install-cmd": [
-            "rsync -a -v --ignore-existing -q wp-config-custom-sample.php wp-config-custom.php",
-            "rsync -a -v --ignore-existing -q .htaccess.dist .htaccess"
-        ],
-        "post-update-cmd": [
-          "rsync -a -v --ignore-existing -q wp-config-custom-sample.php wp-config-custom.php",
-          "rsync -a -v --ignore-existing -q .htaccess.dist .htaccess"
-        ]
-    },
-    "config": {
-        "bin-dir": "bin/"
-    },
-    "autoload": {
-        "psr-4": {
-            "": "src/themes/"
-        }
-    },
-    "extra": {
-        "webroot-dir": "core",
-        "webroot-package": "wordpress",
-        "installer-paths": {
-            "src/plugins/{$name}/": ["type:wordpress-plugin"],
-            "src/themes/{$name}/": ["type:wordpress-theme"]
-        }
+    {
+      "type": "vcs",
+      "url": "http://gitlab.novisline.es:8081/lin3s/wp-routing.git"
     }
+  ],
+  "require": {
+    "php": ">=5.4.0",
+
+    "wordpress": "4.2.2",
+    "lin3s/wp-routing": "dev-master",
+    "wpackagist-plugin/timber-library": "~0.21",
+    "wpackagist-plugin/simple-fields": "~1.4",
+    "wpackagist-plugin/wordpress-seo": "~2.2",
+    "wpackagist-theme/twentyeleven": "*"
+  },
+  "require-dev": {
+    "behat/behat": "~3.0",
+    "behat/mink-extension": "~2.0",
+    "behat/mink-browserkit-driver": "~1.2"
+  },
+  "config": {
+    "bin-dir": "bin/"
+  },
+  "autoload": {
+    "psr-4": {
+      "": "src/themes/"
+    }
+  },
+  "extra": {
+    "webroot-dir": "core",
+    "webroot-package": "wordpress",
+    "installer-paths": {
+      "src/plugins/{$name}/": ["type:wordpress-plugin"],
+      "src/themes/{$name}/": ["type:wordpress-theme"]
+    }
+  }
 }
