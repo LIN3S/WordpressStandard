@@ -14,7 +14,8 @@ RewriteCond %{REQUEST_FILENAME} !-d
 # Otherwise send it to WordPress
 RewriteRule .* core/index.php [L]
 </IfModule>
-# -----------------------
+
+# ------------------------------------------------- #
 
 #### BEGIN WordPress ####
 <IfModule mod_rewrite.c>
