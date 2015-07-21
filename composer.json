@@ -1,52 +1,44 @@
 {
-    "name": "lin3s/wordpress-standard-edition",
-    "license": "MIT",
+    "name": "lin3s/wordpress-standard",
+    "description": "The \"Wordpress Standard Edition\" distribution in the LIN3S way",
+    "keywords": ["lin3s", "wordpress", "standard"],
     "type": "project",
-    "description": "The \"Wordpress Standard Edition\" distribution",
-    "repositories": [
+    "license": "MIT",
+    "authors": [
         {
-            "type": "package",
-            "package": {
-                "name": "wordpress",
-                "type": "webroot",
-                "version": "4.2.2",
-                "dist": {
-                    "type": "zip",
-                    "url": "https://github.com/WordPress/WordPress/archive/4.2.2.zip"
-                },
-                "require": {
-                    "fancyguy/webroot-installer": "1.0.0"
-                }
-            }
-        },
+            "name": "LIN3S",
+            "email": "info@lin3s.com",
+            "homepage": "https://lin3s.com"
+        }
+    ],
+    "repositories": [
         {
             "type": "composer",
             "url": "http://wpackagist.org"
         }, {
             "type": "vcs",
-            "url": "git@gitlab.novisline.es:lin3s/wp-routing.git"
+            "url": "git@gitlab.novisline.es:lin3s-plugins/wp-routing.git"
         }, {
             "type": "vcs",
             "url": "git@gitlab.novisline.es:lin3s-plugins/template-selector.git"
         }
     ],
     "require": {
-        "php": ">=5.4",
+        "php":                                            ">=5.4",
 
-        "wordpress":                          "4.2.2",
-        "lin3s/wp-routing":                   "dev-master",
-        "template-selector":                  "dev-master",
+        "johnpbloch/wordpress":                           "~4.2",
+        "lin3s/wp-foundation":                            "~1.0",
+        "lin3s/wp-routing":                               "~1.1",
+        "template-selector":                              "dev-master",
 
-        "wpackagist-plugin/timber-library":   "~0.21",
-        "wpackagist-theme/twentyeleven":      "*",
-        "wpackagist-plugin/wordpress-seo":    "~2.2"
+        "wpackagist-plugin/simple-fields":                "~1.4",
+        "wpackagist-plugin/timber-library":               "~0.21",
+        "wpackagist-plugin/wordpress-seo":                "~2.2",
+        "wpackagist-theme/twentyeleven":                  "*"
     },
     "require-dev": {
-        "behat/behat":                        "~3.0",
-        "behat/mink-extension":               "~2.0",
-        "behat/mink-browserkit-driver":       "~1.2",
-
-        "symfony/var-dumper":                 "~2.7"
+        "symfony/var-dumper":                             "~2.7",
+        "wpackagist-plugin/monkeyman-rewrite-analyzer":   "~1.0"
     },
     "scripts": {
         "post-install-cmd": [
@@ -66,9 +58,16 @@
             "": "src/themes/"
         }
     },
+    "suggest": {
+      "sitepress-multilingual-cms": "It allows to implement the multilingual in an easy way",
+      "wpml-media": "It allows to implement the multilingual in an easy way",
+      "wpml-string-translation": "It allows to implement the multilingual in an easy way",
+      "wpackagist-plugin/categories-images": "It allows to assign easily images to categories",
+      "wpackagist-plugin/contact-form-7": "It allows to manage the contact form without code, all inside WP panel",
+      "wpackagist-plugin/ml-slider": "It allows a complete management of sliders. Ideal when the site has a lot and different sliders"
+    },
     "extra": {
-        "webroot-dir": "core",
-        "webroot-package": "wordpress",
+        "wordpress-install-dir": "core",
         "installer-paths": {
             "src/plugins/{$name}/": ["type:wordpress-plugin"],
             "src/themes/{$name}/": ["type:wordpress-theme"]

@@ -8,6 +8,14 @@
 # @author Gorka Laucirica <gorka.lauzirika@gmail.com>
 # @author Beñat Espiña <benatespina@gmail.com>
 
-/*
-!.gitignore
-!WordpressStandard
+-
+    controller: WordpressStandard\Controller\DefaultController::indexAction
+    type: index
+
+-
+    controller: WordpressStandard\Controller\DefaultController::notFoundAction
+    type: 404
+
+-
+    controller: WordpressStandard\Controller\DefaultController::pageAction
+    type: page

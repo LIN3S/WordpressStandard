@@ -1,0 +1,7 @@
+{
+  "name": "wordpress-standard",
+  "author": "LIN3S",
+  "dependencies": {
+    "foundation": "zurb/bower-foundation"
+  }
+}

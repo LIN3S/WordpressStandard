@@ -13,14 +13,12 @@
 # Setup Server
 ############################################
 
-server "", user: "", roles: %w{web}
-set :deploy_to, "/var/www/standard-wordpress.net"
-set :env, "prod"
+server "dev1.novisline.es", user: "deploy", roles: %w{web}
+set :deploy_to, "/home/novisline/domains/standard-wordpress.novisline.es/public_html"
+set :env, "dev1"
 
 ############################################
 # Setup Git
 ############################################
 
 set :branch, "master"
-
-SSHKit.config.command_map[:composer] = "php #{shared_path.join("composer.phar")}"

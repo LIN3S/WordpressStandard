@@ -8,6 +8,7 @@
 # @author Gorka Laucirica <gorka.lauzirika@gmail.com>
 # @author Beñat Espiña <benatespina@gmail.com>
 
-/*
-!.gitignore
-!WordpressStandard
+/node_modules
+/Resources/build
+/Resources/assets/vendor
+/style.css
