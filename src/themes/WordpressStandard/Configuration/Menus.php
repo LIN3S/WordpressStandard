@@ -24,12 +24,12 @@ final class Menus extends BaseMenus
     const MENU_HEADER = 'header-menu';
 
     /**
-     * The callback example method.
+     * @inheritdoc}
      */
     public function menus()
     {
-         register_nav_menus([
-             self::MENU_HEADER => 'Header menu'
-         ]);
+        register_nav_menus([
+            self::MENU_HEADER => 'Header menu'
+        ]);
     }
 }
