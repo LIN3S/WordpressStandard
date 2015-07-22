@@ -1,6 +1,12 @@
 Wordpress Standard Edition
 ===========================
-> The "Wordpress Standard Edition" distribution in the LIN3S way
+> The "Wordpress Standard Edition" distribution in the LIN3S way.
+
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/LIN3S/WordpressStandard/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/LIN3S/WordpressStandard/?branch=master)
+[![Total Downloads](https://poser.pugx.org/lin3s/wordpress-standard/downloads)](https://packagist.org/packages/lin3s/wordpress-standard)
+&nbsp;&nbsp;&nbsp;&nbsp;
+[![Latest Stable Version](https://poser.pugx.org/lin3s/wordpress-standard/v/stable.svg)](https://packagist.org/packages/lin3s/wordpress-standard)
+[![Latest Unstable Version](https://poser.pugx.org/lin3s/wordpress-standard/v/unstable.svg)](https://packagist.org/packages/lin3s/wordpress-standard)
 
 Why?
 ----
@@ -111,8 +117,8 @@ After all, and following the Capistrano [documentation][11] to configure the ser
 $ cap <stage> deploy       # <stage> can be dev1, prod or whatever file inside deploy directory
 ```
 
-> In the Capistrano shared directory must be exist `src/uploads`, .htaccess (if you are using Apache), robots.txt and
- wp-config-custom.php
+> In the Capistrano shared directory must be exist `src/uploads`, `.htaccess` (if you are using Apache), `robots.txt`
+and `wp-config-custom.php`
 
 [1]: https://wordpress.org/
 [2]: http://lin3s.com
