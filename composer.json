@@ -15,12 +15,6 @@
         {
             "type": "composer",
             "url": "http://wpackagist.org"
-        }, {
-            "type": "vcs",
-            "url": "git@gitlab.novisline.es:lin3s-plugins/wp-routing.git"
-        }, {
-            "type": "vcs",
-            "url": "git@gitlab.novisline.es:lin3s-plugins/template-selector.git"
         }
     ],
     "require": {
@@ -71,6 +65,9 @@
         "installer-paths": {
             "src/plugins/{$name}/": ["type:wordpress-plugin"],
             "src/themes/{$name}/": ["type:wordpress-theme"]
+        },
+        "branch-alias": {
+            "dev-master": "1.x-dev"
         }
     }
 }
