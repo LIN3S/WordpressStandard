@@ -120,6 +120,9 @@ $ cap <stage> deploy       # <stage> can be dev1, prod or whatever file inside d
 > In the Capistrano shared directory must be exist `src/uploads`, `.htaccess` (if you are using Apache), `robots.txt`
 and `wp-config-custom.php`
 
+## Licensing Options
+[![License](https://poser.pugx.org/lin3s/wordpress-standard/license.svg)](https://github.com/LIN3S/WordpressStandard/blob/master/LICENSE)
+
 [1]: https://wordpress.org/
 [2]: http://lin3s.com
 [3]: https://getcomposer.org/
