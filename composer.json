@@ -21,11 +21,12 @@
         "php":                                            ">=5.4",
 
         "johnpbloch/wordpress":                           "~4.2",
+        "lin3s/lin3s-distribution":                       "~1.0",
         "lin3s/wp-foundation":                            "~1.0",
         "lin3s/wp-routing":                               "~1.0",
-        "template-selector":                              "~1.0",
 
         "wpackagist-plugin/simple-fields":                "~1.4",
+        "wpackagist-plugin/template-selector":            "~1.0",
         "wpackagist-plugin/timber-library":               "~0.21",
         "wpackagist-plugin/wordpress-seo":                "~2.2",
         "wpackagist-theme/twentyeleven":                  "*"
@@ -36,12 +37,10 @@
     },
     "scripts": {
         "post-install-cmd": [
-            "rsync -a -v --ignore-existing -q wp-config-custom-sample.php wp-config-custom.php",
-            "rsync -a -v --ignore-existing -q .htaccess.dist .htaccess"
+            "LIN3S\\Distribution\\Composer\\WordpressStandard::createRequiredFiles"
         ],
         "post-update-cmd": [
-          "rsync -a -v --ignore-existing -q wp-config-custom-sample.php wp-config-custom.php",
-          "rsync -a -v --ignore-existing -q .htaccess.dist .htaccess"
+            "LIN3S\\Distribution\\Composer\\WordpressStandard::createRequiredFiles"
         ]
     },
     "config": {
