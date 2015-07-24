@@ -22,8 +22,8 @@
 
         "johnpbloch/wordpress":                           "~4.2",
         "lin3s/wp-foundation":                            "~1.0",
-        "lin3s/wp-routing":                               "~1.1",
-        "template-selector":                              "dev-master",
+        "lin3s/wp-routing":                               "~1.0",
+        "template-selector":                              "~1.0",
 
         "wpackagist-plugin/simple-fields":                "~1.4",
         "wpackagist-plugin/timber-library":               "~0.21",
