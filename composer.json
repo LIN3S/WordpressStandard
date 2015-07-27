@@ -26,7 +26,6 @@
         "lin3s/wp-routing":                               "~1.0",
 
         "wpackagist-plugin/simple-fields":                "~1.4",
-        "wpackagist-plugin/template-selector":            "~1.0",
         "wpackagist-plugin/timber-library":               "~0.21",
         "wpackagist-plugin/wordpress-seo":                "~2.2",
         "wpackagist-theme/twentyeleven":                  "*"
@@ -57,7 +56,8 @@
       "wpml-string-translation": "It allows to implement the multilingual in an easy way",
       "wpackagist-plugin/categories-images": "It allows to assign easily images to categories",
       "wpackagist-plugin/contact-form-7": "It allows to manage the contact form without code, all inside WP panel",
-      "wpackagist-plugin/ml-slider": "It allows a complete management of sliders. Ideal when the site has a lot and different sliders"
+      "wpackagist-plugin/ml-slider": "It allows a complete management of sliders. Ideal when the site has a lot and different sliders",
+      "wpackagist-plugin/template-selector": "It allows to declare templates programmatically to reference them from the wp-routing component"
     },
     "extra": {
         "wordpress-install-dir": "core",
