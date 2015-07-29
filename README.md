@@ -110,7 +110,7 @@ There is no logic, these files only contain few parameters that you should custo
 
 After all, and following the Capistrano [documentation][11] to configure the server, you can deploy executing:
 ```
-$ cap <stage> deploy       # <stage> can be dev1, prod or whatever file inside deploy directory
+$ cap <stage> deploy    # <stage> can be dev1, prod or whatever file inside deploy directory
 ```
 
 > In the Capistrano shared directory must be exist `src/uploads`, `.htaccess` (if you are using Apache), `robots.txt`
