@@ -20,7 +20,7 @@ var gulp = require('gulp'),
   rename = require('gulp-rename'),
   sass = require('gulp-sass'),
   scsslint = require('gulp-scss-lint'),
-  svgSprite = require("gulp-svg-sprites"),
+  svgSprite = require('gulp-svg-sprites'),
   uglify = require('gulp-uglify');
 
 var paths = {

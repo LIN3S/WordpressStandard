@@ -21,7 +21,7 @@
         "php":                                            ">=5.4",
 
         "johnpbloch/wordpress":                           "~4.2",
-        "lin3s/lin3s-distribution":                       "~1.0",
+        "lin3s/lin3s-distribution":                       "~1.1",
         "lin3s/wp-foundation":                            "~1.0",
         "lin3s/wp-routing":                               "~1.0",
 
@@ -36,10 +36,10 @@
     },
     "scripts": {
         "post-install-cmd": [
-            "LIN3S\\Distribution\\Composer\\WordpressStandard::createRequiredFiles"
+            "LIN3S\\Distribution\\Composer\\Wordpress::installRequiredFiles"
         ],
         "post-update-cmd": [
-            "LIN3S\\Distribution\\Composer\\WordpressStandard::createRequiredFiles"
+            "LIN3S\\Distribution\\Composer\\Wordpress::installRequiredFiles"
         ]
     },
     "config": {

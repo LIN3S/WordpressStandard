@@ -75,12 +75,8 @@ $ gulp
 $ gulp watch
 ```
 **Configure the web server** to serve this project. With PHP 5.4 or higher you don't need to configure the web server
-for this project, because you can use the "**built-in-server**":
-```
-$ php -S 12.0.0.1:8000
-```
-And that's all! Now, if you request [http://127.0.0.1:8000/](http://127.0.0.1:8000/), you will see your site up and
-running, for testing.
+for this project, because you can use the "**built-in-server**", however Wordpress structure needs some requirements
+to start use this server.
 
 Use an [Apache][17], Nginx or another web server of your choice for production environments. If you choose Apache,
 remember that you should created the `.htaccess` moving from base `.htaccess.dist` file.
