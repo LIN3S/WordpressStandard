@@ -35,12 +35,12 @@ set :keep_releases, 5
 # Linked files and directories (symlinks)
 ############################################
 
-set :composer_install_flags, '--no-dev --no-interaction --optimize-autoloader'
-
 set :theme_path, "src/themes/#{fetch(:theme_name)}"
 
 set :linked_files, %w{wp-config-custom.php .htaccess robots.txt}
 set :linked_dirs, %w{src/uploads}
+
+set :composer_install_flags, '--no-dev --no-interaction --optimize-autoloader'
 
 namespace :compile_and_upload do
     desc 'Compile and upload'
