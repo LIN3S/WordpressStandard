@@ -21,10 +21,10 @@ use LIN3S\WPFoundation\PostTypes\PostType;
  * @author Gorka Laucirica <gorka.lauzirika@gmail.com>
  * @author Beñat Espiña <benatespina@gmail.com>
  */
-final class ExamplePostType extends PostType
+final class ProductPostType extends PostType
 {
-    const NAME = 'example';
-    const TAXONOMY_TYPE_CATEGORY = 'example_category';
+    const NAME = 'product';
+    const TAXONOMY_TYPE_CATEGORY = 'product_category';
 
     /**
      * {@inheritdoc}
@@ -34,8 +34,8 @@ final class ExamplePostType extends PostType
         register_post_type(self::NAME,
             [
                 'labels'      => [
-                    'name'          => 'Example',
-                    'singular_name' => 'Example'
+                    'name'          => 'Products',
+                    'singular_name' => 'Product'
                 ],
                 'public'      => true,
                 'has_archive' => true,
@@ -51,8 +51,8 @@ final class ExamplePostType extends PostType
     {
         register_taxonomy(self::TAXONOMY_TYPE_CATEGORY, self::NAME, [
             'labels'       => [
-                'name'          => 'Example category',
-                'singular_name' => 'Example category'
+                'name'          => 'Product categories',
+                'singular_name' => 'Product category'
             ],
             'sort'         => true,
             'hierarchical' => true

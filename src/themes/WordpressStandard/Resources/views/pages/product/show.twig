@@ -1,0 +1,6 @@
+{% extends 'layout/base.twig' %}
+
+{% block content %}
+    <h1>{{ product.title }}</h1>
+    {{ product.content | wpautop }}
+{% endblock %}

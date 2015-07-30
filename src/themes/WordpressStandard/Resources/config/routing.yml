@@ -19,3 +19,18 @@
 -
     controller: WordpressStandard\Controller\DefaultController::pageAction
     type: page
+
+-
+    controller: WordpressStandard\Controller\TemplatesController::contactAction
+    type: page
+    template: contact
+
+-
+    controller: WordpressStandard\Controller\ProductController::listAction
+    type: archive
+    slug: product
+
+-
+    controller: WordpressStandard\Controller\ProductController::showAction
+    type: single
+    slug: product
