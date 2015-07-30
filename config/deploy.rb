@@ -70,7 +70,7 @@ namespace :compile_and_upload do
 end
 
 namespace :deploy do
-  after :starting, 'composer:install_executable'
+  after :updated, 'composer:install_executable'
   after :updated, 'compile_and_upload:compile'
   after :updated, 'compile_and_upload:upload'
 end
