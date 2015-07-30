@@ -12,6 +12,8 @@
 @import 'base/foundation_settings';
 @import 'base/wp';
 
+@import '../vendor/foundation/scss/foundation/components/grid';
+
 @import 'layout/header';
 @import 'layout/content';
 @import 'layout/footer';
