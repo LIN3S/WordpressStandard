@@ -13,7 +13,7 @@
 # Setup Server
 ############################################
 
-server "dev1.novisline.es", user: "deploy", roles: %w{web}
+server "dev1.lin3s.com", user: "novisline", roles: %w{web}
 set :deploy_to, "/home/novisline/domains/standard-wordpress.novisline.es/public_html"
 set :env, "dev1"
 
