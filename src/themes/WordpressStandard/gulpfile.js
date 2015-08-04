@@ -54,7 +54,7 @@ gulp.task('sass', ['wp-style', 'scss-lint'], function () {
 });
 
 gulp.task('scss-lint', function () {
-  return gulp.src([watch.sass, '!' + paths.sass + '/base/_reset.scss', '!'])
+  return gulp.src([watch.sass, '!' + paths.sass + '/base/_reset.scss'])
     .pipe(scsslint());
 });
 
