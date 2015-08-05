@@ -46,9 +46,9 @@ Getting Started
 After install all the prerequisites, to create a Wordpress project based on this *Wordpress Standard* you should check
 the following steps.
 
-Firstly, you need to **clone the project**:
+Firstly, you need to **create the project**:
 ```
-$ git clone git@github.com:LIN3S/WordpressStandard.git <project-name> && cd <project-name>
+$ composer create-project lin3s/wordpress-standard <project-name> && cd <project-name>
 ```
 Because our proposal is create a new Wordpress project on top of this, you should **remove `.git` folder and create a
 new git repo** for your new awesome Wordpress theme:
@@ -63,9 +63,8 @@ Also, all the namespaces and different references inside project have the **Word
 also, should be changed.
 > Also, **CAUTION!**: you **MUST** updated `!WordpressStandard` of [`src/themes/.gitignore`][18] file
 
-Then, to **install all the project dependencies** run the following commands:
+Then, to **install all the front-end dependencies** run the following commands:
 ```
-$ composer install
 $ cd src/themes/<project-name> && npm install && bower install
 ```
 Create the `wp-config-custom.php` copying the `wp-config-custom-sample.php` and customizing with your values.
