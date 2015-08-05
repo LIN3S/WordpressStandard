@@ -14,7 +14,7 @@
 RewriteEngine On
 
 # Make the admin still accessible from /wp-admin
-RewriteCond %{REQUEST_URI} ^/wp-admin/?(.*)                                                                                  │
+RewriteCond %{REQUEST_URI} ^/wp-admin/?(.*)
 RewriteRule ^wp-admin/(.*) core/wp-admin/$1 [L]
 # Base is the URL path of the home directory
 RewriteBase /
