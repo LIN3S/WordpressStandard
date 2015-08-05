@@ -69,7 +69,7 @@ gulp.task('sass:prod', ['sass'], function () {
 
 gulp.task('sprites', function () {
   return gulp.src(paths.svg + '/*.svg')
-    .pipe(svgSprite({mode: "symbols"}))
+    .pipe(svgSprite({mode: 'symbols'}))
     .pipe(gulp.dest(paths.buildSvg));
 });
 
@@ -84,5 +84,7 @@ gulp.task('watch', function () {
   gulp.watch(watch.sass, ['sass']);
   gulp.watch(watch.svg, ['sprites']);
 });
+
+gulp.task('default', ['sass', 'sprites']);
 
 gulp.task('prod', ['sass:prod', 'js:prod', 'sprites']);

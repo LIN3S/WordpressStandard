@@ -2,6 +2,7 @@ Wordpress Standard Edition
 ===========================
 > The "Wordpress Standard Edition" distribution in the LIN3S way.
 
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/b43b0be1-d2b5-44a1-8d4b-a556848129a5/mini.png)](https://insight.sensiolabs.com/projects/b43b0be1-d2b5-44a1-8d4b-a556848129a5)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/LIN3S/WordpressStandard/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/LIN3S/WordpressStandard/?branch=master)
 [![Total Downloads](https://poser.pugx.org/lin3s/wordpress-standard/downloads)](https://packagist.org/packages/lin3s/wordpress-standard)
 &nbsp;&nbsp;&nbsp;&nbsp;
