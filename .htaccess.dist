@@ -9,32 +9,26 @@
 # @author Beñat Espiña <benatespina@gmail.com>
 # @author Jon Torrado <jontorrado@gmail.com>
 
+## Basic Wordpress .htaccess (non Multisite)
 <IfModule mod_rewrite.c>
-
 RewriteEngine On
+RewriteBase /
+
+# Securize some files
+RewriteRule ^composer\.(lock|json)$ - [F,L]
+RewriteRule ^vendor/.*$ - [F,L]
+RewriteRule ^Capfile - [F,L]
+RewriteRule ^.git - [F,L]
+RewriteRule ^config - [F,L]
 
 # Make the admin still accessible from /wp-admin
 RewriteCond %{REQUEST_URI} ^/wp-admin/?(.*)
-RewriteRule ^wp-admin/(.*) core/wp-admin/$1 [L]
-# Base is the URL path of the home directory
-RewriteBase /
+RewriteRule ^wp-admin/(.*) core/wp-admin/$1 [R=301,L]
+
+## WordPress rewrites
+RewriteRule ^core/index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . core/index.php [L]
 RewriteRule ^$ core/index.php [L]
-# Skip real files and directories
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-# Otherwise send it to WordPress
-RewriteRule .* core/index.php [L]
 </IfModule>
-
-# ------------------------------------------------- #
-
-#### BEGIN WordPress ####
-<IfModule mod_rewrite.c>
-RewriteEngine On
-RewriteBase /
-RewriteRule ^index\.php$ - [L]
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . /index.php [L]
-</IfModule>
-#### END WordPress ####
