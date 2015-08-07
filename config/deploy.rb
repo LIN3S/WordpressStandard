@@ -69,7 +69,7 @@ namespace :compile_and_upload do
       end
     end
   end
-  
+
   task :upload do
     if fetch(:env) == "prod"
       on roles(:all) do |host|
