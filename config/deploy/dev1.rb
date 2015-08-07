@@ -13,9 +13,9 @@
 # Setup Server
 ############################################
 
-server "dev1.lin3s.com", user: "novisline", roles: %w{web}
-set :deploy_to, "/home/novisline/domains/standard-wordpress.novisline.es/public_html"
-set :env, "dev1"
+server "dev.company.com", user: "sshuser", roles: %w{web}
+set :deploy_to, "/path/to/your/deployment/directory"
+set :env,  "dev"
 
 ############################################
 # Setup Git
