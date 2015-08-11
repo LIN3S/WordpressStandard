@@ -30,7 +30,7 @@ var paths = {
   css: './Resources/build/css',
   buildJs: './Resources/build/js',
   svg: './Resources/assets/svg',
-  buildSvg: './Resources/build'
+  buildSvg: './Resources/build/svg'
 };
 
 var watch = {
@@ -69,7 +69,15 @@ gulp.task('sass:prod', ['sass'], function () {
 
 gulp.task('sprites', function () {
   return gulp.src(paths.svg + '/*.svg')
-    .pipe(svgSprite({mode: {symbol: {example: true}}}))
+    .pipe(svgSprite({
+      mode: {
+        symbol: {
+          dest: '',
+          sprite: 'symbols',
+          example: {dest: 'symbols'}
+        }
+      }
+    }))
     .pipe(gulp.dest(paths.buildSvg));
 });
 
