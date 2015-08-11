@@ -20,7 +20,7 @@ var gulp = require('gulp'),
   rename = require('gulp-rename'),
   sass = require('gulp-sass'),
   scsslint = require('gulp-scss-lint'),
-  svgSprite = require('gulp-svg-sprites'),
+  svgSprite = require('gulp-svg-sprite'),
   uglify = require('gulp-uglify');
 
 var paths = {
@@ -69,7 +69,7 @@ gulp.task('sass:prod', ['sass'], function () {
 
 gulp.task('sprites', function () {
   return gulp.src(paths.svg + '/*.svg')
-    .pipe(svgSprite({mode: 'symbols'}))
+    .pipe(svgSprite({mode: {symbol: {example: true}}}))
     .pipe(gulp.dest(paths.buildSvg));
 });
 
