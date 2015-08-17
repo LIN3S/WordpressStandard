@@ -47,11 +47,6 @@ Firstly, you need to **create the project**:
 ```
 $ composer create-project lin3s/wordpress-standard <project-name> && cd <project-name>
 ```
-Because our proposal is create a new Wordpress project on top of this, you should **remove `.git` folder and create a
-new git repo** for your new awesome Wordpress theme:
-```
-$ rm -rf .git && git init
-```
 Also, all the namespaces and different references inside project have the **WordpressStandard** keyword so you should
 **check for the references across the files and replace them with your awesome project name**.
 > You should remove the header licenses and `LICENSE` itself, because we are not going to be the authors of your
@@ -72,8 +67,10 @@ $ gulp
 $ gulp watch
 ```
 **Configure the web server** to serve this project. With PHP 5.4 or higher you don't need to configure the web server
-for this project, because you can use the "**built-in-server**". However, Wordpress structure needs some requirements
-to start use this server.
+for this project, because you can use the "**built-in-server**":
+```
+$ php -S 127.0.0.1:8000 router.php
+```
 
 Use an [Apache][17], Nginx or other web server of your choice for production environments. If you choose Apache,
 remember that you should create the `.htaccess` copying the base `.htaccess.dist` file.
