@@ -1,5 +1,4 @@
-Wordpress Standard Edition
-===========================
+#Wordpress Standard Edition
 > The "Wordpress Standard Edition" distribution in the LIN3S way.
 
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/b43b0be1-d2b5-44a1-8d4b-a556848129a5/mini.png)](https://insight.sensiolabs.com/projects/b43b0be1-d2b5-44a1-8d4b-a556848129a5)
@@ -9,10 +8,10 @@ Wordpress Standard Edition
 [![Latest Stable Version](https://poser.pugx.org/lin3s/wordpress-standard/v/stable.svg)](https://packagist.org/packages/lin3s/wordpress-standard)
 [![Latest Unstable Version](https://poser.pugx.org/lin3s/wordpress-standard/v/unstable.svg)](https://packagist.org/packages/lin3s/wordpress-standard)
 
-Why?
-----
+##Why?
 [**Wordpress**][1] is the most important CMS around the world, but its PHP code is dark and unmaintainable. In
-[*LIN3S*][2] we implement this solution providing some useful features that the standard edition of Wordpress hasn't:
+[*LIN3S*][2] we implement this solution providing some useful features that the standard edition of Wordpress doesn't
+come with:
 
 1. [Composer][3]
 2. [PHP namespaces][4]
@@ -25,9 +24,8 @@ Why?
 5. [Capistrano][11] deploy
 6. [Symfony style routing made by LIN3S][12]
 
-Prerequisites
--------------
-The above sounds great so now, to start developing Wordpress themes based on this project, you need the the following
+##Prerequisites
+The above sounds great so, now, to start developing Wordpress project based on this repo, you need the the following
 requirements:
 
 1. [PHP][13] 5.4 or higher
@@ -41,10 +39,9 @@ requirements:
   * Bower: `npm install -g bower`
   * Gulp.js: `npm install -g gulp`
 
-Getting Started
----------------
-After install all the prerequisites, to create a Wordpress project based on this *Wordpress Standard* you should check
-the following steps.
+##Getting Started
+After installing all the prerequisites, to create a Wordpress project based on this *Wordpress Standard* you should
+check the following steps.
 
 Firstly, you need to **create the project**:
 ```
@@ -53,36 +50,35 @@ $ composer create-project lin3s/wordpress-standard <project-name> && cd <project
 Because our proposal is create a new Wordpress project on top of this, you should **remove `.git` folder and create a
 new git repo** for your new awesome Wordpress theme:
 ```
-$ rm -Rf .git && git init
+$ rm -rf .git && git init
 ```
-Also, all the namespaces and different references inside project have the **WordpressStandard** keyword so, you should
+Also, all the namespaces and different references inside project have the **WordpressStandard** keyword so you should
 **check for the references across the files and replace them with your awesome project name**.
 > You should remove the header licenses and `LICENSE` itself, because we are not going to be the authors of your
  awesome project :)
-> Remember that the `WordpressStandardTheme.php` file name and the `src/themes/WordpressStandard` directory name,
-also, should be changed.
-> Also, **CAUTION!**: you **MUST** updated `!WordpressStandard` of [`src/themes/.gitignore`][18] file
+> Remember that the `WordpressStandardTheme.php` file name and the `src/themes/WordpressStandard` directory name
+should be changed too.
+> Also, **CAUTION!**: you **MUST** updated `!WordpressStandard` of [`src/themes/.gitignore`][18] file.
 
-Then, to **install all the front-end dependencies** run the following commands:
+Then, in order to **install all the front-end dependencies** run the following commands:
 ```
 $ cd src/themes/<project-name> && npm install && bower install
 ```
 Create the `wp-config-custom.php` copying the `wp-config-custom-sample.php` and customizing with your values.
 
-**Generate all required assets** using Gulp. You can also watch the changes:
+**Generate all the required assets** using Gulp. You can also watch the changes:
 ```
 $ gulp
 $ gulp watch
 ```
 **Configure the web server** to serve this project. With PHP 5.4 or higher you don't need to configure the web server
-for this project, because you can use the "**built-in-server**", however Wordpress structure needs some requirements
+for this project, because you can use the "**built-in-server**". However, Wordpress structure needs some requirements
 to start use this server.
 
-Use an [Apache][17], Nginx or another web server of your choice for production environments. If you choose Apache,
-remember that you should created the `.htaccess` moving from base `.htaccess.dist` file.
+Use an [Apache][17], Nginx or other web server of your choice for production environments. If you choose Apache,
+remember that you should create the `.htaccess` copying the base `.htaccess.dist` file.
 
-Considerations
---------------
+##Considerations
 If all goes well you should have your project on top of Wordpress Standard running like a charm. However, there are
 few tips that you should read.
 
@@ -97,10 +93,9 @@ find some examples on how to extend many different Wordpress features. In case t
 create a new class or a new folder (if there are multiple classes related to that feature as in post types) with your 
 code.
 
-Deploy
-------
-To automatize the deploy process this project is using **Capistrano**. All about its configuration is inside `config`
-directory. You can customize deploy tasks simply, modifying the `config/deploy.rb` file.
+##Deployment
+To automatize the deployment process this project is using **Capistrano**. All about its configuration is inside the
+`config` directory. You can customize deployment tasks simply, modifying the `config/deploy.rb` file.
 
 You should update the *wordpress-standard* application name for your awesome project name and the repo url with your
 project git url.
@@ -113,10 +108,10 @@ After all, and following the Capistrano [documentation][11] to configure the ser
 $ cap <stage> deploy    # <stage> can be dev1, prod or whatever file inside deploy directory
 ```
 
-> In the Capistrano shared directory must be exist `src/uploads`, `.htaccess` (if you are using Apache), `robots.txt`
-and `wp-config-custom.php`
+> In the Capistrano shared directory you should create the `src/uploads` folder, the `.htaccess` file (if you are using
+Apache), the `robots.txt` and the `wp-config-custom.php` files.
 
-## Licensing Options
+##Licensing Options
 [![License](https://poser.pugx.org/lin3s/wordpress-standard/license.svg)](https://github.com/LIN3S/WordpressStandard/blob/master/LICENSE)
 
 [1]: https://wordpress.org/
