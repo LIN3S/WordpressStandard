@@ -63,7 +63,8 @@
         "wordpress-install-dir": "core",
         "installer-paths": {
             "src/plugins/{$name}/": ["type:wordpress-plugin"],
-            "src/themes/{$name}/": ["type:wordpress-theme"]
+            "src/themes/{$name}/": ["type:wordpress-theme"],
+            "src/mu-plugins/{$name}": ["type:wordpress-muplugin"]
         }
     }
 }
