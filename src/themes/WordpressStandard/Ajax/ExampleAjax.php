@@ -11,26 +11,18 @@
 
 namespace WordpressStandard\Ajax;
 
+use LIN3S\WPFoundation\Ajax\Ajax;
+
 /**
- * Very basic example of Ajax class. It contains calls to "add_action"
- * Wordpress internal method and then its callbacks.
+ * Very basic example of Ajax class.
  *
  * @author Gorka Laucirica <gorka.lauzirika@gmail.com>
  * @author Beñat Espiña <benatespina@gmail.com>
  */
-final class ExampleAjax
+final class ExampleAjax extends Ajax
 {
     /**
-     * Constructor.
-     */
-    public function __construct()
-    {
-        add_action('wp_ajax_nopriv_example', [$this, 'ajax']);
-        add_action('wp_ajax_example', [$this, 'ajax']);
-    }
-
-    /**
-     * The callback example method.
+     * {@inheritdoc}
      */
     public function ajax()
     {

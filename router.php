@@ -19,15 +19,15 @@ if ($path === '/wp-admin/') {
     header('Location: /core/wp-admin/');
     die;
 }
-if (file_exists($root.$path) && $path !== '/') {
-    if (is_dir($root.$path) && substr($path,strlen($path) - 1, 1) !== '/') {
+if (file_exists($root . $path) && $path !== '/') {
+    if (is_dir($root . $path) && substr($path, strlen($path) - 1, 1) !== '/') {
         $path = rtrim($path, '/') . '/core/index.php';
     }
     if (strpos($path, '.php') === false) {
         return false;
     } else {
-        chdir(dirname($root.$path));
-        require_once $root.$path;
+        chdir(dirname($root . $path));
+        require_once $root . $path;
     }
 } else {
     include_once $root . '/core/index.php';

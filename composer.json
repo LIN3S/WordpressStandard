@@ -20,12 +20,14 @@
     "require": {
         "php":                                            ">=5.4",
 
-        "johnpbloch/wordpress":                           "~4.2",
-        "lin3s/lin3s-distribution":                       "~1.1",
-        "lin3s/wp-foundation":                            "~1.0",
-        "lin3s/wp-routing":                               "~1.0",
+        "johnpbloch/wordpress":                           "~4.3",
 
-        "wpackagist-plugin/simple-fields":                "~1.4",
+        "lin3s/cs":                                       "~0.1",
+        "lin3s/lin3s-distribution":                       "~1.1",
+        "lin3s/wp-foundation":                            "~1.1",
+        "lin3s/wp-routing":                               "~1.0",
+        "lin3s/template-selector":                        "~1.0",
+
         "wpackagist-plugin/timber-library":               "~0.21",
         "wpackagist-plugin/wordpress-seo":                "~2.2",
         "wpackagist-theme/twentyeleven":                  "*"
@@ -40,10 +42,18 @@
     },
     "scripts": {
         "post-install-cmd": [
-            "LIN3S\\Distribution\\Composer\\Wordpress::installRequiredFiles"
+            "LIN3S\\Distribution\\Composer\\Wordpress::installRequiredFiles",
+            "LIN3S\\CS\\Composer\\Hooks::buildDistFile",
+            "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
+            "LIN3S\\CS\\Composer\\Hooks::addHooks",
+            "LIN3S\\CS\\Composer\\Hooks::addFiles"
         ],
         "post-update-cmd": [
-            "LIN3S\\Distribution\\Composer\\Wordpress::installRequiredFiles"
+            "LIN3S\\Distribution\\Composer\\Wordpress::installRequiredFiles",
+            "LIN3S\\CS\\Composer\\Hooks::buildDistFile",
+            "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
+            "LIN3S\\CS\\Composer\\Hooks::addHooks",
+            "LIN3S\\CS\\Composer\\Hooks::addFiles"
         ]
     },
     "config": {
@@ -55,13 +65,12 @@
         }
     },
     "suggest": {
-      "sitepress-multilingual-cms": "It allows to implement the multilingual in an easy way",
-      "wpml-media": "It allows to implement the multilingual in an easy way",
-      "wpml-string-translation": "It allows to implement the multilingual in an easy way",
-      "wpackagist-plugin/categories-images": "It allows to assign easily images to categories",
-      "wpackagist-plugin/contact-form-7": "It allows to manage the contact form without code, all inside WP panel",
-      "wpackagist-plugin/ml-slider": "It allows a complete management of sliders. Ideal when the site has a lot and different sliders",
-      "wpackagist-plugin/template-selector": "It allows to declare templates programmatically to reference them from the wp-routing component"
+        "sitepress-multilingual-cms": "It allows to implement the multilingual in an easy way",
+        "wpml-media": "It allows to implement the multilingual in an easy way",
+        "wpml-string-translation": "It allows to implement the multilingual in an easy way",
+        "wpackagist-plugin/categories-images": "It allows to assign easily images to categories",
+        "wpackagist-plugin/contact-form-7": "It allows to manage the contact form without code, all inside WP panel",
+        "wpackagist-plugin/advanced-custom-fields": "It allows customize the fields of post types in an easy way"
     },
     "extra": {
         "wordpress-install-dir": "core",
@@ -69,6 +78,10 @@
             "src/plugins/{$name}/": ["type:wordpress-plugin"],
             "src/themes/{$name}/": ["type:wordpress-theme"],
             "src/mu-plugins/{$name}": ["type:wordpress-muplugin"]
+        },
+        "incenteev-parameters": {
+            "file": ".lin3s_cs.yml",
+            "dist-file": ".lin3s_cs.yml.dist"
         }
     }
 }

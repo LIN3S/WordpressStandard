@@ -8,12 +8,12 @@
 # @author Gorka Laucirica <gorka.lauzirika@gmail.com>
 # @author Beñat Espiña <benatespina@gmail.com>
 
-/bin
-/core
-/src/plugins
-/src/uploads
-/src/languages
-/vendor
-/wp-config-custom.php
 .htaccess
+bin
+core
 robots.txt
+src/plugins
+src/uploads
+src/languages
+vendor
+wp-config-custom.php
