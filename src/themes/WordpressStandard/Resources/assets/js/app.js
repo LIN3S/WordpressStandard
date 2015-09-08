@@ -7,10 +7,12 @@
  * file that was distributed with this source code.
  * 
  * @author Gorka Laucirica <gorka.lauzirika@gmail.com>
+ * @author Beñat Espiña <benatespina@gmail.com>
  */
 
+'use strict';
+
 (function ($) {
-  'use strict';
 
   $(document).foundation();
 
