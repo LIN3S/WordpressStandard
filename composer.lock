@@ -7,6 +7,53 @@
     "hash": "a88ca383b35b4eadac3d9f9c9ec5de85",
     "packages": [
         {
+            "name": "asm89/twig-lint",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/asm89/twig-lint.git",
+                "reference": "0d7b47bc9e044c6dc768b725258a9e5dfb8a9f16"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/asm89/twig-lint/zipball/0d7b47bc9e044c6dc768b725258a9e5dfb8a9f16",
+                "reference": "0d7b47bc9e044c6dc768b725258a9e5dfb8a9f16",
+                "shasum": ""
+            },
+            "require": {
+                "symfony/console": "~2.1",
+                "symfony/finder": "~2.1",
+                "twig/twig": "~1.12"
+            },
+            "bin": [
+                "bin/twig-lint"
+            ],
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Asm89\\Twig\\Lint\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Alexander",
+                    "email": "iam.asm89@gmail.com",
+                    "homepage": "http://asm89.github.io/"
+                }
+            ],
+            "description": "Standalone twig linter.",
+            "homepage": "https://github.com/asm89/twig-lint",
+            "keywords": [
+                "lint",
+                "twig"
+            ],
+            "time": "2014-05-31 13:18:21"
+        },
+        {
             "name": "composer/installers",
             "version": "v1.0.21",
             "source": {
@@ -208,16 +255,16 @@
         },
         {
             "name": "johnpbloch/wordpress",
-            "version": "4.3",
+            "version": "4.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnpbloch/wordpress.git",
-                "reference": "2afe902599538caaa0f1fd7579895dd7cc0ac5f7"
+                "reference": "cfcf25eb42baeb7316a61c7a64e9a1ab3e291f2f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/2afe902599538caaa0f1fd7579895dd7cc0ac5f7",
-                "reference": "2afe902599538caaa0f1fd7579895dd7cc0ac5f7",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/cfcf25eb42baeb7316a61c7a64e9a1ab3e291f2f",
+                "reference": "cfcf25eb42baeb7316a61c7a64e9a1ab3e291f2f",
                 "shasum": ""
             },
             "require": {
@@ -241,7 +288,7 @@
                 "blog",
                 "cms"
             ],
-            "time": "2015-08-18 18:16:11"
+            "time": "2015-09-15 15:01:23"
         },
         {
             "name": "johnpbloch/wordpress-core-installer",
@@ -293,19 +340,20 @@
         },
         {
             "name": "lin3s/cs",
-            "version": "v0.3.1",
+            "version": "v0.3.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/LIN3S/CS.git",
-                "reference": "d77810fe7aa79d3b91d21d97f0166776945bee30"
+                "reference": "398d779d9bb99a3b67adf4021fac58bd82559d74"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/LIN3S/CS/zipball/d77810fe7aa79d3b91d21d97f0166776945bee30",
-                "reference": "d77810fe7aa79d3b91d21d97f0166776945bee30",
+                "url": "https://api.github.com/repos/LIN3S/CS/zipball/398d779d9bb99a3b67adf4021fac58bd82559d74",
+                "reference": "398d779d9bb99a3b67adf4021fac58bd82559d74",
                 "shasum": ""
             },
             "require": {
+                "asm89/twig-lint": "^1.0",
                 "fabpot/php-cs-fixer": "^1.9",
                 "incenteev/composer-parameter-handler": "^2.1",
                 "mmoreram/php-formatter": "^1.0",
@@ -319,7 +367,7 @@
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "LIN3S\\CS\\": "src"
+                    "LIN3S\\CS\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -334,21 +382,20 @@
                 }
             ],
             "description": "The coding standards in the LIN3S way",
-            "homepage": "http://lin3s.com",
-            "time": "2015-09-02 13:58:38"
+            "time": "2015-09-15 10:45:12"
         },
         {
             "name": "lin3s/lin3s-distribution",
-            "version": "v1.1.1",
+            "version": "v1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/LIN3S/Distribution.git",
-                "reference": "8d85291c66f3eb714535eba9fc03cc588a06c88c"
+                "reference": "67d5f22e14a369ca8ead44d2c7d9076a2931f0e7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/LIN3S/Distribution/zipball/8d85291c66f3eb714535eba9fc03cc588a06c88c",
-                "reference": "8d85291c66f3eb714535eba9fc03cc588a06c88c",
+                "url": "https://api.github.com/repos/LIN3S/Distribution/zipball/67d5f22e14a369ca8ead44d2c7d9076a2931f0e7",
+                "reference": "67d5f22e14a369ca8ead44d2c7d9076a2931f0e7",
                 "shasum": ""
             },
             "require": {
@@ -376,7 +423,7 @@
                 "distribution",
                 "lin3s"
             ],
-            "time": "2015-08-03 07:13:26"
+            "time": "2015-09-14 11:04:25"
         },
         {
             "name": "lin3s/template-selector",
@@ -414,16 +461,16 @@
         },
         {
             "name": "lin3s/wp-foundation",
-            "version": "v1.1.2",
+            "version": "v1.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/LIN3S/WPFoundation.git",
-                "reference": "1192bbac1e6e1afc76846e80d6583c525fd5de3a"
+                "reference": "53e049b4d15f05c55e6354fddfccae35a6d24893"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/LIN3S/WPFoundation/zipball/1192bbac1e6e1afc76846e80d6583c525fd5de3a",
-                "reference": "1192bbac1e6e1afc76846e80d6583c525fd5de3a",
+                "url": "https://api.github.com/repos/LIN3S/WPFoundation/zipball/53e049b4d15f05c55e6354fddfccae35a6d24893",
+                "reference": "53e049b4d15f05c55e6354fddfccae35a6d24893",
                 "shasum": ""
             },
             "require": {
@@ -457,7 +504,7 @@
                 "lin3s",
                 "wordpress"
             ],
-            "time": "2015-08-12 21:21:43"
+            "time": "2015-09-21 08:41:57"
         },
         {
             "name": "lin3s/wp-routing",
@@ -562,16 +609,16 @@
         },
         {
             "name": "pdepend/pdepend",
-            "version": "2.1.0",
+            "version": "2.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pdepend/pdepend.git",
-                "reference": "f58902a774449f73f1a1d9cd1a07aeac8fbee367"
+                "reference": "eceacb580af64e9039b274a1e9c6997fc69756c7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pdepend/pdepend/zipball/f58902a774449f73f1a1d9cd1a07aeac8fbee367",
-                "reference": "f58902a774449f73f1a1d9cd1a07aeac8fbee367",
+                "url": "https://api.github.com/repos/pdepend/pdepend/zipball/eceacb580af64e9039b274a1e9c6997fc69756c7",
+                "reference": "eceacb580af64e9039b274a1e9c6997fc69756c7",
                 "shasum": ""
             },
             "require": {
@@ -597,7 +644,7 @@
                 "BSD-3-Clause"
             ],
             "description": "Official version of pdepend to be handled with Composer",
-            "time": "2015-05-21 18:09:06"
+            "time": "2015-09-20 20:30:27"
         },
         {
             "name": "phpmd/phpmd",
@@ -1244,16 +1291,77 @@
             "time": "2015-08-24 07:13:45"
         },
         {
-            "name": "wpackagist-plugin/timber-library",
-            "version": "0.21.9",
+            "name": "twig/twig",
+            "version": "v1.22.1",
             "source": {
-                "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/timber-library/",
-                "reference": "tags/0.21.9"
+                "type": "git",
+                "url": "https://github.com/twigphp/Twig.git",
+                "reference": "b7fc2469fa009897871fb95b68237286fc54a5ad"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/timber-library.0.21.9.zip",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/b7fc2469fa009897871fb95b68237286fc54a5ad",
+                "reference": "b7fc2469fa009897871fb95b68237286fc54a5ad",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.2.7"
+            },
+            "require-dev": {
+                "symfony/debug": "~2.7",
+                "symfony/phpunit-bridge": "~2.7"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.22-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Twig_": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com",
+                    "homepage": "http://fabien.potencier.org",
+                    "role": "Lead Developer"
+                },
+                {
+                    "name": "Armin Ronacher",
+                    "email": "armin.ronacher@active-4.com",
+                    "role": "Project Founder"
+                },
+                {
+                    "name": "Twig Team",
+                    "homepage": "http://twig.sensiolabs.org/contributors",
+                    "role": "Contributors"
+                }
+            ],
+            "description": "Twig, the flexible, fast, and secure template language for PHP",
+            "homepage": "http://twig.sensiolabs.org",
+            "keywords": [
+                "templating"
+            ],
+            "time": "2015-09-15 06:50:16"
+        },
+        {
+            "name": "wpackagist-plugin/timber-library",
+            "version": "0.21.10",
+            "source": {
+                "type": "svn",
+                "url": "http://plugins.svn.wordpress.org/timber-library/",
+                "reference": "tags/0.21.10"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/timber-library.0.21.10.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -1265,15 +1373,15 @@
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",
-            "version": "2.3.4",
+            "version": "2.3.5",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/wordpress-seo/",
-                "reference": "tags/2.3.4"
+                "reference": "tags/2.3.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.2.3.4.zip",
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.2.3.5.zip",
                 "reference": null,
                 "shasum": null
             },
