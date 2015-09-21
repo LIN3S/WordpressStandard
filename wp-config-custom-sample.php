@@ -38,5 +38,6 @@ define('MAILER_HOST',       'smtp.mandrillapp.com');
 define('MAILER_PORT',       587);
 define('MAILER_USERNAME',   'Put the username here');
 define('MAILER_PASSWORD',   'Put the password here');
+define('MAILER_TO',         'The receiver email address');
 define('MAILER_FROM',       'The email address that will be shown to the receiver');
 define('MAILER_FROM_NAME',  'The name that will be shown to the receiver');
