@@ -11,11 +11,13 @@
 
 namespace WordpressStandard;
 
+use LIN3S\WPFoundation\Configuration\Mailer\Mailer;
 use WordpressStandard\Configuration\Assets;
 use WordpressStandard\Configuration\ImageSizes;
 use WordpressStandard\Configuration\Menus;
 use LIN3S\WPFoundation\Configuration\Theme\Theme;
 use TimberMenu;
+use WordpressStandard\Configuration\Translations;
 
 /**
  * Final class of theme. Declares all stuff related to the template. Its responsibility
@@ -28,9 +30,6 @@ use TimberMenu;
  */
 final class WordpressStandardTheme extends Theme
 {
-    const VERSION = '0.1';
-    const LANG = 'WordpressStandard';
-
     /**
      * {@inheritdoc}
      */
@@ -38,7 +37,9 @@ final class WordpressStandardTheme extends Theme
     {
         new Assets();
         new ImageSizes();
+        new Mailer();
         new Menus();
+        new Translations();
     }
 
     /**

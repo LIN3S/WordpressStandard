@@ -461,16 +461,16 @@
         },
         {
             "name": "lin3s/wp-foundation",
-            "version": "v1.1.5",
+            "version": "v1.1.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/LIN3S/WPFoundation.git",
-                "reference": "53e049b4d15f05c55e6354fddfccae35a6d24893"
+                "reference": "2cc93d85282328c9b7f6c5c3def514b1b49e27a3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/LIN3S/WPFoundation/zipball/53e049b4d15f05c55e6354fddfccae35a6d24893",
-                "reference": "53e049b4d15f05c55e6354fddfccae35a6d24893",
+                "url": "https://api.github.com/repos/LIN3S/WPFoundation/zipball/2cc93d85282328c9b7f6c5c3def514b1b49e27a3",
+                "reference": "2cc93d85282328c9b7f6c5c3def514b1b49e27a3",
                 "shasum": ""
             },
             "require": {
@@ -504,7 +504,7 @@
                 "lin3s",
                 "wordpress"
             ],
-            "time": "2015-09-21 08:41:57"
+            "time": "2015-09-22 07:36:09"
         },
         {
             "name": "lin3s/wp-routing",
@@ -648,28 +648,28 @@
         },
         {
             "name": "phpmd/phpmd",
-            "version": "2.2.3",
+            "version": "2.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpmd/phpmd.git",
-                "reference": "5eeb5a4d39c8304910b33ae49f8813905346cc35"
+                "reference": "246b254505951508bea08db5dde44322264f75fe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpmd/phpmd/zipball/5eeb5a4d39c8304910b33ae49f8813905346cc35",
-                "reference": "5eeb5a4d39c8304910b33ae49f8813905346cc35",
+                "url": "https://api.github.com/repos/phpmd/phpmd/zipball/246b254505951508bea08db5dde44322264f75fe",
+                "reference": "246b254505951508bea08db5dde44322264f75fe",
                 "shasum": ""
             },
             "require": {
                 "pdepend/pdepend": "~2.0",
                 "php": ">=5.3.0",
-                "symfony/config": ">=2.4",
-                "symfony/dependency-injection": ">=2.4",
-                "symfony/filesystem": ">=2.4"
+                "symfony/config": "^2.4",
+                "symfony/dependency-injection": "^2.4",
+                "symfony/filesystem": "^2.4"
             },
             "require-dev": {
-                "phpunit/phpunit": "*",
-                "squizlabs/php_codesniffer": "*"
+                "phpunit/phpunit": "^4.0",
+                "squizlabs/php_codesniffer": "^2.0"
             },
             "bin": [
                 "src/bin/phpmd"
@@ -689,12 +689,18 @@
                     "name": "Manuel Pichler",
                     "email": "github@manuel-pichler.de",
                     "homepage": "https://github.com/manuelpichler",
-                    "role": "Project founder"
+                    "role": "Project Founder"
                 },
                 {
                     "name": "Other contributors",
                     "homepage": "https://github.com/phpmd/phpmd/graphs/contributors",
                     "role": "Contributors"
+                },
+                {
+                    "name": "Marc Würth",
+                    "email": "ravage@bluewin.ch",
+                    "homepage": "https://github.com/ravage84",
+                    "role": "Project Maintainer"
                 }
             ],
             "description": "PHPMD is a spin-off project of PHP Depend and aims to be a PHP equivalent of the well known Java tool PMD.",
@@ -706,7 +712,7 @@
                 "phpmd",
                 "pmd"
             ],
-            "time": "2015-05-27 18:16:57"
+            "time": "2015-09-22 05:16:44"
         },
         {
             "name": "sebastian/diff",
