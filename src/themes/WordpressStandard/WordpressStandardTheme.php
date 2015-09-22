@@ -60,5 +60,8 @@ final class WordpressStandardTheme extends Theme
      */
     public function templates($templates)
     {
+        return array_merge($templates, [
+            'contact' => 'Contact',
+        ]);
     }
 }
