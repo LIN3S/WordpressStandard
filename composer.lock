@@ -461,16 +461,16 @@
         },
         {
             "name": "lin3s/wp-foundation",
-            "version": "v1.1.6",
+            "version": "v1.1.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/LIN3S/WPFoundation.git",
-                "reference": "2cc93d85282328c9b7f6c5c3def514b1b49e27a3"
+                "reference": "564999ad7b9fbdf759da9a87bc1cbfcd5bc0841c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/LIN3S/WPFoundation/zipball/2cc93d85282328c9b7f6c5c3def514b1b49e27a3",
-                "reference": "2cc93d85282328c9b7f6c5c3def514b1b49e27a3",
+                "url": "https://api.github.com/repos/LIN3S/WPFoundation/zipball/564999ad7b9fbdf759da9a87bc1cbfcd5bc0841c",
+                "reference": "564999ad7b9fbdf759da9a87bc1cbfcd5bc0841c",
                 "shasum": ""
             },
             "require": {
@@ -504,7 +504,7 @@
                 "lin3s",
                 "wordpress"
             ],
-            "time": "2015-09-22 07:36:09"
+            "time": "2015-09-22 12:44:40"
         },
         {
             "name": "lin3s/wp-routing",
@@ -648,16 +648,16 @@
         },
         {
             "name": "phpmd/phpmd",
-            "version": "2.3.0",
+            "version": "2.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpmd/phpmd.git",
-                "reference": "246b254505951508bea08db5dde44322264f75fe"
+                "reference": "241bc5f8d140419a8d981ec11063e009b05fd4c5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpmd/phpmd/zipball/246b254505951508bea08db5dde44322264f75fe",
-                "reference": "246b254505951508bea08db5dde44322264f75fe",
+                "url": "https://api.github.com/repos/phpmd/phpmd/zipball/241bc5f8d140419a8d981ec11063e009b05fd4c5",
+                "reference": "241bc5f8d140419a8d981ec11063e009b05fd4c5",
                 "shasum": ""
             },
             "require": {
@@ -712,7 +712,7 @@
                 "phpmd",
                 "pmd"
             ],
-            "time": "2015-09-22 05:16:44"
+            "time": "2015-09-22 09:31:11"
         },
         {
             "name": "sebastian/diff",

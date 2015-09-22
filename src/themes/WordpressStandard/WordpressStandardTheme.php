@@ -12,12 +12,13 @@
 namespace WordpressStandard;
 
 use LIN3S\WPFoundation\Configuration\Mailer\Mailer;
+use LIN3S\WPFoundation\Twig\TagManagerTwig;
+use LIN3S\WPFoundation\Twig\TranslationTwig;
 use WordpressStandard\Configuration\Assets;
 use WordpressStandard\Configuration\ImageSizes;
 use WordpressStandard\Configuration\Menus;
 use LIN3S\WPFoundation\Configuration\Theme\Theme;
 use TimberMenu;
-use WordpressStandard\Configuration\Translations;
 
 /**
  * Final class of theme. Declares all stuff related to the template. Its responsibility
@@ -39,7 +40,9 @@ final class WordpressStandardTheme extends Theme
         new ImageSizes();
         new Mailer();
         new Menus();
-        new Translations();
+
+        new TagManagerTwig();
+        new TranslationTwig();
     }
 
     /**
