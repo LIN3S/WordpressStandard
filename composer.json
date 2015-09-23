@@ -77,7 +77,7 @@
         "installer-paths": {
             "src/plugins/{$name}/": ["type:wordpress-plugin"],
             "src/themes/{$name}/": ["type:wordpress-theme"],
-            "src/mu-plugins/{$name}": ["type:wordpress-muplugin"]
+            "src/mu-plugins/{$name}/": ["type:wordpress-muplugin"]
         },
         "incenteev-parameters": {
             "file": ".lin3s_cs.yml",
