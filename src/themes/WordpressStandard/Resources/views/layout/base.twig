@@ -2,12 +2,13 @@
 <!--[if IE 8]> <html class="no-js lt-ie9" {{ function('language_attributes') }}> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta charset="{{ site.charset }}" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="{{ site.charset }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="application-name" content="{{ function('wp_title', '-', false, 'right') }}">
+
     <title>{{ function('wp_title', '-', false, 'right') }}</title>
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+
     {{function('wp_head')}}
 </head>
 <body {{function('body_class')}}>
