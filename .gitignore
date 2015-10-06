@@ -8,7 +8,9 @@
 # @author Gorka Laucirica <gorka.lauzirika@gmail.com>
 # @author Beñat Espiña <benatespina@gmail.com>
 
+.editorconfig
 .htaccess
+.lin3s_cs.yml
 bin
 core
 robots.txt

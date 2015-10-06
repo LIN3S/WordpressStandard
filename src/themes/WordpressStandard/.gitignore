@@ -8,6 +8,8 @@
 # @author Gorka Laucirica <gorka.lauzirika@gmail.com>
 # @author Beñat Espiña <benatespina@gmail.com>
 
+.eslint.yml
+.scss_lint.yml
 node_modules
 Resources/assets/vendor
 Resources/build
