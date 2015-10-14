@@ -13,6 +13,7 @@
 </head>
 <body {{function('body_class')}}>
     {% block body %}
+        {% block tagManager %}{% endblock %}
         {% block header %}
             {% include 'layout/header.twig' %}
         {% endblock %}
@@ -23,6 +24,5 @@
     {% endblock %}
     {{function('wp_footer')}}
     {% block javascripts %}{% endblock %}
-    {% block tagManager %}{% endblock %}
     {% block dataLayer %}{% endblock %}
 </body>
