@@ -12,6 +12,7 @@
 namespace WordpressStandard\Configuration;
 
 use LIN3S\WPFoundation\Configuration\Menus\Menus as BaseMenus;
+use LIN3S\WPFoundation\Configuration\Translations\Translations;
 
 /**
  * Final Menu class. With menus method are registered the different menus.
@@ -29,7 +30,7 @@ final class Menus extends BaseMenus
     public function menus()
     {
         register_nav_menus([
-            self::MENU_HEADER => 'Header menu'
+            self::MENU_HEADER => Translations::trans('Header menu')
         ]);
     }
 }

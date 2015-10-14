@@ -11,6 +11,7 @@
 
 namespace WordpressStandard\Widgets\Areas;
 
+use LIN3S\WPFoundation\Configuration\Translations\Translations;
 use LIN3S\WPFoundation\Widgets\Areas\WidgetArea;
 
 /**
@@ -28,7 +29,7 @@ final class ExampleWidgetArea extends WidgetArea
     public function widgetArea()
     {
         register_sidebar([
-            'name'          => 'Example widgets',
+            'name'          => Translations::trans('Example widgets'),
             'id'            => 'example-widgets',
             'before_widget' => '<section class="">',
             'after_widget'  => '</section>',

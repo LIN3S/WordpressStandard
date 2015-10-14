@@ -11,6 +11,7 @@
 
 namespace WordpressStandard\PostTypes;
 
+use LIN3S\WPFoundation\Configuration\Translations\Translations;
 use LIN3S\WPFoundation\PostTypes\PostType;
 
 /**
@@ -34,8 +35,8 @@ final class ExamplePostType extends PostType
         register_post_type(self::NAME,
             [
                 'labels'      => [
-                    'name'          => 'Example',
-                    'singular_name' => 'Example'
+                    'name'          => Translations::trans('Example'),
+                    'singular_name' => Translations::trans('Example')
                 ],
                 'public'      => true,
                 'has_archive' => true,
@@ -51,8 +52,8 @@ final class ExamplePostType extends PostType
     {
         register_taxonomy(self::TAXONOMY_TYPE_CATEGORY, self::NAME, [
             'labels'       => [
-                'name'          => 'Example category',
-                'singular_name' => 'Example category'
+                'name'          => Translations::trans('Example category'),
+                'singular_name' => Translations::trans('Example category')
             ],
             'sort'         => true,
             'hierarchical' => true
