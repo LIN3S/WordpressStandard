@@ -63,8 +63,8 @@ final class ExamplePostType extends PostType
     /**
      * {@inheritdoc}
      */
-    public static function serialize($postTypes)
+    public static function singleSerialize($postType)
     {
-        return $postTypes;
+        return $postType;
     }
 }

@@ -20,24 +20,23 @@
     "require": {
         "php":                                            ">=5.4",
 
-        "johnpbloch/wordpress":                           "~4.3",
+        "johnpbloch/wordpress":                           "^4.3",
+        "lin3s/cs":                                       "^0.3",
+        "lin3s/lin3s-distribution":                       "^1.1",
+        "lin3s/wp-foundation":                            "^1.1",
+        "lin3s/wp-routing":                               "^1.0",
+        "lin3s/template-selector":                        "^1.0",
 
-        "lin3s/cs":                                       "~0.1",
-        "lin3s/lin3s-distribution":                       "~1.1",
-        "lin3s/wp-foundation":                            "~1.1",
-        "lin3s/wp-routing":                               "~1.0",
-        "lin3s/template-selector":                        "~1.0",
-
-        "wpackagist-plugin/timber-library":               "~0.21",
-        "wpackagist-plugin/wordpress-seo":                "~2.2",
+        "wpackagist-plugin/timber-library":               "^0.21",
+        "wpackagist-plugin/wordpress-seo":                "^2.2",
         "wpackagist-theme/twentyeleven":                  "*"
     },
     "require-dev": {
-        "symfony/var-dumper":                             "~2.7",
-        "wpackagist-plugin/debug-bar":                    "~0.8",
-        "wpackagist-plugin/debug-bar-timber":             "~0.3",
-        "wpackagist-plugin/monkeyman-rewrite-analyzer":   "~1.0",
-        "wpackagist-plugin/plugin-profiler":              "~1.0",
+        "symfony/var-dumper":                             "^2.7",
+        "wpackagist-plugin/debug-bar":                    "^0.8",
+        "wpackagist-plugin/debug-bar-timber":             "^0.3",
+        "wpackagist-plugin/monkeyman-rewrite-analyzer":   "^1.0",
+        "wpackagist-plugin/plugin-profiler":              "^1.0",
         "wpackagist-plugin/query-monitor":                "2.7.*"
     },
     "scripts": {

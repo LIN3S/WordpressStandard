@@ -1,0 +1,49 @@
+<?php
+
+/*
+ * This file is part of the Wordpress Standard project.
+ *
+ * Copyright (c) 2015 LIN3S <info@lin3s.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace WordpressStandard\Controller;
+
+use Timber;
+
+/**
+ * WordPress base Post controller implementation.
+ *
+ * @author Beñat Espiña <benatespina@gmail.com>
+ * @author Jon Torrado <jontorrado@gmail.com>
+ */
+final class PostController
+{
+    /**
+     * List action.
+     *
+     * @return bool|string
+     */
+    public function listAction()
+    {
+        $context = Timber::get_context();
+        $context['posts'] = Timber::get_posts();
+
+        return Timber::render('pages/posts/list.twig', $context);
+    }
+
+    /**
+     * Show action.
+     *
+     * @return bool|string
+     */
+    public function showAction()
+    {
+        $context = Timber::get_context();
+        $context['post'] = Timber::get_post();
+
+        return Timber::render('pages/posts/show.twig', $context);
+    }
+}

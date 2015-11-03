@@ -60,5 +60,6 @@ final class WordpressStandardTheme extends Theme
      */
     public function templates($templates)
     {
+        return $templates;
     }
 }

@@ -7,6 +7,7 @@
 #
 # @author Gorka Laucirica <gorka.lauzirika@gmail.com>
 # @author Beñat Espiña <benatespina@gmail.com>
+# @author Jon Torrado <jontorrado@gmail.com>
 
 -
     controller: WordpressStandard\Controller\DefaultController::indexAction
@@ -19,3 +20,13 @@
 -
     controller: WordpressStandard\Controller\DefaultController::pageAction
     type: page
+
+-
+    controller: WordpressStandard\Controller\PostController::listAction
+    type: archive
+    slug: post
+
+-
+    controller: WordpressStandard\Controller\PostController::showAction
+    type: single
+    slug: post
