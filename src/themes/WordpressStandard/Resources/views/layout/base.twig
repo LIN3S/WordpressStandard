@@ -14,12 +14,18 @@
 <body {{function('body_class')}}>
     {% block body %}
         {% block tagManager %}{% endblock %}
+        {% block deprecationNotice %}
+            {% include 'component/deprecation_notice.twig' %}
+        {% endblock %}
         {% block header %}
             {% include 'layout/header.twig' %}
         {% endblock %}
         {% block content %}{% endblock %}
         {% block footer %}
             {% include 'layout/footer.twig' %}
+        {% endblock %}
+        {% block cookies %}
+            {% include 'component/cookies.twig' %}
         {% endblock %}
     {% endblock %}
     {{function('wp_footer')}}

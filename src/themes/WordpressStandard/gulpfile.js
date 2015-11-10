@@ -21,7 +21,8 @@ var gulp = require('gulp'),
   sass = require('gulp-sass'),
   scsslint = require('gulp-scss-lint'),
   svgSprite = require('gulp-svg-sprite'),
-  uglify = require('gulp-uglify');
+  uglify = require('gulp-uglify'),
+  modernizr = require('gulp-modernizr');
 
 var paths = {
   assets: './Resources/assets',
@@ -83,6 +84,17 @@ gulp.task('sprites', function () {
     .pipe(gulp.dest(paths.buildSvg));
 });
 
+gulp.task('modernizr', function() {
+  return gulp.src([paths.js + '/*.js'])
+    .pipe(modernizr({
+      "options" : [
+        "setClasses", "addTest", "html5printshiv", "testProp", "fnBind"
+      ],
+      "tests" : ["objectfit", "flexbox"]
+    }))
+    .pipe(gulp.dest(paths.buildJs))
+});
+
 gulp.task('js:prod', function () {
   return gulp.src([paths.js + '/*.js'])
     .pipe(concat('app.min.js'))
@@ -95,6 +107,6 @@ gulp.task('watch', function () {
   gulp.watch(watch.svg, ['sprites']);
 });
 
-gulp.task('default', ['sass', 'sprites']);
+gulp.task('default', ['sass', 'sprites', 'modernizr']);
 
-gulp.task('prod', ['sass:prod', 'js:prod', 'sprites']);
+gulp.task('prod', ['sass:prod', 'js:prod', 'sprites', 'modernizr']);

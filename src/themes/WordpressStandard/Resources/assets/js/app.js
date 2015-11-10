@@ -14,6 +14,4 @@
 
 (function ($) {
 
-  $(document).foundation();
-
 })(jQuery);
