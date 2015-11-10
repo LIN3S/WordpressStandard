@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the CHANGE-FOR-YOUR-AWESOME-NAME project.
+ * This file is part of the Wordpress Standard project.
  *
  * Copyright (c) 2015 LIN3S <info@lin3s.com>
  *

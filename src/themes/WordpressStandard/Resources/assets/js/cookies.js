@@ -1,5 +1,5 @@
 /*
- * This file is part of the DWeek project.
+ * This file is part of the Wordpress Standard project.
  *
  * Copyright (c) 2015 LIN3S <info@lin3s.com>
  *
