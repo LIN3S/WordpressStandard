@@ -11,7 +11,7 @@
 
 -
     controller: WordpressStandard\Controller\DefaultController::indexAction
-    type: index
+    type: front
 
 -
     controller: WordpressStandard\Controller\DefaultController::notFoundAction
@@ -23,6 +23,10 @@
 
 -
     controller: WordpressStandard\Controller\PostController::listAction
+    type: home
+
+-
+    controller: WordpressStandard\Controller\PostController::categoryListAction
     type: archive
     slug: post
 

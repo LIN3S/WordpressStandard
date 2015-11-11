@@ -22,7 +22,7 @@ use Timber;
 final class PostController
 {
     /**
-     * List action.
+     * Blog posts page.
      *
      * @return bool|string
      */
@@ -31,7 +31,20 @@ final class PostController
         $context = Timber::get_context();
         $context['posts'] = Timber::get_posts();
 
-        return Timber::render('pages/posts/list.twig', $context);
+        return Timber::render('pages/post/list.twig', $context);
+    }
+
+    /**
+     * Category list action.
+     *
+     * @return bool|string
+     */
+    public function categoryListAction()
+    {
+        $context = Timber::get_context();
+        $context['posts'] = Timber::get_posts();
+
+        return Timber::render('pages/post/category_list.twig', $context);
     }
 
     /**
@@ -44,6 +57,6 @@ final class PostController
         $context = Timber::get_context();
         $context['post'] = Timber::get_post();
 
-        return Timber::render('pages/posts/show.twig', $context);
+        return Timber::render('pages/post/show.twig', $context);
     }
 }
