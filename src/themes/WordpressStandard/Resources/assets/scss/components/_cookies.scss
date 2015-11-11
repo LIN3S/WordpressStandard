@@ -1,0 +1,56 @@
+// This file is part of the Wordpress Standard project.
+//
+// Copyright (c) 2015 LIN3S <info@lin3s.com>
+//
+// For the full copyright and license information, please view the LICENSE
+// file that was distributed with this source code.
+//
+// @author Gorka Laucirica <gorka.lauzirika@gmail.com>
+
+.cookies {
+  align-items: center;
+  background: $white;
+  bottom: 0;
+  font-size: 12px;
+  padding: 20px $column-gutter;
+  position: fixed;
+  transform: translateY(100%);
+  transition: transform .3s;
+  width: 100%;
+  z-index: 100;
+}
+
+.cookies__text {
+  margin: 0;
+}
+
+.cookies--visible {
+  transform: translateY(0);
+}
+
+.cookies__actions {
+  margin-top: 20px;
+  text-align: center;
+}
+
+@media #{$medium-up} {
+  .cookies {
+    display: flex;
+    font-size: 14px;
+  }
+
+  .cookies__content {
+    flex: 1;
+    padding-right: $column-gutter;
+  }
+
+  .cookies__actions {
+    margin: 0;
+  }
+}
+
+@media #{$large-up} {
+  .cookies {
+    font-size: 16px;
+  }
+}

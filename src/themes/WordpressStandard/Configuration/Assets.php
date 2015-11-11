@@ -26,9 +26,14 @@ final class Assets extends BaseAssets
      */
     public function assets()
     {
+        $this->addScript('fastclick', self::VENDOR . '/fastclick/lib');
+        $this->addScript('svg4everybody.min', self::VENDOR . '/svg4everybody/dist');
+        $this->addScript('modernizr', self::BUILD_JS, [], '3.0.0', false);
+
         if (WP_DEBUG) {
             $this->addStylesheet('app', self::CSS);
             $this->addScript('app');
+            $this->addScript('cookies');
         } else {
             $this->addStylesheet('app.min', self::CSS);
             $this->addScript('app.min', self::BUILD_JS);

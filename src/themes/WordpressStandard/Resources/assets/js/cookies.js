@@ -7,11 +7,16 @@
  * file that was distributed with this source code.
  *
  * @author Gorka Laucirica <gorka.lauzirika@gmail.com>
- * @author Beñat Espiña <benatespina@gmail.com>
  */
 
 'use strict';
 
 (function ($) {
-
-})(jQuery);
+  if (!localStorage.getItem('cookies')) {
+    $('.cookies').addClass('cookies--visible');
+  }
+  $('.cookies__actions .button').click(function () {
+    localStorage.setItem('cookies', true);
+    $('.cookies').removeClass('cookies--visible');
+  })
+}(jQuery));
