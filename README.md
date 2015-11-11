@@ -111,6 +111,18 @@ $ cap <stage> deploy    # <stage> can be dev1, prod or whatever file inside stag
 > In the Capistrano shared directory you should create the `src/uploads` folder, the `.htaccess` file (if you are using
 Apache), the `robots.txt` and the `wp-config-custom.php` files.
 
+### Downloading database dump
+
+To download the file just run `cap dev1 database:download`. A sql file will be downloaded to your local environment
+
+### Replacing uploads with remote ones
+ 
+To steps are required to get all the uploads located in the remote environment, download and extract.
+
+`cap dev1 uploads:download` will download a .tar.gz file to the root of your local environment and 
+`cap dev1 uploads:extract` will extract the downloaded file into `src/uploads` folder, replacing all the existing 
+uploads. 
+
 ##Licensing Options
 [![License](https://poser.pugx.org/lin3s/wordpress-standard/license.svg)](https://github.com/LIN3S/WordpressStandard/blob/master/LICENSE)
 

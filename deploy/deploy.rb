@@ -81,6 +81,58 @@ namespace :compile_and_upload do
   end
 end
 
+namespace :uploads do
+  desc 'Get uploads'
+
+  task :download do
+    on roles(:all) do |host|
+      execute "cd #{shared_path}; tar -zcvf uploads.tar.gz src/uploads/"
+      download! "#{shared_path}/uploads.tar.gz", "."
+      execute :rm, "-rf", "#{shared_path}/src/uploads.tar.gz"
+    end
+  end
+
+  task :extract do
+    run_locally do
+      execute :rm, "-rf", "src/uploads"
+      execute :tar, '-zxvf', "uploads.tar.gz"
+      execute :rm, "uploads.tar.gz"
+    end
+  end
+end
+
+namespace :database do
+  desc "Database management"
+  task :download do
+    on roles(:all) do |host|
+      dbuser = nil
+      dbpass = nil
+      dbname = nil
+      file = capture "cat #{shared_path}/wp-config-custom.php"
+      file.each_line do |line|
+        line.split("\t").each do |item|
+          if item.include? "DB_USER"
+            dbuser = item.gsub(/(define|\(|\'|\,|\)\;|\ |\n|DB_USER)/, '')
+          end
+          if item.include? "DB_PASSWORD"
+            dbpass = item.gsub(/(define|\(|\'|\,|\)\;|\ |\n|DB_PASSWORD)/, '')
+          end
+          if item.include? "DB_NAME"
+            dbname = item.gsub(/(define|\(|\'|\,|\)\;|\ |\n|DB_NAME)/, '')
+          end
+        end
+      end
+      if dbuser != nil and dbpass != nil and dbname != nil
+        execute "cd #{shared_path};mysqldump -u#{dbuser} -p#{dbpass} #{dbname} > #{dbname}_cap.sql"
+        download! "#{shared_path}/#{dbname}_cap.sql", "."
+        execute :rm, "-f", "#{shared_path}/#{dbname}_cap.sql"
+      else
+        puts "Cannot download file (dbuser or dbpass or dbname not found)"
+      end
+    end
+  end
+end
+
 namespace :deploy do
   after :updated, 'composer:install_executable'
   after :updated, 'compile_and_upload:bower'
