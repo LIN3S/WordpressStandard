@@ -87,10 +87,10 @@ gulp.task('sprites', function () {
 gulp.task('modernizr', function() {
   return gulp.src([paths.js + '/*.js'])
     .pipe(modernizr({
-      "options" : [
-        "setClasses", "addTest", "html5printshiv", "testProp", "fnBind"
+      'options' : [
+        'setClasses', 'addTest', 'html5printshiv', 'testProp', 'fnBind'
       ],
-      "tests" : ["objectfit", "flexbox"]
+      'tests' : ['objectfit', 'flexbox']
     }))
     .pipe(gulp.dest(paths.buildJs))
 });
