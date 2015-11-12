@@ -88,7 +88,7 @@ namespace :uploads do
     on roles(:all) do |host|
       execute "cd #{shared_path}; tar -zcvf uploads.tar.gz src/uploads/"
       download! "#{shared_path}/uploads.tar.gz", "."
-      execute :rm, "-rf", "#{shared_path}/src/uploads.tar.gz"
+      execute :rm, "-rf", "#{shared_path}/uploads.tar.gz"
     end
   end
 
