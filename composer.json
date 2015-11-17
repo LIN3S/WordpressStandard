@@ -69,6 +69,7 @@
         "wpml-string-translation": "It allows to implement the multilingual in an easy way",
         "wpackagist-plugin/categories-images": "It allows to assign easily images to categories",
         "wpackagist-plugin/contact-form-7": "It allows to manage the contact form without code, all inside WP panel",
+        "wpackagist-plugin/contact-form-7-to-database-extension": "It allows to save contact forms to database",
         "wpackagist-plugin/advanced-custom-fields": "It allows customize the fields of post types in an easy way"
     },
     "extra": {
