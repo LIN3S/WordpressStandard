@@ -29,7 +29,7 @@
 
         "wpackagist-plugin/timber-library":               "^0.21",
         "wpackagist-plugin/wordpress-seo":                "^2.2",
-        "wpackagist-theme/twentyeleven":                  "*"
+        "wpackagist-theme/twentyfifteen":                 "*"
     },
     "require-dev": {
         "symfony/var-dumper":                             "^2.7",
