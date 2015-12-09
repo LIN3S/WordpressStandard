@@ -30,7 +30,7 @@ come with:
 The above sounds great so, now, to start developing Wordpress project based on this repo, you need the the following
 requirements:
 
-1. [PHP][15] 5.4 or higher
+1. [PHP][15] 5.5.9 or higher
 2. [MySQL][16]
 3. Composer: `curl -sS https://getcomposer.org/installer | php`
 4. [Ruby][17]
