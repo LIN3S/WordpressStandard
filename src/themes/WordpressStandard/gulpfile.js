@@ -45,6 +45,13 @@ gulp.task('wp-style', function () {
   return file('style.css', content, {src: true}).pipe(gulp.dest('.'));
 });
 
+gulp.task('scss-lint', function () {
+  return gulp.src([watch.sass, '!' + paths.sass + '/base/_reset.scss'])
+    .pipe(scsslint({
+      'config': './.scss_lint.yml'
+    }));
+});
+
 gulp.task('sass', ['wp-style', 'scss-lint'], function () {
   return gulp.src(paths.sass + '/app.scss')
     .pipe(sass({
@@ -54,16 +61,14 @@ gulp.task('sass', ['wp-style', 'scss-lint'], function () {
     .pipe(gulp.dest(paths.css));
 });
 
-gulp.task('scss-lint', function () {
-  return gulp.src([watch.sass, '!' + paths.sass + '/base/_reset.scss'])
-    .pipe(scsslint({
-      'config': './.scss_lint.yml'
-    }));
-});
-
-gulp.task('sass:prod', ['sass'], function () {
-  return gulp.src(paths.css + '/app.css')
-    .pipe(minifyCSS({keepSpecialComments: 0}))
+gulp.task('sass:prod', function () {
+  return gulp.src(paths.sass + '/app.scss')
+    .pipe(sass())
+    .pipe(autoprefixer())
+    .pipe(minifyCSS({
+      keepSpecialComments: 1,
+      rebase: false
+    }))
     .pipe(rename({
       suffix: '.min'
     }))
@@ -84,13 +89,13 @@ gulp.task('sprites', function () {
     .pipe(gulp.dest(paths.buildSvg));
 });
 
-gulp.task('modernizr', function() {
+gulp.task('modernizr', function () {
   return gulp.src([paths.js + '/*.js'])
     .pipe(modernizr({
-      'options' : [
+      'options': [
         'setClasses', 'addTest', 'html5printshiv', 'testProp', 'fnBind'
       ],
-      'tests' : ['objectfit', 'flexbox']
+      'tests': ['objectfit', 'flexbox']
     }))
     .pipe(gulp.dest(paths.buildJs))
 });
