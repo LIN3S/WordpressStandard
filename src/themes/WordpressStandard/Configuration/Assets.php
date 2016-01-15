@@ -32,8 +32,9 @@ final class Assets extends BaseAssets
 
         if (WP_DEBUG) {
             $this->addStylesheet('app', self::CSS);
-            $this->addScript('app');
+            $this->addScript('svg');
             $this->addScript('cookies');
+            $this->addScript('app');
         } else {
             $this->addStylesheet('app.min', self::CSS);
             $this->addScript('app.min', self::BUILD_JS);

@@ -46,14 +46,24 @@ namespace :compile_and_upload do
 
   desc 'Compile and upload'
 
-  task :bower do
+  task :npm do
     if fetch(:env) == "prod"
       run_locally do
-        execute "cd #{fetch(:theme_path)}; bower install"
+        execute "cd #{fetch(:theme_path)}; rm -rf node_modules/* && npm install --production"
+        execute "cd #{fetch(:theme_path)}; tar -zcvf node_modules.tar.gz node_modules"
+      end
+      on roles(:all) do |host|
+        upload! "#{fetch(:theme_path)}/node_modules.tar.gz", "#{release_path}/#{fetch(:theme_path)}/node_modules.tar.gz"
+        execute :tar, '-zxvf', "#{release_path}/#{fetch(:theme_path)}/node_modules.tar.gz -C #{release_path}/#{fetch(:theme_path)}/"
+        execute :rm, "#{release_path}/#{fetch(:theme_path)}/node_modules.tar.gz"
+      end
+      run_locally do
+        execute :rm, "#{fetch(:theme_path)}/node_modules.tar.gz"
+        execute "cd #{fetch(:theme_path)}; npm install"
       end
     else
       on roles(:all) do |host|
-        execute "cd #{release_path}/#{fetch(:theme_path)}; bower install"
+        execute "cd #{release_path}/#{fetch(:theme_path)}; npm install"
       end
     end
   end
@@ -61,7 +71,7 @@ namespace :compile_and_upload do
   task :gulp do
     if fetch(:env) == "prod"
       run_locally do
-        execute "cd #{fetch(:theme_path)}; gulp prod"
+        execute "cd #{fetch(:theme_path)}; npm install && gulp prod"
       end
     else
       on roles(:all) do |host|
@@ -73,9 +83,8 @@ namespace :compile_and_upload do
   task :upload do
     if fetch(:env) == "prod"
       on roles(:all) do |host|
-        upload! "#{fetch(:theme_path)}/Resources/assets/vendor", "#{release_path}/src/themes/#{fetch(:theme_name)}/Resources/assets/vendor", recursive: true
-        upload! "#{fetch(:theme_path)}/Resources/build", "#{release_path}/src/themes/#{fetch(:theme_name)}/Resources/build", recursive: true
-        upload! "#{fetch(:theme_path)}/style.css", "#{release_path}/src/themes/#{fetch(:theme_name)}/style.css"
+        upload! "#{fetch(:theme_path)}/Resources/build", "#{release_path}/#{fetch(:theme_path)}/Resources/build", recursive: true
+        upload! "#{fetch(:theme_path)}/style.css", "#{release_path}/#{fetch(:theme_path)}/style.css"
       end
     end
   end
@@ -135,7 +144,7 @@ end
 
 namespace :deploy do
   after :updated, 'composer:install_executable'
-  after :updated, 'compile_and_upload:bower'
+  after :updated, 'compile_and_upload:npm'
   after :updated, 'compile_and_upload:gulp'
   after :updated, 'compile_and_upload:upload'
 end

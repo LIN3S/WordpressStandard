@@ -60,7 +60,7 @@
     },
     "autoload": {
         "psr-4": {
-            "": "src/themes/"
+            "WordpressStandard\\": "src/themes/WordpressStandard/"
         }
     },
     "suggest": {

@@ -1,5 +1,5 @@
-#Wordpress Standard Edition
-> The "Wordpress Standard Edition" distribution in the LIN3S way.
+#WordPress Standard Edition
+> The "WordPress Standard Edition" distribution in the LIN3S way.
 
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/b43b0be1-d2b5-44a1-8d4b-a556848129a5/mini.png)](https://insight.sensiolabs.com/projects/b43b0be1-d2b5-44a1-8d4b-a556848129a5)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/LIN3S/WordpressStandard/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/LIN3S/WordpressStandard/?branch=master)
@@ -10,7 +10,7 @@
 
 ##Why?
 [**Wordpress**][1] is the most important CMS around the world, but its PHP code is dark and unmaintainable. In
-[*LIN3S*][2] we implement this solution providing some useful features that the standard edition of Wordpress doesn't
+[*LIN3S*][2] we implement this solution providing some useful features that the standard edition of WordPress doesn't
 come with:
 
 1. [Composer][3]
@@ -27,7 +27,7 @@ come with:
 8. [Coding standards library][14] made by LIN3S
 
 ##Prerequisites
-The above sounds great so, now, to start developing Wordpress project based on this repo, you need the the following
+The above sounds great so, now, to start developing WordPress project based on this repo, you need the the following
 requirements:
 
 1. [PHP][15] 5.5.9 or higher
@@ -43,7 +43,7 @@ requirements:
   * ESLint: `npm install -g eslint`
 
 ##Getting Started
-After installing all the prerequisites, to create a Wordpress project based on this *Wordpress Standard* you should
+After installing all the prerequisites, to create a WordPress project based on this *Wordpress Standard* you should
 check the following steps.
 
 Firstly, you need to **create the project**:
@@ -56,6 +56,7 @@ Also, all the namespaces and different references inside project have the **Word
  awesome project :)
 > Remember that the `WordpressStandardTheme.php` file name and the `src/themes/WordpressStandard` directory name
 should be changed too.
+> You must change the autoload path into `composer.json` file with defined directory name.
 > Also, **CAUTION!**: you **MUST** updated `!WordpressStandard` of [`src/themes/.gitignore`][19] file.
 
 Then, in order to **install all the front-end dependencies** run the following commands:
@@ -79,17 +80,17 @@ Use an [Apache][20], Nginx or other web server of your choice for production env
 remember that you should create the `.htaccess` copying the base `.htaccess.dist` file.
 
 ##Considerations
-If all goes well you should have your project on top of Wordpress Standard running like a charm. However, there are
+If all goes well you should have your project on top of WordPress Standard running like a charm. However, there are
 few tips that you should read.
 
 * **Activate all yours plugins before all**: it's a common mistake; you are developing inside your favorite IDE, you
-test in the browser and something is wrong because *Timber* or *simple-fields* plugins are very required in this project.
+test in the browser and something is wrong because *Timber* is very required in this project.
 * To generate simple, clean and maintainable Sass code you should use the *scss-lint*. It's a project prerequisite so
 please, check its outputs and try to accomplish them. Also, **Sass example folder structure has been created,
 follow it. Use mobile first approach** and **don't use magic numbers**.
-* Usually, the features Wordpress has by default are not enough so new PostTypes, Widgets, ShortCodes, ImageSizes...
+* Usually, the features WordPress has by default are not enough so new PostTypes, Widgets, ShortCodes, ImageSizes...
 have to be created. In case you need those changes to the codebase you should go to the `core` folder. There, you will
-find some examples on how to extend many different Wordpress features. In case there is no class for what you need, just
+find some examples on how to extend many different WordPress features. In case there is no class for what you need, just
 create a new class or a new folder (if there are multiple classes related to that feature as in post types) with your
 code.
 
