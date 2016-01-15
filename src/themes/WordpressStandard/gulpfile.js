@@ -5,7 +5,7 @@
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
- * 
+ *
  * @author Gorka Laucirica <gorka.lauzirika@gmail.com>
  * @author Beñat Espiña <benatespina@gmail.com>
  */
@@ -15,8 +15,9 @@
 var gulp = require('gulp'),
   autoprefixer = require('gulp-autoprefixer'),
   concat = require('gulp-concat'),
+  cssNano = require('gulp-cssnano'),
   file = require('gulp-file'),
-  minifyCSS = require('gulp-minify-css'),
+  livereload = require('gulp-livereload'),
   rename = require('gulp-rename'),
   sass = require('gulp-sass'),
   scsslint = require('gulp-scss-lint'),
@@ -65,7 +66,7 @@ gulp.task('sass:prod', function () {
   return gulp.src(paths.sass + '/app.scss')
     .pipe(sass())
     .pipe(autoprefixer())
-    .pipe(minifyCSS({
+    .pipe(cssNano({
       keepSpecialComments: 1,
       rebase: false
     }))
@@ -108,6 +109,7 @@ gulp.task('js:prod', function () {
 });
 
 gulp.task('watch', function () {
+  livereload.listen();
   gulp.watch(watch.sass, ['sass']);
   gulp.watch(watch.svg, ['sprites']);
 });
