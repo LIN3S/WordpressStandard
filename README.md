@@ -18,7 +18,6 @@ come with:
 3. Front-end workflow
  * [Sass][5]
  * [Npm][6]
- * [Bower][7]
  * [Gulp.js][8]
 4. [Twig][9] template engine with [Timber][10]
 5. [Capistrano][11] deploy
@@ -38,7 +37,6 @@ requirements:
   * Sass: `gem install sass`
   * Scss-lint: `gem install scss-lint`
 5. [Node.js][18]
-  * Bower: `npm install -g bower`
   * Gulp.js: `npm install -g gulp`
   * ESLint: `npm install -g eslint`
 
@@ -133,7 +131,6 @@ uploads.
 [4]: http://php.net/manual/en/language.namespaces.php
 [5]: http://sass-lang.com/
 [6]: https://www.npmjs.com/
-[7]: http://bower.io/
 [8]: http://gulpjs.com/
 [9]: http://twig.sensiolabs.org/
 [10]: http://upstatement.com/timber/
