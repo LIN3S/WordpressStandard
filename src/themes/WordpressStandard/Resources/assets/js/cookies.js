@@ -7,16 +7,40 @@
  * file that was distributed with this source code.
  *
  * @author Gorka Laucirica <gorka.lauzirika@gmail.com>
+ * @author Beñat Espiña <bespina@lin3s.com>
  */
 
 'use strict';
 
 (function ($) {
+
+  var $allLinks = $('a, button, .cookies__actions .button'),
+    $window = $(window),
+    scrollTop = 400;
+
   if (!localStorage.getItem('cookies')) {
     $('.cookies').addClass('cookies--visible');
   }
-  $('.cookies__actions .button').click(function () {
+
+  function acceptCookies() {
     localStorage.setItem('cookies', true);
     $('.cookies').removeClass('cookies--visible');
-  })
+  }
+
+  $allLinks.click(function () {
+    acceptCookies();
+  });
+
+  $window.on('scroll', function () {
+    if (typeof window.requestAnimationFrame !== 'undefined') {
+      if ($(this).scrollTop() > scrollTop) {
+        window.requestAnimationFrame(acceptCookies);
+      }
+    } else {
+      if ($(this).scrollTop() > scrollTop) {
+        acceptCookies();
+      }
+    }
+  });
+
 }(jQuery));

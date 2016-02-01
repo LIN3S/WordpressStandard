@@ -18,14 +18,15 @@ var gulp = require('gulp'),
   cssNano = require('gulp-cssnano'),
   file = require('gulp-file'),
   livereload = require('gulp-livereload'),
+  modernizr = require('gulp-modernizr'),
   rename = require('gulp-rename'),
   sass = require('gulp-sass'),
   scsslint = require('gulp-scss-lint'),
   svgSprite = require('gulp-svg-sprite'),
-  uglify = require('gulp-uglify'),
-  modernizr = require('gulp-modernizr');
+  uglify = require('gulp-uglify');
 
 var paths = {
+  npm: './node_modules',
   assets: './Resources/assets',
   sass: './Resources/assets/scss',
   js: './Resources/assets/js',
@@ -47,7 +48,7 @@ gulp.task('wp-style', function () {
 });
 
 gulp.task('scss-lint', function () {
-  return gulp.src([watch.sass, '!' + paths.sass + '/base/_reset.scss'])
+  return gulp.src([watch.sass, '!' + paths.sass + '/base/_reset.scss', '!' + paths.sass + '/base/_grid.scss'])
     .pipe(scsslint({
       'config': './.scss_lint.yml'
     }));
@@ -59,7 +60,8 @@ gulp.task('sass', ['wp-style', 'scss-lint'], function () {
       errLogToConsole: true
     }))
     .pipe(autoprefixer())
-    .pipe(gulp.dest(paths.css));
+    .pipe(gulp.dest(paths.css))
+    .pipe(livereload());
 });
 
 gulp.task('sass:prod', function () {
@@ -90,6 +92,25 @@ gulp.task('sprites', function () {
     .pipe(gulp.dest(paths.buildSvg));
 });
 
+gulp.task('vendor-css', function () {
+  return gulp.src([
+      // Put here css files of vendors, for example:
+      // paths.npm + '/slick-carousel/slick/slick.css'
+    ])
+    .pipe(concat('vendor.css'))
+    .pipe(gulp.dest(paths.css));
+});
+
+gulp.task('vendor-js', function () {
+  return gulp.src([
+      paths.npm + '/jquery/dist/jquery.min.js',
+      paths.npm + '/fastclick/lib/fastclick.js',
+      paths.npm + '/svg4everybody/dist/svg4everybody.min.js'
+    ])
+    .pipe(concat('vendor.js'))
+    .pipe(gulp.dest(paths.buildJs));
+});
+
 gulp.task('modernizr', function () {
   return gulp.src([paths.js + '/*.js'])
     .pipe(modernizr({
@@ -114,6 +135,6 @@ gulp.task('watch', function () {
   gulp.watch(watch.svg, ['sprites']);
 });
 
-gulp.task('default', ['sass', 'sprites', 'modernizr']);
+gulp.task('default', ['sass', 'sprites', 'vendor-js', 'vendor-css', 'modernizr']);
 
-gulp.task('prod', ['sass:prod', 'js:prod', 'sprites', 'modernizr']);
+gulp.task('prod', ['sass:prod', 'js:prod', 'sprites', 'vendor-js', 'vendor-css', 'modernizr']);
