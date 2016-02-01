@@ -19,7 +19,7 @@ come with:
  * [Sass][5]
  * [Npm][6]
  * [Gulp.js][8]
- * [Zurb Foundation][21] vs LIN3S's custom Grid
+ * [Zurb Foundation][21] vs [LIN3S's custom Grid][22]
 4. [Twig][9] template engine with [Timber][10]
 5. [Capistrano][11] deploy
 6. [Symfony style routing made by LIN3S][12]
@@ -146,3 +146,4 @@ uploads.
 [19]: https://github.com/LIN3S/WordpressStandard/blob/master/src/themes/.gitignore#L13
 [20]: http://httpd.apache.org/
 [21]: http://foundation.zurb.com/
+[22]: https://github.com/LIN3S/WordpressStandard/blob/master/src/themes/WordpressStandard/Resources/assets/scss/base/_grid.scss
