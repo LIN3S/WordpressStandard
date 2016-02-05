@@ -28,7 +28,7 @@
         "lin3s/template-selector":                        "^1.0",
 
         "wpackagist-plugin/timber-library":               "~0.22",
-        "wpackagist-plugin/wordpress-seo":                "^2.2",
+        "wpackagist-plugin/wordpress-seo":                "^3.0.7",
         "wpackagist-theme/twentyfifteen":                 "*"
     },
     "require-dev": {
@@ -36,8 +36,8 @@
         "wpackagist-plugin/debug-bar":                    "~0.8",
         "wpackagist-plugin/debug-bar-timber":             "~0.3",
         "wpackagist-plugin/monkeyman-rewrite-analyzer":   "^1.0",
-        "wpackagist-plugin/plugin-profiler":              "^1.0",
-        "wpackagist-plugin/query-monitor":                "^2.8"
+        "wpackagist-plugin/plugin-profiler":              "^1.1.2",
+        "wpackagist-plugin/query-monitor":                "^2.8.1"
     },
     "scripts": {
         "post-install-cmd": [
