@@ -20,6 +20,8 @@
 @import '../../../node_modules/foundation-sites/scss/components/flex';
 @include foundation-global-styles;
 @include foundation-flex-grid;
+@include foundation-flex-classes;
+
 // Import if the project uses LIN3S's custom grid
 @import 'base/grid';
 
