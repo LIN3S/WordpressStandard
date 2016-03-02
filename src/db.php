@@ -1,1 +1,0 @@
-/home/jon/NetBeansProjects/WordpressStandard/src/plugins/query-monitor/wp-content/db.php
