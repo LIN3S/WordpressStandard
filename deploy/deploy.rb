@@ -143,7 +143,7 @@ namespace :database do
 end
 
 namespace :deploy do
-  after :updated, 'composer:install_executable'
+  after :starting, 'composer:install_executable'
   after :updated, 'compile_and_upload:npm'
   after :updated, 'compile_and_upload:gulp'
   after :updated, 'compile_and_upload:upload'
