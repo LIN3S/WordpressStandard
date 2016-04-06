@@ -36,10 +36,8 @@
       if ($(this).scrollTop() > scrollTop) {
         window.requestAnimationFrame(acceptCookies);
       }
-    } else {
-      if ($(this).scrollTop() > scrollTop) {
-        acceptCookies();
-      }
+    } else if ($(this).scrollTop() > scrollTop) {
+      acceptCookies();
     }
   });
 
