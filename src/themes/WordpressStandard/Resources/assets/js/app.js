@@ -11,7 +11,7 @@
 
 'use strict';
 
-$(function() {
+(function() {
   FastClick.attach(document.body);
   svg4everybody();
-});
+})();
