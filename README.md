@@ -58,9 +58,9 @@ should be changed too.
 > You must change the autoload path into `composer.json` file with defined directory name.
 > Also, **CAUTION!**: you **MUST** updated `!WordpressStandard` of [`src/themes/.gitignore`][19] file.
 
-Then, in order to **install all the front-end dependencies** run the following commands:
+Then, in order to **install all the front-end dependencies** run the following command:
 ```
-$ cd src/themes/<project-name> && npm install && bower install
+$ cd src/themes/<project-name> && npm install
 ```
 Create the `wp-config-custom.php` copying the `wp-config-custom-sample.php` and customizing with your values.
 

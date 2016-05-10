@@ -18,9 +18,9 @@
         }
     ],
     "require": {
-        "php":                                            "^5.5|^7.0",
+        "php":                                            "^5.5 || ^7.0",
 
-        "johnpbloch/wordpress":                           "^4.4",
+        "johnpbloch/wordpress":                           "^4.5",
         "lin3s/cs":                                       "^0.3.6",
         "lin3s/lin3s-distribution":                       "^1.2.1",
         "lin3s/wp-foundation":                            "^1.3.4",
