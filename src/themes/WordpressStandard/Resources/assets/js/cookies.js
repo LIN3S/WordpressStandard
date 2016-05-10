@@ -17,8 +17,31 @@
   var
     allLinks = 'a, button, .cookies__actions .button',
     $cookies = $('.cookies'),
+    $tagManager = $('.tag-manager'),
     $window = $(window),
     scrollTop = 400;
+
+  function addGoogleTagManager() {
+    if (typeof tagManagerId === 'undefined') {
+      console.log('Please define tagManagerId global JS variable to append GTM code');
+
+      return;
+    }
+
+    $tagManager.append(
+      '<noscript><iframe src="//www.googletagmanager.com/ns.html?id=' + tagManagerId + '"' +
+      'height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>' +
+      '<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({"gtm.start":' +
+      'new Date().getTime(),event:"gtm.js"});var f=d.getElementsByTagName(s)[0],' +
+      'j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src=' +
+      '"//www.googletagmanager.com/gtm.js?id="+i+dl;f.parentNode.insertBefore(j,f);' +
+      '})(window,document,"script","dataLayer","' + tagManagerId + '");</script>'
+    );
+  }
+
+  function removeGoogleTagManager() {
+    $tagManager.empty();
+  }
 
   function setCookie(name, value, expirationDays) {
     var
@@ -34,7 +57,6 @@
     var cookies = document.cookie.split(';');
 
     name = name + '=';
-
     for (var i = 0, length = cookies.length; i < length; i++) {
       var cookie = cookies[i];
 
@@ -51,6 +73,7 @@
 
   function acceptCookies() {
     setCookie('username', Math.floor((Math.random() * 100000000) + 1), 30);
+    addGoogleTagManager();
     $cookies.removeClass('cookies--visible');
   }
 
@@ -70,7 +93,10 @@
 
   $(document).ready(function () {
     if (!getCookie('username')) {
+      removeGoogleTagManager();
       $cookies.addClass('cookies--visible');
+    } else {
+      addGoogleTagManager();
     }
 
     $(document).on('click', allLinks, function () {
