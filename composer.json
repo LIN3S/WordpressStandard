@@ -27,9 +27,9 @@
         "lin3s/wp-routing":                               "^1.0.3",
         "lin3s/template-selector":                        "^1.0",
 
-        "wpackagist-plugin/timber-library":               "~0.22",
         "wpackagist-plugin/wordpress-seo":                "^3.0.7",
-        "wpackagist-theme/twentysixteen":                 "*"
+        "wpackagist-theme/twentysixteen":                 "*",
+        "timber/timber": "^1.0"
     },
     "require-dev": {
         "symfony/var-dumper":                             "^3.0",
