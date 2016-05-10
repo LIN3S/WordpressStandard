@@ -1,5 +1,5 @@
 /*
- * This file is part of the Guggenheim microsites project.
+ * This file is part of the WordPress Standard project.
  *
  * Copyright (c) 2015-2016 LIN3S <info@lin3s.com>
  *
@@ -11,7 +11,13 @@
 
 'use strict';
 
-(function() {
-  FastClick.attach(document.body);
-  svg4everybody();
+(function () {
+
+  if ('addEventListener' in document) {
+    document.addEventListener('DOMContentLoaded', function () {
+      FastClick.attach(document.body);
+      svg4everybody();
+    }, false);
+  }
+
 })();
