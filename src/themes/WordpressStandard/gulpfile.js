@@ -171,6 +171,6 @@ gulp.task('watch', function () {
   gulp.watch(watch.svg, ['sprites']);
 });
 
-gulp.task('default', ['sass', 'sprites', 'vendor-js', 'vendor-css', 'modernizr']);
+gulp.task('default', ['sass', 'sprites', 'modernizr']);
 
 gulp.task('prod', ['sass:prod', 'js:prod', 'sprites', 'vendor-js', 'vendor-css', 'modernizr']);

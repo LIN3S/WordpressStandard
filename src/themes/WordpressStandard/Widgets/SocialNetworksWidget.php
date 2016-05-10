@@ -16,7 +16,7 @@ use Timber;
 
 /**
  * Social network widget. Is fully manageable inside Wordpress administrator panel.
- * This is a little pretty example that you can do extending WPFoundation's Widget class. 
+ * This is a little pretty example that you can do extending WPFoundation's Widget class.
  *
  * @author Gorka Laucirica <gorka.lauzirika@gmail.com>
  */
@@ -67,13 +67,5 @@ final class SocialNetworksWidget extends Widget
         ];
 
         return $instance;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function register()
-    {
-        register_widget('\WordpressStandard\Widgets\SocialNetworksWidget');
     }
 }
