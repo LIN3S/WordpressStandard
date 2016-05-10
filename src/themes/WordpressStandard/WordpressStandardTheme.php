@@ -18,7 +18,7 @@ use WordpressStandard\Configuration\Assets;
 use WordpressStandard\Configuration\ImageSizes;
 use WordpressStandard\Configuration\Menus;
 use LIN3S\WPFoundation\Configuration\Theme\Theme;
-use TimberMenu;
+use Timber\Menu;
 
 /**
  * Final class of theme. Declares all stuff related to the template. Its responsibility
@@ -50,7 +50,7 @@ final class WordpressStandardTheme extends Theme
      */
     public function context(array $context)
     {
-        $context['headerMenu'] = new TimberMenu(Menus::MENU_HEADER);
+        $context['headerMenu'] = new Menu(Menus::MENU_HEADER);
 
         return $context;
     }

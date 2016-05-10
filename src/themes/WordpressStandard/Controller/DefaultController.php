@@ -11,8 +11,8 @@
 
 namespace WordpressStandard\Controller;
 
-use Timber;
-use TimberPost;
+use Timber\Post;
+use Timber\Timber;
 
 /**
  * Basic controller that works in the same way of MVC frameworks like Laravel or Symfony.
@@ -55,7 +55,7 @@ final class DefaultController
     public function pageAction()
     {
         $context = Timber::get_context();
-        $context['page'] = new TimberPost();
+        $context['page'] = new Post();
 
         return Timber::render('pages/default.twig', $context);
     }

@@ -11,7 +11,7 @@
 
 include WP_CONTENT_DIR . '/../vendor/autoload.php';
 
-\Timber::$locations = [
+\Timber\Timber::$locations = [
     get_template_directory() . '/Resources/views',
     get_template_directory() . '/Resources/build',
 ];

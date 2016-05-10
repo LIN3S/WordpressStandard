@@ -23,11 +23,11 @@
         "johnpbloch/wordpress":                           "^4.5",
         "lin3s/cs":                                       "^0.3.6",
         "lin3s/lin3s-distribution":                       "^1.2.1",
-        "lin3s/wp-foundation":                            "^1.3.4",
+        "lin3s/wp-foundation":                            "^1.5.0",
         "lin3s/wp-routing":                               "^1.0.3",
         "lin3s/template-selector":                        "^1.0",
+        "timber/timber":                                  "^1.0",
 
-        "wpackagist-plugin/timber-library":               "~0.22",
         "wpackagist-plugin/wordpress-seo":                "^3.0.7",
         "wpackagist-theme/twentysixteen":                 "*"
     },
@@ -68,9 +68,7 @@
         "wpml-media": "It allows to implement the multilingual in an easy way",
         "wpml-string-translation": "It allows to implement the multilingual in an easy way",
         "wpackagist-plugin/categories-images": "It allows to assign easily images to categories",
-        "wpackagist-plugin/contact-form-7": "It allows to manage the contact form without code, all inside WP panel",
-        "wpackagist-plugin/contact-form-7-to-database-extension": "It allows to save contact forms to database",
-        "wpackagist-plugin/advanced-custom-fields": "It allows customize the fields of post types in an easy way"
+        "lin3s/wp-symfony-form": "It allows to create forms with Symfony form component"
     },
     "extra": {
         "wordpress-install-dir": "core",

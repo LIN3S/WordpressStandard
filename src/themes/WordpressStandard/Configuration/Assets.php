@@ -24,20 +24,29 @@ final class Assets extends BaseAssets
     /**
      * {@inheritdoc}
      */
-    public function assets()
+    public function developmentAssets()
     {
-        $this->addScript('fastclick', self::NPM . '/fastclick/lib');
-        $this->addScript('svg4everybody.min', self::NPM . '/svg4everybody/dist');
-        $this->addScript('modernizr', self::BUILD_JS, [], '3.0.0', false);
+        $this
+            ->addScript('fastclick', self::NPM . '/fastclick/lib')
+            ->addScript('svg4everybody.min', self::NPM . '/svg4everybody/dist')
+            ->addScript('modernizr', self::BUILD_JS, [], '3.0.0', false)
 
-        if (WP_DEBUG) {
-            $this->addStylesheet('app', self::CSS);
-            $this->addScript('svg');
-            $this->addScript('cookies');
-            $this->addScript('app');
-        } else {
-            $this->addStylesheet('app.min', self::CSS);
-            $this->addScript('app.min', self::BUILD_JS);
-        }
+            ->addStylesheet('app', self::CSS)
+            ->addScript('svg')
+            ->addScript('cookies')
+            ->addScript('app');
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function productionAssets()
+    {
+        $this
+            ->addStylesheet('vendor', self::CSS)
+            ->addScript('vendor', self::BUILD_JS)
+
+            ->addStylesheet('app.min', self::CSS)
+            ->addScript('app.min', self::BUILD_JS);
     }
 }

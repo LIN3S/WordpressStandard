@@ -11,7 +11,7 @@
 
 namespace WordpressStandard\Controller;
 
-use Timber;
+use Timber\Timber;
 
 /**
  * WordPress base Post controller implementation.
