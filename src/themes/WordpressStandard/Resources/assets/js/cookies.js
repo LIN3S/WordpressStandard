@@ -14,31 +14,68 @@
 
 (function ($) {
 
-  var $allLinks = $('a, button, .cookies__actions .button'),
+  var
+    allLinks = 'a, button, .cookies__actions .button',
+    $cookies = $('.cookies'),
     $window = $(window),
     scrollTop = 400;
 
-  if (!localStorage.getItem('cookies')) {
-    $('.cookies').addClass('cookies--visible');
+  function setCookie(name, value, expirationDays) {
+    var
+      date = new Date(),
+      expires = 'expires=';
+
+    date.setTime(date.getTime() + (expirationDays * 24 * 60 * 60 * 1000));
+    expires += date.toGMTString();
+    document.cookie = name + '=' + value + '; ' + expires;
+  }
+
+  function getCookie(name) {
+    var cookies = document.cookie.split(';');
+
+    name = name + '=';
+
+    for (var i = 0, length = cookies.length; i < length; i++) {
+      var cookie = cookies[i];
+
+      while (cookie.charAt(0) == ' ') {
+        cookie = cookie.substring(1);
+      }
+      if (cookie.indexOf(name) == 0) {
+        return cookie.substring(name.length, cookie.length);
+      }
+    }
+
+    return false;
   }
 
   function acceptCookies() {
-    localStorage.setItem('cookies', true);
-    $('.cookies').removeClass('cookies--visible');
+    setCookie('username', Math.floor((Math.random() * 100000000) + 1), 30);
+    $cookies.removeClass('cookies--visible');
   }
 
-  $allLinks.click(function () {
-    acceptCookies();
-  });
+  function scrollingAcceptCookies() {
+    if ($window.scrollTop() > scrollTop) {
+      acceptCookies();
+    }
+  }
 
   $window.on('scroll', function () {
     if (typeof window.requestAnimationFrame !== 'undefined') {
-      if ($(this).scrollTop() > scrollTop) {
-        window.requestAnimationFrame(acceptCookies);
-      }
-    } else if ($(this).scrollTop() > scrollTop) {
-      acceptCookies();
+      window.requestAnimationFrame(scrollingAcceptCookies);
+    } else {
+      scrollingAcceptCookies();
     }
+  });
+
+  $(document).ready(function () {
+    if (!getCookie('username')) {
+      $cookies.addClass('cookies--visible');
+    }
+
+    $(document).on('click', allLinks, function () {
+      acceptCookies();
+    });
   });
 
 }(jQuery));
