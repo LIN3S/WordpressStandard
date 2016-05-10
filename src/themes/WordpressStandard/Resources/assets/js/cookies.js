@@ -15,7 +15,7 @@
 (function ($) {
 
   var
-    allLinks = 'a, button, .cookies__actions .button',
+    allLinks = 'a, button, .cookies__actions, .cookies__cross-icon, .button',
     $cookies = $('.cookies'),
     $googleTagManager = $('.google-tag-manager'),
     $window = $(window),
