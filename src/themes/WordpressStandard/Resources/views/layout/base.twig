@@ -13,7 +13,7 @@
 </head>
 <body {{function('body_class')}}>
     {% block body %}
-        {% block tagManager %}{% endblock %}
+        <div class="google-tag-manager"></div>
         {% block deprecationNotice %}
             {% include 'component/deprecation_notice.twig' %}
         {% endblock %}
