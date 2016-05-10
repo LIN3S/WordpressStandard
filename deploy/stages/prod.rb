@@ -16,6 +16,8 @@
 server "", user: "", roles: %w{web}
 set :deploy_to, "/var/www/standard-wordpress.net"
 set :env, "prod"
+set :cache_opts, ""
+set :domain, "http://website.domain.com"
 
 ############################################
 # Setup Git

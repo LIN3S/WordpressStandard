@@ -121,7 +121,19 @@ To steps are required to get all the uploads located in the remote environment, 
 
 `cap dev1 uploads:download` will download a .tar.gz file to the root of your local environment and 
 `cap dev1 uploads:extract` will extract the downloaded file into `src/uploads` folder, replacing all the existing 
-uploads. 
+uploads.
+
+###Clearing remote caches
+
+When working with PHP7 & Opcache, for example, you won't see all changes after deploying. Caches need to be flushed
+with the correct website domain. If you need this feature, just open the `deploy.rb` file and remove the commented line:
+
+```
+after :finishing, 'cache:clear'
+```
+
+You also need to configure the website domain in each stage file. If the website is password protected, the `curl`
+command must use the `-u user:password` given in the `dev1.rb` example file.
 
 ##Licensing Options
 [![License](https://poser.pugx.org/lin3s/wordpress-standard/license.svg)](https://github.com/LIN3S/WordpressStandard/blob/master/LICENSE)

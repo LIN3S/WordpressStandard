@@ -16,6 +16,8 @@
 server "dev.company.com", user: "sshuser", roles: %w{web}
 set :deploy_to, "/path/to/your/deployment/directory"
 set :env,  "dev"
+set :cache_opts, "-u user:password"
+set :domain, "http://devwebsite.domain.com"
 
 ############################################
 # Setup Git
