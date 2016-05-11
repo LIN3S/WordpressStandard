@@ -90,6 +90,9 @@ namespace :compile_and_upload do
   end
 end
 
+############################################
+# Download and extract uploaded files
+############################################
 namespace :uploads do
   desc 'Get uploads'
 
@@ -110,6 +113,9 @@ namespace :uploads do
   end
 end
 
+############################################
+# Download database
+############################################
 namespace :database do
   desc "Database management"
   task :download do
@@ -142,9 +148,24 @@ namespace :database do
   end
 end
 
+############################################
+# Empty remote caches
+############################################
+namespace :cache do
+
+  desc 'Clears accelerator caches'
+
+  task :clear do
+    on roles(:all) do |host|
+      execute "curl #{fetch(:cache_opts)} #{fetch(:domain)}/deploy/scripts/clearcache.php"
+    end
+  end
+end
+
 namespace :deploy do
-  after :updated, 'composer:install_executable'
+  after :starting, 'composer:install_executable'
   after :updated, 'compile_and_upload:npm'
   after :updated, 'compile_and_upload:gulp'
   after :updated, 'compile_and_upload:upload'
+  #after :finishing, 'cache:clear'
 end

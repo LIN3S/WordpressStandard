@@ -13,7 +13,7 @@ namespace WordpressStandard\Configuration;
 
 /**
  * Final image sizes class, its responsibility is to add different thumbnails
- * into Wordpress ecosystem with "add_image_size" internal method.
+ * into WordPress ecosystem with "add_image_size" internal method.
  *
  * @author Gorka Laucirica <gorka.lauzirika@gmail.com>
  * @author Beñat Espiña <benatespina@gmail.com>

@@ -13,19 +13,22 @@
 'use strict';
 
 var gulp = require('gulp'),
-  autoprefixer = require('gulp-autoprefixer'),
   concat = require('gulp-concat'),
-  cssNano = require('gulp-cssnano'),
+  cssnext = require('postcss-cssnext'),
+  cssnano = require('gulp-cssnano'),
   file = require('gulp-file'),
   livereload = require('gulp-livereload'),
+  modernizr = require('gulp-modernizr'),
+  plumber = require('gulp-plumber'),
+  postcss = require('gulp-postcss'),
   rename = require('gulp-rename'),
   sass = require('gulp-sass'),
   scsslint = require('gulp-scss-lint'),
   svgSprite = require('gulp-svg-sprite'),
-  uglify = require('gulp-uglify'),
-  modernizr = require('gulp-modernizr');
+  uglify = require('gulp-uglify');
 
 var paths = {
+  npm: './node_modules',
   assets: './Resources/assets',
   sass: './Resources/assets/scss',
   js: './Resources/assets/js',
@@ -40,6 +43,12 @@ var watch = {
   svg: './Resources/assets/svg/**/*.svg'
 };
 
+// Plumber error function
+function onError(err) {
+  console.log(err);
+  this.emit('end');
+}
+
 gulp.task('wp-style', function () {
   var content = '/*\n * Author: LIN3S\n * Author URI: http://www.lin3s.com/\n */';
 
@@ -47,7 +56,14 @@ gulp.task('wp-style', function () {
 });
 
 gulp.task('scss-lint', function () {
-  return gulp.src([watch.sass, '!' + paths.sass + '/base/_reset.scss'])
+  return gulp.src([
+      watch.sass,
+      '!' + paths.sass + '/base/_reset.scss',
+      '!' + paths.sass + '/base/_grid.scss'
+    ])
+    .pipe(plumber({
+      errorHandler: onError
+    }))
     .pipe(scsslint({
       'config': './.scss_lint.yml'
     }));
@@ -55,18 +71,25 @@ gulp.task('scss-lint', function () {
 
 gulp.task('sass', ['wp-style', 'scss-lint'], function () {
   return gulp.src(paths.sass + '/app.scss')
+    .pipe(plumber({
+      errorHandler: onError
+    }))
     .pipe(sass({
       errLogToConsole: true
     }))
-    .pipe(autoprefixer())
-    .pipe(gulp.dest(paths.css));
+    .pipe(postcss([cssnext]))
+    .pipe(gulp.dest(paths.css))
+    .pipe(livereload());
 });
 
 gulp.task('sass:prod', function () {
   return gulp.src(paths.sass + '/app.scss')
+    .pipe(plumber({
+      errorHandler: onError
+    }))
     .pipe(sass())
-    .pipe(autoprefixer())
-    .pipe(cssNano({
+    .pipe(postcss([cssnext]))
+    .pipe(cssnano({
       keepSpecialComments: 1,
       rebase: false
     }))
@@ -78,6 +101,9 @@ gulp.task('sass:prod', function () {
 
 gulp.task('sprites', function () {
   return gulp.src(paths.svg + '/*.svg')
+    .pipe(plumber({
+      errorHandler: onError
+    }))
     .pipe(svgSprite({
       mode: {
         symbol: {
@@ -90,8 +116,36 @@ gulp.task('sprites', function () {
     .pipe(gulp.dest(paths.buildSvg));
 });
 
+gulp.task('vendor-css', function () {
+  return gulp.src([
+      // Put here css files of vendors, for example:
+      // paths.npm + '/slick-carousel/slick/slick.css'
+    ])
+    .pipe(plumber({
+      errorHandler: onError
+    }))
+    .pipe(concat('vendor.css'))
+    .pipe(gulp.dest(paths.css));
+});
+
+gulp.task('vendor-js', function () {
+  return gulp.src([
+      paths.npm + '/jquery/dist/jquery.min.js',
+      paths.npm + '/fastclick/lib/fastclick.js',
+      paths.npm + '/svg4everybody/dist/svg4everybody.min.js'
+    ])
+    .pipe(plumber({
+      errorHandler: onError
+    }))
+    .pipe(concat('vendor.js'))
+    .pipe(gulp.dest(paths.buildJs));
+});
+
 gulp.task('modernizr', function () {
   return gulp.src([paths.js + '/*.js'])
+    .pipe(plumber({
+      errorHandler: onError
+    }))
     .pipe(modernizr({
       'options': [
         'setClasses', 'addTest', 'html5printshiv', 'testProp', 'fnBind'
@@ -103,6 +157,9 @@ gulp.task('modernizr', function () {
 
 gulp.task('js:prod', function () {
   return gulp.src([paths.js + '/*.js'])
+    .pipe(plumber({
+      errorHandler: onError
+    }))
     .pipe(concat('app.min.js'))
     .pipe(uglify())
     .pipe(gulp.dest(paths.buildJs));
@@ -116,4 +173,4 @@ gulp.task('watch', function () {
 
 gulp.task('default', ['sass', 'sprites', 'modernizr']);
 
-gulp.task('prod', ['sass:prod', 'js:prod', 'sprites', 'modernizr']);
+gulp.task('prod', ['sass:prod', 'js:prod', 'sprites', 'vendor-js', 'vendor-css', 'modernizr']);

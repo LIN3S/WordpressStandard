@@ -19,6 +19,7 @@ come with:
  * [Sass][5]
  * [Npm][6]
  * [Gulp.js][8]
+ * [Zurb Foundation][21] vs [LIN3S's custom Grid][22]
 4. [Twig][9] template engine with [Timber][10]
 5. [Capistrano][11] deploy
 6. [Symfony style routing made by LIN3S][12]
@@ -29,7 +30,7 @@ come with:
 The above sounds great so, now, to start developing WordPress project based on this repo, you need the the following
 requirements:
 
-1. [PHP][15] 5.5.9 or higher
+1. [PHP][15] 5.5 or higher
 2. [MySQL][16]
 3. Composer: `curl -sS https://getcomposer.org/installer | php`
 4. [Ruby][17]
@@ -57,9 +58,9 @@ should be changed too.
 > You must change the autoload path into `composer.json` file with defined directory name.
 > Also, **CAUTION!**: you **MUST** updated `!WordpressStandard` of [`src/themes/.gitignore`][19] file.
 
-Then, in order to **install all the front-end dependencies** run the following commands:
+Then, in order to **install all the front-end dependencies** run the following command:
 ```
-$ cd src/themes/<project-name> && npm install && bower install
+$ cd src/themes/<project-name> && npm install
 ```
 Create the `wp-config-custom.php` copying the `wp-config-custom-sample.php` and customizing with your values.
 
@@ -120,7 +121,19 @@ To steps are required to get all the uploads located in the remote environment, 
 
 `cap dev1 uploads:download` will download a .tar.gz file to the root of your local environment and 
 `cap dev1 uploads:extract` will extract the downloaded file into `src/uploads` folder, replacing all the existing 
-uploads. 
+uploads.
+
+###Clearing remote caches
+
+When working with PHP7 & Opcache, for example, you won't see all changes after deploying. Caches need to be flushed
+with the correct website domain. If you need this feature, just open the `deploy.rb` file and remove the commented line:
+
+```
+after :finishing, 'cache:clear'
+```
+
+You also need to configure the website domain in each stage file. If the website is password protected, the `curl`
+command must use the `-u user:password` given in the `dev1.rb` example file.
 
 ##Licensing Options
 [![License](https://poser.pugx.org/lin3s/wordpress-standard/license.svg)](https://github.com/LIN3S/WordpressStandard/blob/master/LICENSE)
@@ -144,3 +157,5 @@ uploads.
 [18]: https://nodejs.org/download/
 [19]: https://github.com/LIN3S/WordpressStandard/blob/master/src/themes/.gitignore#L13
 [20]: http://httpd.apache.org/
+[21]: http://foundation.zurb.com/
+[22]: https://github.com/LIN3S/WordpressStandard/blob/master/src/themes/WordpressStandard/Resources/assets/scss/base/_grid.scss
