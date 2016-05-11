@@ -21,9 +21,11 @@ define('DB_HOST',             'localhost');
 define('DB_CHARSET',          'utf8');
 define('DB_COLLATE',          '');
 
-define('WPLANG',              '');       // '': default (English); 'es_ES': Spanish
-define('WP_DEBUG',            true);
-define('WP_AUTO_UPDATE_CORE', false);
+define('WPLANG',                     '');       // '': default (English); 'es_ES': Spanish
+define('WP_DEBUG',                   true);
+define('AUTOMATIC_UPDATER_DISABLED', true);
+define('DISALLOW_FILE_EDIT',         true);
+define('DISALLOW_FILE_MODS',         true);
 
 define('AUTH_KEY',           'Put your unique phrase here');
 define('SECURE_AUTH_KEY',    'Put your unique phrase here');
