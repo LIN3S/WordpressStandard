@@ -15,6 +15,7 @@ find .htaccess.dist -type f -print0 | xargs -0 sed -i "s/WordPress Standard/$pro
 
 rm .lin3s_cs.yml
 find .lin3s_cs.yml.dist -type f -print0 | xargs -0 sed -i "s/CHANGE-FOR-YOUR-AWESOME-NAME/$project/g"
+find .lin3s_cs.yml.dist -type f -print0 | xargs -0 sed -i "s/WordpressStandard/$project/g"
 find Capfile -type f -print0 | xargs -0 sed -i "s/WordPress Standard/$project/g"
 find composer.json -type f -print0 | xargs -0 sed -i "s/lin3s\/wordpress-standard/$lowerproject/g"
 find composer.json -type f -print0 | xargs -0 sed -i "s/WordpressStandard/$project/g"

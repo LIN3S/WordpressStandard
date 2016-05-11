@@ -52,11 +52,13 @@ $ composer create-project lin3s/wordpress-standard <project-name> && cd <project
 Also, all the namespaces and different references inside project have the **WordpressStandard** keyword so you should
 **check for the references across the files and replace them with your awesome project name**.
 > You should remove the header licenses and `LICENSE` itself, because we are not going to be the authors of your
- awesome project :)
-> Remember that the `WordpressStandardTheme.php` file name and the `src/themes/WordpressStandard` directory name
+awesome project :)
+> You can automate the following steps by calling `./scripts/replace.sh`, or you can do it manually.
+
+> 1. Remember that the `WordpressStandardTheme.php` file name and the `src/themes/WordpressStandard` directory name
 should be changed too.
-> You must change the autoload path into `composer.json` file with defined directory name.
-> Also, **CAUTION!**: you **MUST** updated `!WordpressStandard` of [`src/themes/.gitignore`][19] file.
+> 2. You must change the autoload path into `composer.json` file with defined directory name.
+> 3. Also, **CAUTION!**: you **MUST** updated `!WordpressStandard` of [`src/themes/.gitignore`][19] file.
 
 Then, in order to **install all the front-end dependencies** run the following command:
 ```
