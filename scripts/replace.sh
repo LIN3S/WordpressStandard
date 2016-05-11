@@ -13,7 +13,7 @@ find src -type f -print0 | xargs -0 sed -i "s/wordpress-standard/$lowerproject/g
 find .gitignore -type f -print0 | xargs -0 sed -i "s/WordPress Standard/$project/g"
 find .htaccess.dist -type f -print0 | xargs -0 sed -i "s/WordPress Standard/$project/g"
 
-rm .lines_cs.yml
+rm .lin3s_cs.yml
 find .lin3s_cs.yml.dist -type f -print0 | xargs -0 sed -i "s/CHANGE-FOR-YOUR-AWESOME-NAME/$project/g"
 find Capfile -type f -print0 | xargs -0 sed -i "s/WordPress Standard/$project/g"
 find composer.json -type f -print0 | xargs -0 sed -i "s/lin3s\/wordpress-standard/$lowerproject/g"
@@ -24,5 +24,6 @@ find router.php -type f -print0 | xargs -0 sed -i "s/WordPress Standard/$project
 find wp-config.php -type f -print0 | xargs -0 sed -i "s/WordPress Standard/$project/g"
 find wp-config-custom.php -type f -print0 | xargs -0 sed -i "s/WordPress Standard/$project/g"
 find wp-config-custom-sample.php -type f -print0 | xargs -0 sed -i "s/WordPress Standard/$project/g"
+find deploy/ -type f -print0 | xargs -0 sed -i "s/WordPress Standard/$project/g"
 
 echo "Replace done! Check your composer.json and run composer install again"
