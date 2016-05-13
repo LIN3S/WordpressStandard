@@ -19,3 +19,9 @@ src/uploads
 src/languages
 vendor
 wp-config-custom.php
+src/advanced-cache.php
+# W3TC
+src/cache
+src/db.php
+src/object-cache.php
+src/w3tc-config

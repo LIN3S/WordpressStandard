@@ -9,7 +9,7 @@
 # @author Beñat Espiña <benatespina@gmail.com>
 # @author Jon Torrado <jontorrado@gmail.com>
 
-## Basic Wordpress .htaccess (non Multisite)
+# BEGIN LIN3S - Basic WordPress (non Multisite)
 <IfModule mod_rewrite.c>
     RewriteEngine On
     RewriteBase /
@@ -24,7 +24,11 @@
     # Make the admin still accessible from /wp-admin
     RewriteCond %{REQUEST_URI} ^/wp-admin/?(.*)
     RewriteRule ^wp-admin/(.*) core/wp-admin/$1 [R=301,L]
+</IfModule>
+# END LIN3S
 
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
     ## WordPress rewrites
     RewriteRule ^core/index\.php$ - [L]
     RewriteCond %{REQUEST_FILENAME} !-f
@@ -32,3 +36,4 @@
     RewriteRule . core/index.php [L]
     RewriteRule ^$ core/index.php [L]
 </IfModule>
+# END WordPress

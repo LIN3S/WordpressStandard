@@ -113,6 +113,18 @@ $ cap <stage> deploy    # <stage> can be dev1, prod or whatever file inside stag
 > In the Capistrano shared directory you should create the `src/uploads` folder, the `.htaccess` file (if you are using
 Apache), the `robots.txt` and the `wp-config-custom.php` files.
 
+###Using W3 Total Cache
+If you install W3 Total Cache plugin, you should replace the `linked_dirs` and `linked_folders` variables in the
+`deploy.rb` as follows (check that it fits your needs):
+
+```
+set :linked_files, %w{wp-config-custom.php .htaccess robots.txt src/advanced-cache.php src/db.php src/object-cache.php src/plugins/w3tc-wp-loader.php}
+set :linked_dirs, %w{src/uploads src/cache src/w3tc-config}
+```
+
+> If you install another plugin like WP Super Cache, just replace the previous statement with the created files. You can
+use `git status` to check the created files.
+
 ###Downloading database dump
 
 To download the file just run `cap dev1 database:download`. A sql file will be downloaded to your local environment
