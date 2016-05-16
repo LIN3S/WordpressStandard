@@ -68,6 +68,8 @@
         "wpml-media": "It allows to implement the multilingual in an easy way",
         "wpml-string-translation": "It allows to implement the multilingual in an easy way",
         "wpackagist-plugin/categories-images": "It allows to assign easily images to categories",
+        "wpackagist-plugin/wp-smushit": "Image optimization done for you",
+        "wpackagist-plugin/w3-total-cache": "Easy Web Performance Optimization (WPO) using caching",
         "lin3s/wp-symfony-form": "It allows to create forms with Symfony form component"
     },
     "extra": {
