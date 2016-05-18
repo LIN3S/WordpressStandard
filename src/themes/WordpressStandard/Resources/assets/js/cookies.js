@@ -27,6 +27,9 @@
 
       return;
     }
+    if ($googleTagManager.html()) {
+      return;
+    }
 
     $googleTagManager.append(
       '<noscript><iframe src="//www.googletagmanager.com/ns.html?id=' + googleTagManagerId + '"' +
