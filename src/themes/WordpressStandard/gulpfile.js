@@ -123,18 +123,6 @@ gulp.task('sprites', function () {
     .pipe(gulp.dest(paths.buildSvg));
 });
 
-gulp.task('vendor-css', function () {
-  return gulp.src([
-      // Put here css files of vendors, for example:
-      // paths.npm + '/slick-carousel/slick/slick.css'
-    ])
-    .pipe(plumber({
-      errorHandler: onError
-    }))
-    .pipe(concat('vendor.css'))
-    .pipe(gulp.dest(paths.css));
-});
-
 gulp.task('modernizr', function () {
   return gulp.src([paths.js + '/*.js'])
     .pipe(plumber({
