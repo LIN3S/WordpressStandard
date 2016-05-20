@@ -90,9 +90,11 @@ namespace :compile_and_upload do
   end
 end
 
-############################################
-# Download and extract uploaded files
-############################################
+###############################################
+# Download and extract uploaded files. Usage:
+# - cap <stage> uploads:download
+# - cap <stage> uploads:extract
+###############################################
 namespace :uploads do
   desc 'Get uploads'
 
@@ -114,7 +116,8 @@ namespace :uploads do
 end
 
 ############################################
-# Download database
+# Download database. Usage:
+# - cap <stage> database:download
 ############################################
 namespace :database do
   desc "Database management"
@@ -143,6 +146,61 @@ namespace :database do
         execute :rm, "-f", "#{shared_path}/#{dbname}_cap.sql"
       else
         puts "Cannot download file (dbuser or dbpass or dbname not found)"
+      end
+    end
+  end
+end
+
+######################################################
+# Checks and/or creates linked folders & files. Usage:
+# - cap <stage> server:ensure
+######################################################
+
+namespace :server do
+  reset = "\033[0m"
+  success =  "\e[1m\e[32m"
+  failure =  "\e[1m\e[31m"
+  desc "Ensure linked folders & files"
+  task :ensure do
+    on roles(:all) do |host|
+      if test("[ -d #{shared_path} ]")
+        puts "Checking #{shared_path}... #{success}OK#{reset}"
+      else
+        puts "Checking #{shared_path}... #{failure}failed! Creating...#{reset}"
+        execute "mkdir  #{shared_path}"
+        if test("[ -d #{shared_path} ]")
+          puts "Creating #{shared_path}... #{success}created!#{reset}"
+        else
+          puts "Creating #{shared_path}... #{failure}failed! Check manually!#{reset}"
+          exit 1
+        end
+      end
+      fetch(:linked_dirs, []).each do |dir|
+        if test("[ -d #{shared_path}/#{dir} ]")
+          puts "Checking #{shared_path}/#{dir}... #{success}OK#{reset}"
+        else
+          puts "Checking #{shared_path}/#{dir}... #{failure}failed! Creating...#{reset}"
+          execute "mkdir -p #{shared_path}/#{dir}"
+          if test("[ -d #{shared_path}/#{dir} ]")
+            puts "Creating #{shared_path}/#{dir}... #{success}created!#{reset}"
+          else
+            puts "Creating #{shared_path}/#{dir}... #{failure}failed! Check manually!#{reset}"
+            exit 1
+          end
+        end
+      end
+      fetch(:linked_files, []).each do |file|
+        if test("[ -f #{shared_path}/#{file} ]")
+          puts "Checking #{shared_path}/#{file}... #{success}OK#{reset}"
+        else
+          puts "Checking #{shared_path}/#{file}... #{failure}failed! Uploading...#{reset}"
+          upload! file, "#{shared_path}"
+          if test("[ -f #{shared_path}/#{file} ]")
+            puts "Uploading #{shared_path}/#{file}... #{success}uploaded!#{reset}"
+          else
+            puts "Uploading #{shared_path}/#{file}... #{failure}failed! Check manually!#{reset}"
+          end
+        end
       end
     end
   end
