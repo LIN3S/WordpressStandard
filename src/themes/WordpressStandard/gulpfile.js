@@ -86,7 +86,11 @@ gulp.task('sass', ['wp-style', 'scss-lint'], function () {
 });
 
 gulp.task('sass:prod', function () {
-  return gulp.src(paths.sass + '/app.scss')
+  return gulp.src([
+      paths.sass + '/app.scss'
+      // Put here css/scss vendor files, for example:
+      // paths.npm + '/slick-carousel/slick/slick.scss'
+    ])
     .pipe(plumber({
       errorHandler: onError
     }))
@@ -131,19 +135,6 @@ gulp.task('vendor-css', function () {
     .pipe(gulp.dest(paths.css));
 });
 
-gulp.task('vendor-js', function () {
-  return gulp.src([
-      paths.npm + '/jquery/dist/jquery.min.js',
-      paths.npm + '/fastclick/lib/fastclick.js',
-      paths.npm + '/svg4everybody/dist/svg4everybody.min.js'
-    ])
-    .pipe(plumber({
-      errorHandler: onError
-    }))
-    .pipe(concat('vendor.js'))
-    .pipe(gulp.dest(paths.buildJs));
-});
-
 gulp.task('modernizr', function () {
   return gulp.src([paths.js + '/*.js'])
     .pipe(plumber({
@@ -158,8 +149,15 @@ gulp.task('modernizr', function () {
     .pipe(gulp.dest(paths.buildJs))
 });
 
-gulp.task('js:prod', function () {
-  return gulp.src([paths.js + '/*.js'])
+gulp.task('js:prod', ['modernizr'], function () {
+  return gulp.src([
+      paths.buildJs + '/modernizr.js',
+      paths.npm + '/fastclick/lib/fastclick.js',
+      paths.npm + '/svg4everybody/dist/svg4everybody.min.js',
+      // Put here js vendor files, for example:
+      // paths.npm + '/slick-carousel/slick/slick.min.js'
+      paths.js + '/*.js'
+    ])
     .pipe(plumber({
       errorHandler: onError
     }))
@@ -176,4 +174,4 @@ gulp.task('watch', function () {
 
 gulp.task('default', ['sass', 'sprites', 'modernizr']);
 
-gulp.task('prod', ['sass:prod', 'js:prod', 'sprites', 'vendor-js', 'vendor-css', 'modernizr']);
+gulp.task('prod', ['sass:prod', 'sprites', 'modernizr', 'js:prod']);
