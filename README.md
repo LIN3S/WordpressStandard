@@ -137,6 +137,15 @@ To steps are required to get all the uploads located in the remote environment, 
 `cap dev1 uploads:extract` will extract the downloaded file into `src/uploads` folder, replacing all the existing 
 uploads.
 
+###Ensuring remote files and folders
+
+The first time you deploy the project, all linked files must be created in order to be symlinked. In order to
+autocreate folders and uploads your local files to the remote server (very handy when using W3 Total Cache), just run:
+
+`cap dev1 server:ensure`
+
+After this, just deploy without any problem.
+
 ###Clearing remote caches
 
 When working with PHP7 & Opcache, for example, you won't see all changes after deploying. Caches need to be flushed
