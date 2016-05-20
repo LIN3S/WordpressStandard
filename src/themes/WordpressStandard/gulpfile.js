@@ -8,6 +8,7 @@
  *
  * @author Gorka Laucirica <gorka.lauzirika@gmail.com>
  * @author Beñat Espiña <benatespina@gmail.com>
+ * @author Jon Torrado <jontorrado@gmail.com>
  */
 
 'use strict';
@@ -50,7 +51,9 @@ function onError(err) {
 }
 
 gulp.task('wp-style', function () {
-  var content = '/*\n * Author: LIN3S\n * Author URI: http://www.lin3s.com/\n */';
+  var content = '/*\nTheme Name: WordPress Standard';
+  content += '\nAuthor: LIN3S';
+  content += '\nAuthor URI: http://www.lin3s.com/\n*/';
 
   return file('style.css', content, {src: true}).pipe(gulp.dest('.'));
 });
