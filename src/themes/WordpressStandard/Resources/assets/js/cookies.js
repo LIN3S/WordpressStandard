@@ -7,7 +7,7 @@
  * file that was distributed with this source code.
  *
  * @author Gorka Laucirica <gorka.lauzirika@gmail.com>
- * @author Beñat Espiña <bespina@lin3s.com>
+ * @author Beñat Espiña <benatespina@gmail.com>
  */
 
 'use strict';
@@ -25,6 +25,9 @@
     if (typeof googleTagManagerId === 'undefined') {
       console.log('Please define googleTagManagerId global JS variable to append GTM code');
 
+      return;
+    }
+    if ($googleTagManager.html()) {
       return;
     }
 
