@@ -42,6 +42,17 @@ set :linked_dirs, %w{src/uploads}
 
 set :composer_install_flags, '--no-dev --no-interaction --optimize-autoloader'
 
+namespace :git do
+  desc 'Checks for same actual and deploy branch'
+  task :check_branch do
+    current_branch = `git branch`.match(/\* (\S+)\s/m)[1]
+    if current_branch != fetch(:branch)
+      puts "\e[31mCurrent branch '#{current_branch}' differs from deployment branch, stopping\e[0m"
+      exit 1
+    end
+  end
+end
+
 namespace :compile_and_upload do
 
   desc 'Compile and upload'
@@ -221,6 +232,7 @@ namespace :cache do
 end
 
 namespace :deploy do
+  after :starting, 'git:check_branch'
   after :starting, 'composer:install_executable'
   after :updated, 'compile_and_upload:npm'
   after :updated, 'compile_and_upload:gulp'
