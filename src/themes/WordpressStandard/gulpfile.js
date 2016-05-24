@@ -60,10 +60,9 @@ gulp.task('wp-style', function () {
 
 gulp.task('stylelint', function () {
   return gulp.src([
-      //watch.sass,
-      //'!' + paths.sass + '/base/_reset.scss',
-      //'!' + paths.sass + '/base/_grid.scss'
-      paths.sass + '/base/_grid.scss'
+      watch.sass,
+      '!' + paths.sass + '/base/_reset.scss',
+      '!' + paths.sass + '/base/_grid.scss'
     ])
     .pipe(plumber({
       errorHandler: onError
