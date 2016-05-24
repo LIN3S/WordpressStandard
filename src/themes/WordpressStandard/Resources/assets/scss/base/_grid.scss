@@ -11,6 +11,7 @@
   @if length($range) <= 0 {
     @return 0;
   }
+
   @return nth($range, 1);
 }
 
@@ -18,6 +19,7 @@
   @if length($range) < 2 {
     @return 999999999999;
   }
+
   @return nth($range, 2);
 }
 
@@ -129,6 +131,11 @@ $grid: (
       @warn '#{$grid-type} not found in $grid map, check _grid-settings.scss';
     }
   }
+}
+
+$my-color:#fff;
+.foo {
+  margin: 0;
 }
 
 @mixin grid__column($columns) {
