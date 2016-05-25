@@ -1,7 +1,8 @@
+#!/usr/bin/env php
 <?php
 
 /*
- * This file is part of the LaboralKutxa project.
+ * This file is part of the WordPress Standard project.
  *
  * Copyright (c) 2016 LIN3S <info@lin3s.com>
  *
