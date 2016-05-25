@@ -86,11 +86,9 @@ gulp.task('sass', ['wp-style', 'scss-lint'], function () {
 });
 
 gulp.task('sass:prod', function () {
-  return gulp.src([
-      paths.sass + '/app.scss'
-      // Put here css/scss vendor files, for example:
-      // paths.npm + '/slick-carousel/slick/slick.scss'
-    ])
+  // Import your css/scss vendor files in app.scss. Example:
+  // @import '../../../node_modules/slick-carousel/slick/slick.scss'
+  return gulp.src(paths.sass + '/app.scss')
     .pipe(plumber({
       errorHandler: onError
     }))
