@@ -194,7 +194,7 @@ namespace :server do
           puts "Checking #{shared_path}/#{file}... #{success}OK#{reset}"
         else
           puts "Checking #{shared_path}/#{file}... #{failure}failed! Uploading...#{reset}"
-          upload! file, "#{shared_path}"
+          upload! file, "#{shared_path}/#{file}"
           if test("[ -f #{shared_path}/#{file} ]")
             puts "Uploading #{shared_path}/#{file}... #{success}uploaded!#{reset}"
           else
