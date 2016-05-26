@@ -43,9 +43,6 @@ final class Assets extends BaseAssets
     public function productionAssets()
     {
         $this
-            ->addStylesheet('vendor', self::CSS)
-            ->addScript('vendor', self::BUILD_JS)
-
             ->addStylesheet('app.min', self::CSS)
             ->addScript('app.min', self::BUILD_JS);
     }
