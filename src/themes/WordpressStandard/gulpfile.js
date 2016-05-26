@@ -60,10 +60,10 @@ gulp.task('wp-style', function () {
 
 gulp.task('scss-lint', function () {
   return gulp.src([
-      watch.sass,
-      '!' + paths.sass + '/base/_reset.scss',
-      '!' + paths.sass + '/base/_grid.scss'
-    ])
+    watch.sass,
+    '!' + paths.sass + '/base/_reset.scss',
+    '!' + paths.sass + '/base/_grid.scss'
+  ])
     .pipe(plumber({
       errorHandler: onError
     }))
@@ -86,8 +86,6 @@ gulp.task('sass', ['wp-style', 'scss-lint'], function () {
 });
 
 gulp.task('sass:prod', function () {
-  // Import your css/scss vendor files in app.scss. Example:
-  // @import '../../../node_modules/slick-carousel/slick/slick.scss'
   return gulp.src(paths.sass + '/app.scss')
     .pipe(plumber({
       errorHandler: onError
@@ -137,13 +135,14 @@ gulp.task('modernizr', function () {
 
 gulp.task('js:prod', ['modernizr'], function () {
   return gulp.src([
-      paths.buildJs + '/modernizr.js',
-      paths.npm + '/fastclick/lib/fastclick.js',
-      paths.npm + '/svg4everybody/dist/svg4everybody.min.js',
-      // Put here js vendor files, for example:
-      // paths.npm + '/slick-carousel/slick/slick.min.js'
-      paths.js + '/*.js'
-    ])
+    paths.buildJs + '/modernizr.js',
+    paths.npm + '/fastclick/lib/fastclick.js',
+    paths.npm + '/svg4everybody/dist/svg4everybody.min.js',
+    paths.npm + '/picturefill/dist/picturefill.min.js',
+    // Put here js vendor files, for example:
+    // paths.npm + '/slick-carousel/slick/slick.min.js'
+    paths.js + '/*.js'
+  ])
     .pipe(plumber({
       errorHandler: onError
     }))
