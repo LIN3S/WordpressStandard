@@ -14,6 +14,7 @@ namespace WordpressStandard;
 use LIN3S\WPFoundation\Configuration\Mailer\Mailer;
 use LIN3S\WPFoundation\Twig\TagManagerTwig;
 use LIN3S\WPFoundation\Twig\TranslationTwig;
+use WordpressStandard\Configuration\AdminLogin;
 use WordpressStandard\Configuration\Assets;
 use WordpressStandard\Configuration\ImageSizes;
 use WordpressStandard\Configuration\Menus;
@@ -37,6 +38,7 @@ final class WordpressStandardTheme extends Theme
     public function classes()
     {
         new Assets();
+        new AdminLogin();
         new ImageSizes();
         new Mailer();
         new Menus();
