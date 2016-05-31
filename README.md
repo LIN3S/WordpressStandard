@@ -58,7 +58,7 @@ awesome project :)
 > 1. Remember that the `WordpressStandardTheme.php` file name and the `src/themes/WordpressStandard` directory name
 should be changed too.
 > 2. You must change the autoload path into `composer.json` file with defined directory name.
-> 3. Also, **CAUTION!**: you **MUST** updated `!WordpressStandard` of [`src/themes/.gitignore`][19] file.
+> 3. Also, **CAUTION!**: you **MUST** update `!WordpressStandard` in [`src/themes/.gitignore`][19] file.
 
 Then, in order to **install all the front-end dependencies** run the following command:
 ```
@@ -96,7 +96,7 @@ create a new class or a new folder (if there are multiple classes related to tha
 code.
 
 ##Deployment
-To automatize the deployment process this project is using **Capistrano**. All about its configuration is inside the
+To automate deployment process this project is using **Capistrano**. All related configuration is inside located inside the
 `deploy` directory. You can customize deployment tasks simply, modifying the `deploy/deploy.rb` file.
 
 You should update the *wordpress-standard* application name for your awesome project name and the repo url with your
