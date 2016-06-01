@@ -23,7 +23,7 @@
         "johnpbloch/wordpress":                           "^4.5",
         "lin3s/cs":                                       "^0.3.6",
         "lin3s/lin3s-distribution":                       "^1.2.1",
-        "lin3s/wp-foundation":                            "^1.5.0",
+        "lin3s/wp-foundation":                            "^1.6.0",
         "lin3s/wp-routing":                               "^1.0.3",
         "lin3s/template-selector":                        "^1.0",
         "timber/timber":                                  "^1.0",
