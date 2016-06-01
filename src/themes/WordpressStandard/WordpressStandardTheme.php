@@ -11,11 +11,8 @@
 
 namespace WordpressStandard;
 
-use LIN3S\WPFoundation\Configuration\Mailer\Mailer;
-use LIN3S\WPFoundation\Twig\TagManagerTwig;
 use LIN3S\WPFoundation\Twig\TranslationTwig;
 use WordpressStandard\Configuration\Assets;
-use WordpressStandard\Configuration\ImageSizes;
 use WordpressStandard\Configuration\Menus;
 use LIN3S\WPFoundation\Configuration\Theme\Theme;
 use Timber\Menu;
@@ -37,10 +34,8 @@ final class WordpressStandardTheme extends Theme
     public function classes()
     {
         new Assets();
-        new Mailer();
         new Menus();
 
-        new TagManagerTwig();
         new TranslationTwig();
     }
 
