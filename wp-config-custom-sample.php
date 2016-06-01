@@ -45,3 +45,4 @@ define('MAILER_FROM',        'The email address that will be shown to the receiv
 define('MAILER_FROM_NAME',   'The name that will be shown to the receiver');
 
 define('TRANSLATION_DOMAIN', 'Put your translation domain');
+define('XMLRPC_ENABLED', false);
