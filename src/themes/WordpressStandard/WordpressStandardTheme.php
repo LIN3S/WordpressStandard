@@ -37,7 +37,6 @@ final class WordpressStandardTheme extends Theme
     public function classes()
     {
         new Assets();
-        new ImageSizes();
         new Mailer();
         new Menus();
 
