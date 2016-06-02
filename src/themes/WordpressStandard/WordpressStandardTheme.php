@@ -11,7 +11,6 @@
 
 namespace WordpressStandard;
 
-use LIN3S\WPFoundation\Configuration\Acf\Acf;
 use LIN3S\WPFoundation\Configuration\Mailer\LocalMailer;
 use LIN3S\WPFoundation\Twig\TranslationTwig;
 use WordpressStandard\Configuration\Assets;
@@ -35,7 +34,6 @@ final class WordpressStandardTheme extends Theme
      */
     public function classes()
     {
-        new Acf();
         new Assets();
         new LocalMailer();
         new Menus();
