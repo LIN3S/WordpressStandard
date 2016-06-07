@@ -27,6 +27,7 @@ define('AUTOMATIC_UPDATER_DISABLED', true);
 define('DISALLOW_FILE_EDIT',         true);
 define('DISALLOW_FILE_MODS',         true);
 
+// See: https://api.wordpress.org/secret-key/1.1/salt/
 define('AUTH_KEY',           'Put your unique phrase here');
 define('SECURE_AUTH_KEY',    'Put your unique phrase here');
 define('LOGGED_IN_KEY',      'Put your unique phrase here');
