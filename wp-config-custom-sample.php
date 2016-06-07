@@ -21,12 +21,12 @@ define('DB_HOST',             'localhost');
 define('DB_CHARSET',          'utf8');
 define('DB_COLLATE',          '');
 
-define('WPLANG',                     '');       // '': default (English); 'es_ES': Spanish
 define('WP_DEBUG',                   true);
 define('AUTOMATIC_UPDATER_DISABLED', true);
 define('DISALLOW_FILE_EDIT',         true);
 define('DISALLOW_FILE_MODS',         true);
 
+// See: https://api.wordpress.org/secret-key/1.1/salt/
 define('AUTH_KEY',           'Put your unique phrase here');
 define('SECURE_AUTH_KEY',    'Put your unique phrase here');
 define('LOGGED_IN_KEY',      'Put your unique phrase here');
@@ -45,3 +45,4 @@ define('MAILER_FROM',        'The email address that will be shown to the receiv
 define('MAILER_FROM_NAME',   'The name that will be shown to the receiver');
 
 define('TRANSLATION_DOMAIN', 'Put your translation domain');
+define('XMLRPC_ENABLED', false);

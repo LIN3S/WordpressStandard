@@ -38,7 +38,7 @@ set :keep_releases, 5
 set :theme_path, "src/themes/#{fetch(:theme_name)}"
 
 set :linked_files, %w{wp-config-custom.php .htaccess robots.txt}
-set :linked_dirs, %w{src/uploads}
+set :linked_dirs, %w{src/uploads src/languages}
 
 set :composer_install_flags, '--no-dev --no-interaction --optimize-autoloader'
 

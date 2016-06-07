@@ -53,7 +53,9 @@
 
     date.setTime(date.getTime() + (expirationDays * 24 * 60 * 60 * 1000));
     expires += date.toGMTString();
-    document.cookie = name + '=' + value + '; ' + expires;
+    document.cookie = name + '=' + value + '; ' + expires + '; ' +
+      location.hostname.split('.').reverse()[1] + '.' +
+      location.hostname.split('.').reverse()[0] + '; path=/';
   }
 
   function getCookie(name) {
