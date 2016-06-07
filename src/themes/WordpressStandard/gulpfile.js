@@ -24,7 +24,7 @@ var gulp = require('gulp'),
   postcss = require('gulp-postcss'),
   rename = require('gulp-rename'),
   sass = require('gulp-sass'),
-  scsslint = require('gulp-scss-lint'),
+  stylelint = require('gulp-stylelint'),
   svgSprite = require('gulp-svg-sprite'),
   uglify = require('gulp-uglify');
 
@@ -58,7 +58,7 @@ gulp.task('wp-style', function () {
   return file('style.css', content, {src: true}).pipe(gulp.dest('.'));
 });
 
-gulp.task('scss-lint', function () {
+gulp.task('stylelint', function () {
   return gulp.src([
     watch.sass,
     '!' + paths.sass + '/base/_reset.scss',
@@ -67,12 +67,18 @@ gulp.task('scss-lint', function () {
     .pipe(plumber({
       errorHandler: onError
     }))
-    .pipe(scsslint({
-      'config': './.scss_lint.yml'
+    .pipe(stylelint({
+      configFile: './stylelint/.stylelintrc',
+      failAfterError: false,
+      syntax: 'scss',
+      reporters: [{
+        formatter: 'string',
+        console: true
+      }]
     }));
 });
 
-gulp.task('sass', ['wp-style', 'scss-lint'], function () {
+gulp.task('sass', ['wp-style', 'stylelint'], function () {
   return gulp.src(paths.sass + '/app.scss')
     .pipe(plumber({
       errorHandler: onError
