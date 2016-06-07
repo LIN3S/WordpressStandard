@@ -21,7 +21,6 @@ define('DB_HOST',             'localhost');
 define('DB_CHARSET',          'utf8');
 define('DB_COLLATE',          '');
 
-define('WPLANG',                     '');       // '': default (English); 'es_ES': Spanish
 define('WP_DEBUG',                   true);
 define('AUTOMATIC_UPDATER_DISABLED', true);
 define('DISALLOW_FILE_EDIT',         true);
