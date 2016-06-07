@@ -11,7 +11,7 @@
 
 namespace WordpressStandard;
 
-use LIN3S\WPFoundation\Configuration\Mailer\LocalMailer;
+use LIN3S\WPFoundation\Configuration\Mailer\Mailer;
 use LIN3S\WPFoundation\Twig\TranslationTwig;
 use WordpressStandard\Configuration\Assets;
 use WordpressStandard\Configuration\Menus;
@@ -35,7 +35,7 @@ final class WordpressStandardTheme extends Theme
     public function classes()
     {
         new Assets();
-        new LocalMailer();
+        new Mailer();
         new Menus();
 
         new TranslationTwig();
