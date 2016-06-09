@@ -28,9 +28,13 @@
 -
     controller: WordpressStandard\Controller\PostController::categoryListAction
     type: archive
-    slug: post
+    posttype: post
 
 -
     controller: WordpressStandard\Controller\PostController::showAction
     type: single
-    slug: post
+    posttype: post
+
+-
+    controller: WordpressStandard\Controller\DefaultController::attachmentAction
+    type: attachment
