@@ -24,15 +24,15 @@
     # Make the admin still accessible from /wp-admin
     RewriteCond %{REQUEST_URI} ^/wp-admin/?(.*)
     RewriteRule ^wp-admin/(.*) core/wp-admin/$1 [R=301,L]
-</IfModule>
-# END LIN3S
-
-# BEGIN WordPress
-<IfModule mod_rewrite.c>
+    
+    # Default WordPress rules
     RewriteRule ^core/index\.php$ - [L]
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteRule . core/index.php [L]
     RewriteRule ^$ core/index.php [L]
 </IfModule>
+# END LIN3S
+
+# BEGIN WordPress
 # END WordPress
