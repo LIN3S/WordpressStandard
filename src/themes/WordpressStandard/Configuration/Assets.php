@@ -27,6 +27,7 @@ final class Assets extends BaseAssets
     public function developmentAssets()
     {
         $this
+            ->addScript('bengor-cookies', self::NPM . '/bengor-cookies/dist/')
             ->addScript('fastclick', self::NPM . '/fastclick/lib')
             ->addScript('svg4everybody.min', self::NPM . '/svg4everybody/dist')
             ->addScript('modernizr', self::BUILD_JS, [], '3.0.0', false)

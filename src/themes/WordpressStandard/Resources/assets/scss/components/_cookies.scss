@@ -6,52 +6,10 @@
 // file that was distributed with this source code.
 //
 // @author Gorka Laucirica <gorka.lauzirika@gmail.com>
+// @author Beña Espiña <benatespina@gmail.com>
 
-.cookies {
-  align-items: center;
-  background: $white;
-  bottom: 0;
-  font-size: 12px;
-  padding: 20px $column-gutter;
-  position: fixed;
-  transform: translateY(100%);
-  transition: transform .3s;
-  width: 100%;
-  z-index: 100;
-}
+// Override the BenGorCookies default styles using Sass variables before the import.
+// more info: https://github.com/BenGorJS/Cookies#extension-points
 
-.cookies__text {
-  margin: 0;
-}
+@import '../../../../node_modules/bengor-cookies/src/scss/bengor-cookies';
 
-.cookies--visible {
-  transform: translateY(0);
-}
-
-.cookies__actions {
-  cursor: pointer;
-  margin-top: 20px;
-  text-align: center;
-}
-
-@media #{$medium-up} {
-  .cookies {
-    display: flex;
-    font-size: 14px;
-  }
-
-  .cookies__content {
-    flex: 1;
-    padding-right: $column-gutter;
-  }
-
-  .cookies__actions {
-    margin: 0;
-  }
-}
-
-@media #{$large-up} {
-  .cookies {
-    font-size: 16px;
-  }
-}
