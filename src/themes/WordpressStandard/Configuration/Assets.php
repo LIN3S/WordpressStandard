@@ -34,7 +34,6 @@ final class Assets extends BaseAssets
 
             ->addStylesheet('app', self::CSS)
             ->addScript('svg')
-            ->addScript('cookies')
             ->addScript('app');
     }
 

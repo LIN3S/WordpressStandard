@@ -15,15 +15,18 @@
 
   if ('addEventListener' in document) {
     document.addEventListener('DOMContentLoaded', function () {
+
       FastClick.attach(document.body);
+
       svg4everybody();
+
+      BenGorCookies('.bengor-cookies', {
+        links: 'a, button, .bengor-cookies__actions, .bengor-cookies__button',
+        maxPageYOffset: 500,
+        GTMId: 'undefined'
+      });
+
     }, false);
   }
-
-  BenGorCookies('.bengor-cookies', {
-    links: 'a, button, .bengor-cookies__actions, .bengor-cookies__button',
-    maxPageYOffset: 500,
-    GTMId: 'undefined'
-  });
 
 })();
