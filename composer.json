@@ -21,7 +21,6 @@
         "php":                                            "^5.5 || ^7.0",
 
         "johnpbloch/wordpress":                           "^4.5",
-        "lin3s/cs":                                       "^0.3.6",
         "lin3s/lin3s-distribution":                       "^1.2.1",
         "lin3s/wp-foundation":                            "^1.6.0",
         "lin3s/wp-routing":                               "^1.0.3",
@@ -32,6 +31,7 @@
         "wpackagist-theme/twentysixteen":                 "*"
     },
     "require-dev": {
+        "lin3s/cs":                                       "^0.4",
         "symfony/var-dumper":                             "^3.0",
         "wpackagist-plugin/debug-bar":                    "~0.8",
         "wpackagist-plugin/debug-bar-timber":             "~0.3",
@@ -39,7 +39,7 @@
         "wpackagist-plugin/plugin-profiler":              "^1.1.2",
         "wpackagist-plugin/query-monitor":                "^2.8.1"
     },
-    "scripts": {
+    "scripts-dev": {
         "post-install-cmd": [
             "LIN3S\\Distribution\\Composer\\Wordpress::installRequiredFiles",
             "LIN3S\\CS\\Composer\\Hooks::buildDistFile",
