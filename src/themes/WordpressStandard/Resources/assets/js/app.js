@@ -20,7 +20,7 @@
 
       svg4everybody();
 
-      BenGorCookies('.bengor-cookies', {
+      new BenGorCookies('.bengor-cookies', {
         links: 'a, button, .bengor-cookies__actions, .bengor-cookies__button',
         maxPageYOffset: 500,
         GTMId: 'undefined'
@@ -29,4 +29,4 @@
     }, false);
   }
 
-})();
+}());
