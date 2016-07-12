@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace WordpressStandard\Configuration;
+namespace AppTheme\Configuration;
 
 use LIN3S\WPFoundation\Configuration\Login\Login as BaseLogin;
 

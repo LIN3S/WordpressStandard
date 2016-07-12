@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace WordpressStandard\PostTypes;
+namespace AppTheme\PostTypes;
 
 use LIN3S\WPFoundation\Configuration\Translations\Translations;
 use LIN3S\WPFoundation\PostTypes\PostType;

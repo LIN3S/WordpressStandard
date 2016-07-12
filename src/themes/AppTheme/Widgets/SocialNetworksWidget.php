@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace WordpressStandard\Widgets;
+namespace AppTheme\Widgets;
 
 use LIN3S\WPFoundation\Widgets\Widget;
 use Timber\Timber;

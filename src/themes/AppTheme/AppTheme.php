@@ -9,14 +9,14 @@
  * file that was distributed with this source code.
  */
 
-namespace WordpressStandard;
+namespace AppTheme;
 
 use LIN3S\WPFoundation\Configuration\Mailer\Mailer;
 use LIN3S\WPFoundation\Configuration\Theme\Theme;
 use LIN3S\WPFoundation\Twig\TranslationTwig;
-use WordpressStandard\Configuration\Assets;
-use WordpressStandard\Configuration\Login;
-use WordpressStandard\Configuration\Menus;
+use AppTheme\Configuration\Assets;
+use AppTheme\Configuration\Login;
+use AppTheme\Configuration\Menus;
 use Timber\Menu;
 
 /**
@@ -28,7 +28,7 @@ use Timber\Menu;
  * @author Gorka Laucirica <gorka.lauzirika@gmail.com>
  * @author Beñat Espiña <benatespina@gmail.com>
  */
-final class WordpressStandardTheme extends Theme
+final class AppTheme extends Theme
 {
     /**
      * {@inheritdoc}
