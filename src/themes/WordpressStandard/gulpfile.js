@@ -135,7 +135,6 @@ gulp.task('modernizr', function () {
 
 gulp.task('js:prod', ['modernizr'], function () {
   return gulp.src([
-    paths.buildJs + '/modernizr.js',
     paths.npm + '/fastclick/lib/fastclick.js',
     paths.npm + '/svg4everybody/dist/svg4everybody.min.js',
     paths.npm + '/picturefill/dist/picturefill.min.js',

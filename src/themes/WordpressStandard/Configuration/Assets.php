@@ -44,6 +44,7 @@ final class Assets extends BaseAssets
     {
         $this
             ->addStylesheet('app.min', self::CSS)
-            ->addScript('app.min', self::BUILD_JS);
+            ->addScript('app.min', self::BUILD_JS)
+            ->addScript('modernizr', self::BUILD_JS, [], '3.0.0', false);
     }
 }

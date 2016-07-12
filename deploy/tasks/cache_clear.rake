@@ -7,23 +7,13 @@
 #
 # @author Gorka Laucirica <gorka.lauzirika@gmail.com>
 # @author Beñat Espiña <benatespina@gmail.com>
+# @author Jon Torrado <jontorrado@gmail.com>
 
-.editorconfig
-.htaccess
-.lin3s_cs.yml
-/bin
-/core
-/robots.txt
-/src/plugins
-/src/uploads
-/src/languages
-/vendor
-/wp-config-custom.php
-/src/advanced-cache.php
-# Capistrano
-/log
-# W3TC
-/src/cache
-/src/db.php
-/src/object-cache.php
-/src/w3tc-config
+namespace :cache do
+  desc 'Clears accelerator caches'
+  task :clear do
+    on roles(:all) do |host|
+      execute "curl #{fetch(:cache_opts)} #{fetch(:domain)}/scripts/clearcache.php"
+    end
+  end
+end
