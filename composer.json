@@ -24,7 +24,6 @@
         "lin3s/lin3s-distribution":                       "^1.2.1",
         "lin3s/wp-foundation":                            "^1.6",
         "lin3s/wp-routing":                               "^2.0",
-        "lin3s/template-selector":                        "^1.0",
         "timber/timber":                                  "^1.0",
 
         "wpackagist-plugin/wordpress-seo":                "^3.0.7",
