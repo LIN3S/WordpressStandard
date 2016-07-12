@@ -15,17 +15,17 @@
     {% block body %}
         <div class="google-tag-manager"></div>
         {% block deprecation_notice %}
-            {% include 'component/deprecation_notice.twig' %}
+            {% include 'component/deprecation_notice.html.twig' %}
         {% endblock %}
         {% block header %}
-            {% include 'layout/header.twig' %}
+            {% include 'layout/header.html.twig' %}
         {% endblock %}
         {% block content %}{% endblock %}
         {% block footer %}
-            {% include 'layout/footer.twig' %}
+            {% include 'layout/footer.html.twig' %}
         {% endblock %}
         {% block cookies %}
-            {% include 'component/cookies.twig' %}
+            {% include 'component/cookies.html.twig' %}
         {% endblock %}
     {% endblock %}
     {{function('wp_footer')}}

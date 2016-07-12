@@ -1,3 +1,3 @@
-<svg class="{{ svgClass }}">
+<svg{% if svgClass is defined %} class="{{ svgClass }}{% endif %}">
     <use xlink:href="/src/themes/AppTheme/Resources/build/svg/symbols.svg#{{ icon }}"></use>
 </svg>

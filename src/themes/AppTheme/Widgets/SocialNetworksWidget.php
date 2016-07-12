@@ -39,7 +39,7 @@ final class SocialNetworksWidget extends Widget
             'rssUrl'       => (!empty($instance['rssUrl'])) ? strip_tags($instance['rssUrl']) : '',
         ];
 
-        return Timber::render('widgets/front/socialNetworks.twig', $data);
+        return Timber::render('widgets/front/socialNetworks.html.twig', $data);
     }
 
     /**
@@ -50,7 +50,7 @@ final class SocialNetworksWidget extends Widget
         $instance['widgetNumber'] = $this->number();
         $instance['widgetName'] = $this->name();
 
-        return Timber::render('widgets/admin/socialNetworks.twig', $instance);
+        return Timber::render('widgets/admin/socialNetworks.html.twig', $instance);
     }
 
     /**

@@ -31,7 +31,7 @@ final class PostController
         $context = Timber::get_context();
         $context['posts'] = Timber::get_posts();
 
-        return Timber::render('pages/post/list.twig', $context);
+        return Timber::render('pages/post/list.html.twig', $context);
     }
 
     /**
@@ -44,7 +44,7 @@ final class PostController
         $context = Timber::get_context();
         $context['posts'] = Timber::get_posts();
 
-        return Timber::render('pages/post/category_list.twig', $context);
+        return Timber::render('pages/post/category_list.html.twig', $context);
     }
 
     /**
@@ -57,6 +57,6 @@ final class PostController
         $context = Timber::get_context();
         $context['post'] = Timber::get_post();
 
-        return Timber::render('pages/post/show.twig', $context);
+        return Timber::render('pages/post/show.html.twig', $context);
     }
 }

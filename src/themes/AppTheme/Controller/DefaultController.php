@@ -32,7 +32,7 @@ final class DefaultController
     {
         $context = Timber::get_context();
 
-        return Timber::render('pages/index.twig', $context);
+        return Timber::render('pages/index.html.twig', $context);
     }
 
     /**
@@ -44,7 +44,7 @@ final class DefaultController
     {
         $context = Timber::get_context();
 
-        return Timber::render('pages/404.twig', $context);
+        return Timber::render('pages/404.html.twig', $context);
     }
 
     /**
@@ -57,7 +57,7 @@ final class DefaultController
         $context = Timber::get_context();
         $context['page'] = new Post();
 
-        return Timber::render('pages/default.twig', $context);
+        return Timber::render('pages/default.html.twig', $context);
     }
 
     /**
@@ -71,6 +71,6 @@ final class DefaultController
         $context['attachment'] = Timber::get_post();
         $context['attachment_image'] = wp_attachment_is_image($context['attachment']->ID);
 
-        return Timber::render('pages/attachment/show.twig', $context);
+        return Timber::render('pages/attachment/show.html.twig', $context);
     }
 }
