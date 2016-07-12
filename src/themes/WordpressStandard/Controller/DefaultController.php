@@ -59,4 +59,18 @@ final class DefaultController
 
         return Timber::render('pages/default.twig', $context);
     }
+
+    /**
+     * Attachment action.
+     *
+     * @return bool|string
+     */
+    public function attachmentAction()
+    {
+        $context = Timber::get_context();
+        $context['attachment'] = Timber::get_post();
+        $context['attachment_image'] = wp_attachment_is_image($context['attachment']->ID);
+
+        return Timber::render('pages/attachment/show.twig', $context);
+    }
 }
