@@ -1,0 +1,6 @@
+{% extends 'layout/base.html.twig' %}
+
+{% block content %}
+    <h1>{{ post.post_title }}</h1>
+    {{ post.content | wpautop }}
+{% endblock %}

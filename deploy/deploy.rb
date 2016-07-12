@@ -42,194 +42,39 @@ set :linked_dirs, %w{src/uploads src/languages}
 
 set :composer_install_flags, '--no-dev --no-interaction --optimize-autoloader'
 
-namespace :git do
-  desc 'Checks for same actual and deploy branch'
-  task :check_branch do
-    current_branch = `git branch`.match(/\* (\S+)\s/m)[1]
-    if current_branch != fetch(:branch)
-      puts "\e[31mCurrent branch '#{current_branch}' differs from deployment branch, stopping\e[0m"
-      exit 1
-    end
-  end
-end
+##############################################
+# Checks for local and deploy branch diff
+##############################################
+load File.expand_path('../tasks/check_git_branch.rake', __FILE__)
 
-namespace :compile_and_upload do
+##############################################
+# Compiles and uploads needed files
+##############################################
+load File.expand_path('../tasks/compile_upload.rake', __FILE__)
 
-  desc 'Compile and upload'
-
-  task :npm do
-    if fetch(:env) == "prod"
-      run_locally do
-        execute "cd #{fetch(:theme_path)}; rm -rf node_modules/* && npm install --production"
-        execute "cd #{fetch(:theme_path)}; tar -zcvf node_modules.tar.gz node_modules"
-      end
-      on roles(:all) do |host|
-        upload! "#{fetch(:theme_path)}/node_modules.tar.gz", "#{release_path}/#{fetch(:theme_path)}/node_modules.tar.gz"
-        execute :tar, '-zxvf', "#{release_path}/#{fetch(:theme_path)}/node_modules.tar.gz -C #{release_path}/#{fetch(:theme_path)}/"
-        execute :rm, "#{release_path}/#{fetch(:theme_path)}/node_modules.tar.gz"
-      end
-      run_locally do
-        execute :rm, "#{fetch(:theme_path)}/node_modules.tar.gz"
-        execute "cd #{fetch(:theme_path)}; npm install"
-      end
-    else
-      on roles(:all) do |host|
-        execute "cd #{release_path}/#{fetch(:theme_path)}; npm install"
-      end
-    end
-  end
-
-  task :gulp do
-    if fetch(:env) == "prod"
-      run_locally do
-        execute "cd #{fetch(:theme_path)}; npm install && gulp prod"
-      end
-    else
-      on roles(:all) do |host|
-        execute "cd #{release_path}/#{fetch(:theme_path)}; npm install && gulp prod"
-      end
-    end
-  end
-
-  task :upload do
-    if fetch(:env) == "prod"
-      on roles(:all) do |host|
-        upload! "#{fetch(:theme_path)}/Resources/build", "#{release_path}/#{fetch(:theme_path)}/Resources/build", recursive: true
-        upload! "#{fetch(:theme_path)}/style.css", "#{release_path}/#{fetch(:theme_path)}/style.css"
-      end
-    end
-  end
-end
-
-###############################################
+##############################################
 # Download and extract uploaded files. Usage:
 # - cap <stage> uploads:download
 # - cap <stage> uploads:extract
-###############################################
-namespace :uploads do
-  desc 'Get uploads'
+##############################################
+load File.expand_path('../tasks/wp_uploads.rake', __FILE__)
 
-  task :download do
-    on roles(:all) do |host|
-      execute "cd #{shared_path}; tar -zcvf uploads.tar.gz src/uploads/"
-      download! "#{shared_path}/uploads.tar.gz", "."
-      execute :rm, "-rf", "#{shared_path}/uploads.tar.gz"
-    end
-  end
-
-  task :extract do
-    run_locally do
-      execute :rm, "-rf", "src/uploads"
-      execute :tar, '-zxvf', "uploads.tar.gz"
-      execute :rm, "uploads.tar.gz"
-    end
-  end
-end
-
-############################################
+##############################################
 # Download database. Usage:
 # - cap <stage> database:download
-############################################
-namespace :database do
-  desc "Database management"
-  task :download do
-    on roles(:all) do |host|
-      dbuser = nil
-      dbpass = nil
-      dbname = nil
-      file = capture "cat #{shared_path}/wp-config-custom.php"
-      file.each_line do |line|
-        line.split("\t").each do |item|
-          if item.include? "DB_USER"
-            dbuser = item.gsub(/(define|\(|\'|\,|\)\;|\ |\n|DB_USER)/, '')
-          end
-          if item.include? "DB_PASSWORD"
-            dbpass = item.gsub(/(define|\(|\'|\,|\)\;|\ |\n|DB_PASSWORD)/, '')
-          end
-          if item.include? "DB_NAME"
-            dbname = item.gsub(/(define|\(|\'|\,|\)\;|\ |\n|DB_NAME)/, '')
-          end
-        end
-      end
-      if dbuser != nil and dbpass != nil and dbname != nil
-        execute "cd #{shared_path};mysqldump -u#{dbuser} -p#{dbpass} #{dbname} > #{dbname}_cap.sql"
-        download! "#{shared_path}/#{dbname}_cap.sql", "."
-        execute :rm, "-f", "#{shared_path}/#{dbname}_cap.sql"
-      else
-        puts "Cannot download file (dbuser or dbpass or dbname not found)"
-      end
-    end
-  end
-end
+##############################################
+load File.expand_path('../tasks/database_download.rake', __FILE__)
 
-######################################################
-# Checks and/or creates linked folders & files. Usage:
+##############################################
+# Checks and/or creates linked files. Usage:
 # - cap <stage> server:ensure
-######################################################
+##############################################
+load File.expand_path('../tasks/server_ensure.rake', __FILE__)
 
-namespace :server do
-  reset = "\033[0m"
-  success =  "\e[1m\e[32m"
-  failure =  "\e[1m\e[31m"
-  desc "Ensure linked folders & files"
-  task :ensure do
-    on roles(:all) do |host|
-      if test("[ -d #{shared_path} ]")
-        puts "Checking #{shared_path}... #{success}OK#{reset}"
-      else
-        puts "Checking #{shared_path}... #{failure}failed! Creating...#{reset}"
-        execute "mkdir  #{shared_path}"
-        if test("[ -d #{shared_path} ]")
-          puts "Creating #{shared_path}... #{success}created!#{reset}"
-        else
-          puts "Creating #{shared_path}... #{failure}failed! Check manually!#{reset}"
-          exit 1
-        end
-      end
-      fetch(:linked_dirs, []).each do |dir|
-        if test("[ -d #{shared_path}/#{dir} ]")
-          puts "Checking #{shared_path}/#{dir}... #{success}OK#{reset}"
-        else
-          puts "Checking #{shared_path}/#{dir}... #{failure}failed! Creating...#{reset}"
-          execute "mkdir -p #{shared_path}/#{dir}"
-          if test("[ -d #{shared_path}/#{dir} ]")
-            puts "Creating #{shared_path}/#{dir}... #{success}created!#{reset}"
-          else
-            puts "Creating #{shared_path}/#{dir}... #{failure}failed! Check manually!#{reset}"
-            exit 1
-          end
-        end
-      end
-      fetch(:linked_files, []).each do |file|
-        if test("[ -f #{shared_path}/#{file} ]")
-          puts "Checking #{shared_path}/#{file}... #{success}OK#{reset}"
-        else
-          puts "Checking #{shared_path}/#{file}... #{failure}failed! Uploading...#{reset}"
-          upload! file, "#{shared_path}/#{file}"
-          if test("[ -f #{shared_path}/#{file} ]")
-            puts "Uploading #{shared_path}/#{file}... #{success}uploaded!#{reset}"
-          else
-            puts "Uploading #{shared_path}/#{file}... #{failure}failed! Check manually!#{reset}"
-          end
-        end
-      end
-    end
-  end
-end
-
-############################################
-# Empty remote caches
-############################################
-namespace :cache do
-
-  desc 'Clears accelerator caches'
-
-  task :clear do
-    on roles(:all) do |host|
-      execute "curl #{fetch(:cache_opts)} #{fetch(:domain)}/scripts/clearcache.php"
-    end
-  end
-end
+##############################################
+# Clears remote caches. Configure stage.rb!
+##############################################
+load File.expand_path('../tasks/cache_clear.rake', __FILE__)
 
 namespace :deploy do
   after :starting, 'git:check_branch'

@@ -7,7 +7,13 @@
 #
 # @author Gorka Laucirica <gorka.lauzirika@gmail.com>
 # @author Beñat Espiña <benatespina@gmail.com>
+# @author Jon Torrado <jontorrado@gmail.com>
 
-/*
-!.gitignore
-!AppTheme
+namespace :cache do
+  desc 'Clears accelerator caches'
+  task :clear do
+    on roles(:all) do |host|
+      execute "curl #{fetch(:cache_opts)} #{fetch(:domain)}/scripts/clearcache.php"
+    end
+  end
+end
