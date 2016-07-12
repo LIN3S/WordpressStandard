@@ -16,4 +16,4 @@ include WP_CONTENT_DIR . '/../vendor/autoload.php';
     get_template_directory() . '/Resources/build',
 ];
 
-new \WordpressStandard\WordpressStandardTheme();
+new \AppTheme\AppTheme();

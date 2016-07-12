@@ -59,7 +59,7 @@
     },
     "autoload": {
         "psr-4": {
-            "WordpressStandard\\": "src/themes/WordpressStandard/"
+            "AppTheme\\": "src/themes/AppTheme/"
         }
     },
     "suggest": {

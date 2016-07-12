@@ -10,31 +10,31 @@
 # @author Jon Torrado <jontorrado@gmail.com>
 
 -
-    controller: WordpressStandard\Controller\DefaultController::indexAction
+    controller: AppTheme\Controller\DefaultController::indexAction
     type: front
 
 -
-    controller: WordpressStandard\Controller\DefaultController::notFoundAction
+    controller: AppTheme\Controller\DefaultController::notFoundAction
     type: 404
 
 -
-    controller: WordpressStandard\Controller\DefaultController::pageAction
+    controller: AppTheme\Controller\DefaultController::pageAction
     type: page
 
 -
-    controller: WordpressStandard\Controller\PostController::listAction
+    controller: AppTheme\Controller\PostController::listAction
     type: home
 
 -
-    controller: WordpressStandard\Controller\PostController::categoryListAction
+    controller: AppTheme\Controller\PostController::categoryListAction
     type: archive
     posttype: post
 
 -
-    controller: WordpressStandard\Controller\PostController::showAction
+    controller: AppTheme\Controller\PostController::showAction
     type: single
     posttype: post
 
 -
-    controller: WordpressStandard\Controller\DefaultController::attachmentAction
+    controller: AppTheme\Controller\DefaultController::attachmentAction
     type: attachment

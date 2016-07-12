@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace WordpressStandard\ShortCodes;
+namespace AppTheme\ShortCodes;
 
 /**
  * Very basic example of ShortCode class. Loads all the short codes

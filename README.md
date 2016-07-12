@@ -49,16 +49,8 @@ Firstly, you need to **create the project**:
 ```
 $ composer create-project lin3s/wordpress-standard <project-name> && cd <project-name>
 ```
-Also, all the namespaces and different references inside project have the **WordpressStandard** keyword so you should
-**check for the references across the files and replace them with your awesome project name**.
 > You should remove the header licenses and `LICENSE` itself, because we are not going to be the authors of your
-awesome project :)
-> You can automate the following steps by calling `./scripts/replace.sh`, or you can do it manually.
-
-> 1. Remember that the `WordpressStandardTheme.php` file name and the `src/themes/WordpressStandard` directory name
-should be changed too.
-> 2. You must change the autoload path into `composer.json` file with defined directory name.
-> 3. Also, **CAUTION!**: you **MUST** update `!WordpressStandard` in [`src/themes/.gitignore`][19] file.
+awesome project :) You can automate the following steps by calling `./scripts/replace.sh`, or you can do it manually.
 
 Then, in order to **install all the front-end dependencies** run the following command:
 ```
@@ -178,7 +170,6 @@ command must use the `-u user:password` given in the `dev1.rb` example file.
 [16]: http://dev.mysql.com/downloads/
 [17]: https://www.ruby-lang.org/en/downloads/
 [18]: https://nodejs.org/download/
-[19]: https://github.com/LIN3S/WordpressStandard/blob/master/src/themes/.gitignore#L13
 [20]: http://httpd.apache.org/
 [21]: http://foundation.zurb.com/
 [22]: https://github.com/LIN3S/WordpressStandard/blob/master/src/themes/WordpressStandard/Resources/assets/scss/base/_grid.scss
