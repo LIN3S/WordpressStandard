@@ -32,4 +32,4 @@ find wp-config-custom.php -type f -print0 | xargs -0 sed -i "s/WordPress Standar
 find wp-config-custom-sample.php -type f -print0 | xargs -0 sed -i "s/WordPress Standard/$project/g"
 find deploy/ -type f -print0 | xargs -0 sed -i "s/WordPress Standard/$project/g"
 
-echo "Replace done! Check your composer.json and run composer install again"
+echo "Replace done! Check your composer.json, CHANGE THE NAME SECTION OF COMPOSER (group-name/project-name) and run \"composer install\" again"

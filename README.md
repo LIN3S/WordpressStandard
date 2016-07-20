@@ -54,7 +54,7 @@ awesome project :) You can automate the following steps by calling `./scripts/re
 
 Then, in order to **install all the front-end dependencies** run the following command:
 ```
-$ cd src/themes/<project-name> && npm install
+$ cd src/themes/AppTheme && npm install
 ```
 Create the `wp-config-custom.php` copying the `wp-config-custom-sample.php` and customizing with your values.
 
