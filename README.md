@@ -33,10 +33,7 @@ requirements:
 1. [PHP][15] 5.5 or higher
 2. [MySQL][16]
 3. Composer: `curl -sS https://getcomposer.org/installer | php`
-4. [Ruby][17]
-  * Capistrano: `gem install capistrano && gem install capistrano-composer`
-  * Sass: `gem install sass`
-  * Scss-lint: `gem install scss-lint`
+4. [Ruby][17]: `gem install bundler && bundle`
 5. [Node.js][18]
   * Gulp.js: `npm install -g gulp`
   * ESLint: `npm install -g eslint`
