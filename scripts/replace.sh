@@ -8,10 +8,15 @@
 # file that was distributed with this source code.
 #
 # @author Jon Torrado <jontorrado@gmail.com>
+# @author Beñat Espiña <benatespina@gmail.com>
 
 echo -e "Enter the name of your project (one word, first letter uppercase): \c "
 read project
-lowerproject="${project,,}"
+lowerproject=$(echo $project | tr '[:upper:]' '[:lower:]')
+lowerproject=${lowerproject// /-}
+
+find deploy -type f -print0 | xargs -0 sed -i "s/WordPress Standard/$project/g"
+find deploy -type f -print0 | xargs -0 sed -i "s/wordpress-standard/$lowerproject/g"
 
 find src -type f -print0 | xargs -0 sed -i "s/WordPress Standard/$project/g"
 find src -type f -print0 | xargs -0 sed -i "s/wordpress-standard/$lowerproject/g"
