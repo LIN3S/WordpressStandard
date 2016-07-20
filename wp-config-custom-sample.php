@@ -44,4 +44,7 @@ define('MAILER_PASSWORD',    '');
 define('MAILER_TRANSPORT',   ''); // ex. tls
 
 define('TRANSLATION_DOMAIN', 'Put your translation domain');
-define('XMLRPC_ENABLED', false);
+define('XMLRPC_ENABLED',     false);
+
+define('WP_CACHE',           false);
+define('WPML_FORCE_UPDATES', true);
