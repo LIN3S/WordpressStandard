@@ -158,4 +158,4 @@ gulp.task('watch', function () {
 
 gulp.task('default', ['sass', 'sprites', 'modernizr']);
 
-gulp.task('prod', ['sass:prod', 'sprites', 'modernizr', 'js:prod']);
+gulp.task('prod', ['wp-style', 'sass:prod', 'sprites', 'modernizr', 'js:prod']);
