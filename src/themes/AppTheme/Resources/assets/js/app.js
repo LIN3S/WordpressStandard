@@ -13,20 +13,18 @@
 
 (function () {
 
-  if ('addEventListener' in document) {
-    document.addEventListener('DOMContentLoaded', function () {
+  document.addEventListener('DOMContentLoaded', function () {
 
-      FastClick.attach(document.body);
+    FastClick.attach(document.body);
 
-      svg4everybody();
+    svg4everybody();
 
-      new BenGorCookies('.bengor-cookies', {
-        links: 'a, button, .bengor-cookies__actions, .bengor-cookies__button',
-        maxPageYOffset: 500,
-        GTMId: 'undefined'
-      });
+    new BenGorCookies({
+      links: 'a, button, .bengor-cookies__actions, .bengor-cookies__button',
+      maxPageYOffset: 500,
+      GTMId: 'undefined'
+    });
 
-    }, false);
-  }
+  }, false);
 
 }());
