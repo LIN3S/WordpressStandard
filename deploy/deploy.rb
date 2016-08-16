@@ -42,42 +42,8 @@ set :linked_dirs, %w{src/uploads src/languages}
 
 set :composer_install_flags, '--no-dev --no-interaction --optimize-autoloader'
 
-##############################################
-# Checks for local and deploy branch diff
-##############################################
-load File.expand_path('../tasks/check_git_branch.rake', __FILE__)
-
-##############################################
-# Compiles and uploads needed files
-##############################################
-load File.expand_path('../tasks/compile_upload.rake', __FILE__)
-
-##############################################
-# Download and extract uploaded files. Usage:
-# - cap <stage> uploads:download
-# - cap <stage> uploads:extract
-##############################################
-load File.expand_path('../tasks/wp_uploads.rake', __FILE__)
-
-##############################################
-# Download database. Usage:
-# - cap <stage> database:download
-##############################################
-load File.expand_path('../tasks/database_download.rake', __FILE__)
-
-##############################################
-# Checks and/or creates linked files. Usage:
-# - cap <stage> server:ensure
-##############################################
-load File.expand_path('../tasks/server_ensure.rake', __FILE__)
-
-##############################################
-# Clears remote caches. Configure stage.rb!
-##############################################
-load File.expand_path('../tasks/cache_clear.rake', __FILE__)
-
 namespace :deploy do
-  after :starting, 'git:check_branch'
+  before :starting, 'git:check_branch'
   after :starting, 'composer:install_executable'
   after :updated, 'compile_and_upload:npm'
   after :updated, 'compile_and_upload:gulp'
