@@ -1,0 +1,66 @@
+# This file is auto-generated during the composer install
+parameters:
+    enabled:
+        - phpmd
+        - phpformatter
+        - phpcsfixer
+        - scsslint
+        - eslint
+    name: Laboralkutxa
+    type: project
+    year: 2015
+    author: LIN3S
+    email: info@lin3s.com
+    version: 0.1
+    phpmd_path: src/themes/Laboralkutxa
+    phpmd_rules:
+        - controversial
+        - unusedcode
+    phpformatter_path: src/themes/Laboralkutxa
+    phpcsfixer_path: src/themes/Laboralkutxa
+    phpcsfixer_level: symfony
+    phpcsfixer_fixers:
+        - '-unalign_double_arrow'
+        - '-concat_without_spaces'
+        - align_double_arrow
+        - concat_with_spaces
+        - multiline_spaces_before_semicolon
+        - newline_after_open_tag
+        - ordered_use
+        - php4_constructor
+        - phpdoc_order
+        - phpdoc_var_to_type
+        - short_array_syntax
+        - short_echo_tag
+        - strict
+        - strict_param
+    scsslint_path: src/themes/Laboralkutxa/Resources/assets/scss
+    scsslint_file_location: src/themes/Laboralkutxa
+    scsslint_exclude:
+        - base/_forms.scss
+        - base/_reset.scss
+        - fallback/ie.scss
+    scsslint_rules:
+        linters:
+            SelectorFormat:
+                enabled: true
+                convention: hyphenated_BEM
+    eslint_path: src/themes/Laboralkutxa/Resources/assets/js
+    eslint_file_location: src/themes/Laboralkutxa
+    eslint_exclude:
+        - full-gallery.js
+    eslint_rules:
+        ecmaFeatures: {  }
+        env:
+            browser: true
+            jquery: true
+        globals:
+            dataLayer: true
+            FastClick: true
+            FB: true
+            Modernizr: true
+            svg4everybody: true
+        rules:
+            max-len:
+                - 2
+                - 120

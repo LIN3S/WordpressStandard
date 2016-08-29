@@ -17,7 +17,6 @@ var gulp = require('gulp'),
   concat = require('gulp-concat'),
   cssnext = require('postcss-cssnext'),
   cssnano = require('gulp-cssnano'),
-  file = require('gulp-file'),
   livereload = require('gulp-livereload'),
   modernizr = require('gulp-modernizr'),
   plumber = require('gulp-plumber'),
@@ -49,14 +48,6 @@ function onError(err) {
   console.log(err);
   this.emit('end');
 }
-
-gulp.task('wp-style', function () {
-  var content = '/*\nTheme Name: WordPress Standard';
-  content += '\nAuthor: LIN3S';
-  content += '\nAuthor URI: http://www.lin3s.com/\n*/';
-
-  return file('style.css', content, {src: true}).pipe(gulp.dest('.'));
-});
 
 gulp.task('scss-lint', function () {
   return gulp.src([
@@ -159,4 +150,4 @@ gulp.task('watch', function () {
 
 gulp.task('default', ['sass', 'sprites', 'modernizr']);
 
-gulp.task('prod', ['wp-style', 'sass:prod', 'sprites', 'modernizr', 'js:prod']);
+gulp.task('prod', ['sass:prod', 'sprites', 'modernizr', 'js:prod']);
