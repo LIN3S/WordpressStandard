@@ -51,7 +51,6 @@ namespace :compile_and_upload do
     if fetch(:env) == "prod"
       on roles(:all) do |host|
         upload! "#{fetch(:theme_path)}/Resources/build", "#{release_path}/#{fetch(:theme_path)}/Resources/build", recursive: true
-        upload! "#{fetch(:theme_path)}/style.css", "#{release_path}/#{fetch(:theme_path)}/style.css"
       end
     end
   end
