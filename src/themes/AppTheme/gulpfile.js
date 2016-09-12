@@ -128,7 +128,7 @@ gulp.task('js:prod', ['modernizr'], function () {
   return gulp.src([
     paths.npm + '/fastclick/lib/fastclick.js',
     paths.npm + '/svg4everybody/dist/svg4everybody.min.js',
-    paths.npm + '/bengor-cookies/dist/bengor-cookies.min.js',
+    paths.npm + '/bengor-cookies/dist/bengor-cookies.umd.min.js',
     paths.npm + '/picturefill/dist/picturefill.min.js',
     // Put here js vendor files, for example:
     // paths.npm + '/slick-carousel/slick/slick.min.js'

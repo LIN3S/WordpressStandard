@@ -1,9 +1,9 @@
 <?php
 
 /*
- * This file is part of the WordPress Standard project.
+ * This file is part of the CHANGE-FOR-YOUR-AWESOME-NAME project.
  *
- * Copyright (c) 2015-2016 LIN3S <info@lin3s.com>
+ * Copyright (c) 2016 LIN3S <info@lin3s.com>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -27,7 +27,7 @@ final class Assets extends BaseAssets
     public function developmentAssets()
     {
         $this
-            ->addScript('bengor-cookies', self::NPM . '/bengor-cookies/dist/')
+            ->addScript('bengor-cookies.umd', self::NPM . '/bengor-cookies/dist/')
             ->addScript('fastclick', self::NPM . '/fastclick/lib')
             ->addScript('svg4everybody.min', self::NPM . '/svg4everybody/dist')
             ->addScript('modernizr', self::BUILD_JS, [], '3.0.0', false)
