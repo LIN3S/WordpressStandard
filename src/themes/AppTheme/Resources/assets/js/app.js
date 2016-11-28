@@ -20,9 +20,11 @@
     svg4everybody();
 
     new BenGorCookies({
-      links: 'a, button, .bengor-cookies__actions, .bengor-cookies__button',
+      triggers: 'html',
       maxPageYOffset: 500,
-      GTMId: 'undefined'
+      plugins: [
+        new BenGorCookiesPlugins.GoogleTagManager('GTM-XXXXX')
+      ]
     });
 
   }, false);
