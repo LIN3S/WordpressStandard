@@ -5,7 +5,6 @@
   "dependencies": {
     "bengor-cookies": "^0.7.1",
     "fastclick": "^1.0.6",
-    "foundation-sites": "~6.2",
     "picturefill": "^3.0.2",
     "svg4everybody": "^2.1.0"
   },

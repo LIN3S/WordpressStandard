@@ -13,16 +13,6 @@
 @import 'base/typography';
 @import 'base/wp';
 
-// Imports if the project uses Zurb Foundation
-@import '../../../node_modules/foundation-sites/scss/util/util';
-@import '../../../node_modules/foundation-sites/scss/global';
-@import '../../../node_modules/foundation-sites/scss/grid/grid';
-@import '../../../node_modules/foundation-sites/scss/components/flex';
-@include foundation-global-styles;
-@include foundation-flex-classes;
-@include foundation-flex-grid;
-
-// Import if the project uses LIN3S's custom grid
 @import 'base/grid';
 
 @import 'base/common';
