@@ -121,6 +121,7 @@ gulp.task('modernizr', function () {
       ],
       'tests': ['objectfit', 'flexbox']
     }))
+    .pipe(uglify())
     .pipe(gulp.dest(paths.buildJs))
 });
 
