@@ -6,6 +6,27 @@
 # file that was distributed with this source code.
 #
 # @author Iñaki Gorostiza <igorostiza@lin3s.com>
+# @author Asier Vega <avega@lin3s.com>
 
 User-agent: *
 Disallow: /
+
+### The following directives are optimized for production
+### environment so, please remove above disallow previously:
+Disallow: /wp-login
+Disallow: /wp-admin
+Disallow: /wp-includes/
+Disallow: /*/feed/
+Disallow: /*/trackback/
+Disallow: /*/attachment/
+Disallow: /author/
+Disallow: /*/page/
+Disallow: /*/feed/
+Disallow: /tag/*/page/
+Disallow: /tag/*/feed/
+Disallow: /page/
+Disallow: /comments/
+Disallow: /xmlrpc.php
+Disallow: /*?s=
+Disallow: /*/*/*/feed.xml
+Disallow: /?attachment_id*
