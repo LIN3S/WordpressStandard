@@ -20,8 +20,8 @@
     "require": {
         "php":                                            "^5.5 || ^7.0",
 
-        "johnpbloch/wordpress":                           "^4.5",
-        "lin3s/distribution":                             "^2.0.0",
+        "johnpbloch/wordpress":                           "^4.7",
+        "lin3s/distribution":                             "^2.4",
         "lin3s/wp-foundation":                            "^1.6",
         "lin3s/wp-routing":                               "^2.0",
         "timber/timber":                                  "^1.1",
@@ -38,15 +38,8 @@
         "wpackagist-plugin/plugin-profiler":              "^1.1.2",
         "wpackagist-plugin/query-monitor":                "^2.8.1"
     },
-    "scripts-dev": {
-        "post-install-cmd": [
-            "LIN3S\\Distribution\\Composer\\Wordpress::installRequiredFiles",
-            "LIN3S\\CS\\Composer\\Hooks::buildDistFile",
-            "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
-            "LIN3S\\CS\\Composer\\Hooks::addHooks",
-            "LIN3S\\CS\\Composer\\Hooks::addFiles"
-        ],
-        "post-update-cmd": [
+    "scripts": {
+        "lin3scs-scripts": [
             "LIN3S\\Distribution\\Composer\\Wordpress::installRequiredFiles",
             "LIN3S\\CS\\Composer\\Hooks::buildDistFile",
             "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
@@ -81,6 +74,14 @@
         "incenteev-parameters": {
             "file": ".lin3s_cs.yml",
             "dist-file": ".lin3s_cs.yml.dist"
+        },
+        "scripts-dev": {
+            "post-install-cmd": [
+                "@lin3scs-scripts"
+            ],
+            "post-update-cmd": [
+                "@lin3scs-scripts"
+            ]
         }
     }
 }
