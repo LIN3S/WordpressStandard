@@ -12,7 +12,8 @@ User-agent: *
 Disallow: /
 
 ### The following directives are optimized for production
-### environment so, please remove above disallow previously:
+### environment so, please remove the above disallow:
+
 Disallow: /wp-login
 Disallow: /wp-admin
 Disallow: /wp-includes/
