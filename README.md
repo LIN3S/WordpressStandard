@@ -1,4 +1,4 @@
-#WordPress Standard Edition
+# WordPress Standard Edition
 > The "WordPress Standard Edition" distribution in the LIN3S way.
 
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/b43b0be1-d2b5-44a1-8d4b-a556848129a5/mini.png)](https://insight.sensiolabs.com/projects/b43b0be1-d2b5-44a1-8d4b-a556848129a5)
@@ -8,7 +8,7 @@
 [![Latest Stable Version](https://poser.pugx.org/lin3s/wordpress-standard/v/stable.svg)](https://packagist.org/packages/lin3s/wordpress-standard)
 [![Latest Unstable Version](https://poser.pugx.org/lin3s/wordpress-standard/v/unstable.svg)](https://packagist.org/packages/lin3s/wordpress-standard)
 
-##Why?
+## Why?
 [**Wordpress**][1] is the most important CMS around the world, but its PHP code is dark and unmaintainable. In
 [*LIN3S*][2] we implement this solution providing some useful features that the standard edition of WordPress doesn't
 come with:
@@ -25,7 +25,7 @@ come with:
 7. [WPFoundation][13] made by LIN3S
 8. [Coding standards library][14] made by LIN3S
 
-##Prerequisites
+## Prerequisites
 The above sounds great so, now, to start developing WordPress project based on this repo, you need the the following
 requirements:
 
@@ -37,7 +37,7 @@ requirements:
   * Gulp.js: `npm install -g gulp`
   * ESLint: `npm install -g eslint`
 
-##Getting Started
+## Getting Started
 After installing all the prerequisites, to create a WordPress project based on this *Wordpress Standard* you should
 check the following steps.
 
@@ -68,7 +68,7 @@ $ php -S 127.0.0.1:8000 router.php
 Use an [Apache][20], Nginx or other web server of your choice for production environments. If you choose Apache,
 remember that you should create the `.htaccess` copying the base `.htaccess.dist` file.
 
-##Considerations
+## Considerations
 If all goes well you should have your project on top of WordPress Standard running like a charm. However, there are
 few tips that you should read.
 
@@ -83,7 +83,7 @@ find some examples on how to extend many different WordPress features. In case t
 create a new class or a new folder (if there are multiple classes related to that feature as in post types) with your
 code.
 
-##Deployment
+## Deployment
 To automate deployment process this project is using **Capistrano**. All related configuration is inside located inside the
 `deploy` directory. You can customize deployment tasks simply, modifying the `deploy/deploy.rb` file.
 
@@ -101,7 +101,7 @@ $ cap <stage> deploy    # <stage> can be dev1, prod or whatever file inside stag
 > In the Capistrano shared directory you should create the `src/uploads` folder, the `.htaccess` file (if you are using
 Apache), the `robots.txt` and the `wp-config-custom.php` files.
 
-###Using W3 Total Cache
+## #Using W3 Total Cache
 If you install W3 Total Cache plugin, you should replace the `linked_dirs` and `linked_folders` variables in the
 `deploy.rb` as follows (check that it fits your needs):
 
@@ -113,11 +113,11 @@ set :linked_dirs, %w{src/uploads src/cache src/w3tc-config}
 > If you install another plugin like WP Super Cache, just replace the previous statement with the created files. You can
 use `git status` to check the created files.
 
-###Downloading database dump
+### Downloading database dump
 
 To download the file just run `cap dev1 database:download`. A sql file will be downloaded to your local environment
 
-###Replacing uploads with remote ones
+### Replacing uploads with remote ones
  
 To steps are required to get all the uploads located in the remote environment, download and extract.
 
@@ -125,7 +125,7 @@ To steps are required to get all the uploads located in the remote environment, 
 `cap dev1 uploads:extract` will extract the downloaded file into `src/uploads` folder, replacing all the existing 
 uploads.
 
-###Ensuring remote files and folders
+### Ensuring remote files and folders
 
 The first time you deploy the project, all linked files must be created in order to be symlinked. In order to
 autocreate folders and uploads your local files to the remote server (very handy when using W3 Total Cache), just run:
@@ -134,7 +134,7 @@ autocreate folders and uploads your local files to the remote server (very handy
 
 After this, just deploy without any problem.
 
-###Clearing remote caches
+### Clearing remote caches
 
 When working with PHP7 & Opcache, for example, you won't see all changes after deploying. Caches need to be flushed
 with the correct website domain. If you need this feature, just open the `deploy.rb` file and remove the commented line:
@@ -146,7 +146,7 @@ after :finishing, 'cache:clear'
 You also need to configure the website domain in each stage file. If the website is password protected, the `curl`
 command must use the `-u user:password` given in the `dev1.rb` example file.
 
-##Licensing Options
+## Licensing Options
 [![License](https://poser.pugx.org/lin3s/wordpress-standard/license.svg)](https://github.com/LIN3S/WordpressStandard/blob/master/LICENSE)
 
 [1]: https://wordpress.org/
