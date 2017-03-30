@@ -1,10 +1,12 @@
 {
   "name": "wordpress-standard",
-  "main": "gulpfile.js",
   "author": "LIN3S",
   "dependencies": {
-    "bengor-cookies": "^0.7.1",
+    "bengor-cookies": "^0.8",
     "fastclick": "^1.0.6",
+    "lin3s-css-grid": "^0.3.0",
+    "lin3s-event-bus": "^0.4.0",
+    "parsleyjs": "^2.6.2",
     "picturefill": "^3.0.2",
     "svg4everybody": "^2.1.0"
   },
@@ -21,9 +23,10 @@
     "gulp-scss-lint": "^0.4.0",
     "gulp-svg-sprite": "^1.2.19",
     "gulp-uglify": "^1.5.1",
+    "lin3s-distribution": "^2.4",
     "postcss-cssnext": "^2.7.0"
   },
   "scripts": {
-    "phoenix": "rm -rf node_modules && npm install"
+    "phoenix": "rm -rf node_modules && yarn install"
   }
 }

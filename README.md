@@ -9,7 +9,7 @@
 [![Latest Unstable Version](https://poser.pugx.org/lin3s/wordpress-standard/v/unstable.svg)](https://packagist.org/packages/lin3s/wordpress-standard)
 
 ## Why?
-[**Wordpress**][1] is the most important CMS around the world, but its PHP code is dark and unmaintainable. In
+[**WordPress**][1] is the most important CMS around the world, but its PHP code is dark and unmaintainable. In
 [*LIN3S*][2] we implement this solution providing some useful features that the standard edition of WordPress doesn't
 come with:
 
