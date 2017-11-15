@@ -34,7 +34,6 @@ requirements:
 3. Composer: `curl -sS https://getcomposer.org/installer | php`
 4. [Ruby][17]: `gem install bundler && bundle`
 5. [Node.js][18]
-  * Gulp.js: `npm install -g gulp`
   * ESLint: `npm install -g eslint`
 
 ## Getting Started
@@ -50,14 +49,15 @@ awesome project :) You can automate the following steps by calling `./scripts/re
 
 Then, in order to **install all the front-end dependencies** run the following command:
 ```
-$ cd src/themes/AppTheme && npm install
+$ cd src/themes/AppTheme && yarn install
 ```
 Create the `wp-config-custom.php` copying the `wp-config-custom-sample.php` and customizing with your values.
 
-**Generate all the required assets** using Gulp. You can also watch the changes:
+**Generate all the required assets** using npm scripts. You can also watch the changes or generate the prod build:
 ```
-$ gulp
-$ gulp watch
+$ yarn build
+$ yarn build:prod
+$ yarn build:watch
 ```
 **Configure the web server** to serve this project. With PHP 5.4 or higher you don't need to configure the web server
 for this project, because you can use the "**built-in-server**":

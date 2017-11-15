@@ -9,19 +9,11 @@
 # @author Beñat Espiña <benatespina@gmail.com>
 # @author Jon Torrado <jontorrado@gmail.com>
 
-############################################
-# Setup Server
-############################################
-
 server "", user: "", roles: %w{web}
 set :deploy_to, "/var/www/standard-wordpress.net"
 set :env, "prod"
 set :cache_opts, ""
 set :domain, "http://website.domain.com"
-
-############################################
-# Setup Git
-############################################
 
 set :branch, "master"
 

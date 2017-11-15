@@ -24,9 +24,13 @@
     "gulp-svg-sprite": "^1.2.19",
     "gulp-uglify": "^1.5.1",
     "lin3s-distribution": "^2.4",
-    "postcss-cssnext": "^2.7.0"
+    "postcss-cssnext": "^2.7.0",
+    "rimraf": "^2.6.2"
   },
   "scripts": {
-    "phoenix": "rm -rf node_modules && yarn install"
+    "phoenix": "rimraf node_modules && yarn install",
+    "build": "node_modules/gulp/bin/gulp.js",
+    "build:prod": "node_modules/gulp/bin/gulp.js prod",
+    "build:watch": "node_modules/gulp/bin/gulp.js watch"
   }
 }
