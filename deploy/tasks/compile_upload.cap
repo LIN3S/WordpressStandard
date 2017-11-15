@@ -10,47 +10,20 @@
 # @author Jon Torrado <jontorrado@gmail.com>
 
 namespace :compile_and_upload do
-  desc 'npm dependencies'
-  task :npm do
-    if fetch(:env) == "prod"
-      run_locally do
-        execute "cd #{fetch(:theme_path)}; rm -rf node_modules/* && npm install --production"
-        execute "cd #{fetch(:theme_path)}; tar -zcvf node_modules.tar.gz node_modules"
-      end
-      on roles(:all) do |host|
-        upload! "#{fetch(:theme_path)}/node_modules.tar.gz", "#{release_path}/#{fetch(:theme_path)}/node_modules.tar.gz"
-        execute :tar, '-zxvf', "#{release_path}/#{fetch(:theme_path)}/node_modules.tar.gz -C #{release_path}/#{fetch(:theme_path)}/"
-        execute :rm, "#{release_path}/#{fetch(:theme_path)}/node_modules.tar.gz"
-      end
-      run_locally do
-        execute :rm, "#{fetch(:theme_path)}/node_modules.tar.gz"
-        execute "cd #{fetch(:theme_path)}; npm install"
-      end
-    else
-      on roles(:all) do |host|
-        execute "cd #{release_path}/#{fetch(:theme_path)}; npm install"
-      end
-    end
-  end
-
-  desc 'Gulp tasks launch'
-  task :gulp do
-    if fetch(:env) == "prod"
-      run_locally do
-        execute "cd #{fetch(:theme_path)}; npm install && gulp prod"
-      end
-    else
-      on roles(:all) do |host|
-        execute "cd #{release_path}/#{fetch(:theme_path)}; npm install && gulp prod"
-      end
+  desc 'Compile the assets'
+  task :compile do
+    run_locally do
+      execute "cd #{fetch(:theme_path)}; yarn install; yarn build:prod"
     end
   end
 
   desc 'Upload needed files'
   task :upload do
-    if fetch(:env) == "prod"
-      on roles(:all) do |host|
-        upload! "#{fetch(:theme_path)}/Resources/build", "#{release_path}/#{fetch(:theme_path)}/Resources/build", recursive: true
+    on roles(:all) do |host|
+      Dir.glob("#{fetch(:build_path)}/*").each do |file|
+        file = File.basename file
+
+        upload! "#{fetch(:build_path)}/#{file}", "#{release_path}/#{fetch(:build_path)}"
       end
     end
   end
