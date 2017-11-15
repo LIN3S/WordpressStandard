@@ -25,6 +25,8 @@ namespace :compile_and_upload do
 
         upload! "#{fetch(:build_path)}/#{file}", "#{release_path}/#{fetch(:build_path)}"
       end
+
+      upload! "#{fetch(:theme_path)}/style.css", "#{release_path}/#{fetch(:theme_path)}/style.css"
     end
   end
 end
