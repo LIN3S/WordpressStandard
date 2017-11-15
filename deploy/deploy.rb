@@ -11,7 +11,6 @@
 
 set :application, "wordpress-standard"
 set :repo_url, "https://github.com/LIN3S/WordpressStandard.git"
-set :scm, :git
 set :theme_name, "AppTheme"
 
 set :log_level, :info
