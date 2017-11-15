@@ -20,12 +20,7 @@ namespace :compile_and_upload do
   desc 'Upload needed files'
   task :upload do
     on roles(:all) do |host|
-      Dir.glob("#{fetch(:build_path)}/*").each do |file|
-        file = File.basename file
-
-        upload! "#{fetch(:build_path)}/#{file}", "#{release_path}/#{fetch(:build_path)}"
-      end
-
+      upload! "#{fetch(:build_path)}", "#{release_path}/#{fetch(:build_path)}", recursive: true
       upload! "#{fetch(:theme_path)}/style.css", "#{release_path}/#{fetch(:theme_path)}/style.css"
     end
   end
