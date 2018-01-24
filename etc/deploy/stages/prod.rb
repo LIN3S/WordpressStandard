@@ -7,23 +7,14 @@
 #
 # @author Gorka Laucirica <gorka.lauzirika@gmail.com>
 # @author Beñat Espiña <benatespina@gmail.com>
+# @author Jon Torrado <jontorrado@gmail.com>
 
-/.editorconfig
-/.htaccess
-/.lin3s_cs.yml
-/advanced-cache.php
-/cache
-/core
-/db.php
-/languages
-/object-cache.php
-/plugins
-!/plugins/app
-/robots.txt
-/themes
-!/themes/app
-/uploads
-/vendor
-/w3tc-config
-/wp-config-custom.php
+server "", user: "", roles: %w{web}
+set :deploy_to, "/var/www/standard-wordpress.net"
+set :env, "prod"
+set :cache_opts, ""
+set :domain, "http://website.domain.com"
 
+set :branch, "master"
+
+SSHKit.config.command_map[:composer] = "php #{shared_path.join("composer.phar")}"

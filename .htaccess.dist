@@ -15,11 +15,15 @@
     RewriteBase /
 
     # Securize some files
-    RewriteRule ^composer\.(lock|json)$ - [F,L]
-    RewriteRule ^vendor/.*$ - [F,L]
-    RewriteRule ^Capfile - [F,L]
     RewriteRule ^.git - [F,L]
+    RewriteRule ^.lin3s_cs.yml.dist - [F,L]
+    RewriteRule ^Capfile - [F,L]
+    RewriteRule ^composer\.(lock|json)$ - [F,L]
     RewriteRule ^config - [F,L]
+    RewriteRule ^etc/.*$ - [F,L]
+    RewriteRule ^Gemfile - [F,L]
+    RewriteRule ^router.php - [F,L]
+    RewriteRule ^vendor/.*$ - [F,L]
 
     # Make the admin still accessible from /wp-admin
     RewriteCond %{REQUEST_URI} ^/wp-admin/?(.*)

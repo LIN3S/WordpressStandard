@@ -15,27 +15,18 @@ come with:
 
 1. [Composer][3]
 2. [PHP namespaces][4]
-3. Front-end workflow
- * [Sass][5]
- * [Npm][6]
- * [Gulp.js][8]
-4. [Twig][9] template engine with [Timber][10]
-5. [Capistrano][11] deploy
-6. [Symfony style routing made by LIN3S][12]
-7. [WPFoundation][13] made by LIN3S
-8. [Coding standards library][14] made by LIN3S
+3. [Capistrano][5] deploy
+4. [WPFoundation][6] made by LIN3S
+5. [Coding standards library][7] made by LIN3S
 
 ## Prerequisites
 The above sounds great so, now, to start developing WordPress project based on this repo, you need the the following
 requirements:
 
-1. [PHP][15] 5.5 or higher
+1. [PHP][15] 7.1 or higher
 2. [MySQL][16]
 3. Composer: `curl -sS https://getcomposer.org/installer | php`
 4. [Ruby][17]: `gem install bundler && bundle`
-5. [Node.js][18]
-  * Gulp.js: `npm install -g gulp`
-  * ESLint: `npm install -g eslint`
 
 ## Getting Started
 After installing all the prerequisites, to create a WordPress project based on this *Wordpress Standard* you should
@@ -46,19 +37,10 @@ Firstly, you need to **create the project**:
 $ composer create-project lin3s/wordpress-standard <project-name> && cd <project-name>
 ```
 > You should remove the header licenses and `LICENSE` itself, because we are not going to be the authors of your
-awesome project :) You can automate the following steps by calling `./scripts/replace.sh`, or you can do it manually.
+awesome project :).
 
-Then, in order to **install all the front-end dependencies** run the following command:
-```
-$ cd src/themes/AppTheme && npm install
-```
 Create the `wp-config-custom.php` copying the `wp-config-custom-sample.php` and customizing with your values.
 
-**Generate all the required assets** using Gulp. You can also watch the changes:
-```
-$ gulp
-$ gulp watch
-```
 **Configure the web server** to serve this project. With PHP 5.4 or higher you don't need to configure the web server
 for this project, because you can use the "**built-in-server**":
 ```
@@ -72,11 +54,7 @@ remember that you should create the `.htaccess` copying the base `.htaccess.dist
 If all goes well you should have your project on top of WordPress Standard running like a charm. However, there are
 few tips that you should read.
 
-* **Activate all yours plugins before all**: it's a common mistake; you are developing inside your favorite IDE, you
-test in the browser and something is wrong because *Timber* is very required in this project.
-* To generate simple, clean and maintainable Sass code you should use the *scss-lint*. It's a project prerequisite so
-please, check its outputs and try to accomplish them. Also, **Sass example folder structure has been created,
-follow it. Use mobile first approach** and **don't use magic numbers**.
+* **Activate all yours plugins before all**: it's a common mistake.
 * Usually, the features WordPress has by default are not enough so new PostTypes, Widgets, ShortCodes, ImageSizes...
 have to be created. In case you need those changes to the codebase you should go to the `core` folder. There, you will
 find some examples on how to extend many different WordPress features. In case there is no class for what you need, just
@@ -98,20 +76,8 @@ After all, and following the Capistrano [documentation][11] to configure the ser
 $ cap <stage> deploy    # <stage> can be dev1, prod or whatever file inside stages directory
 ```
 
-> In the Capistrano shared directory you should create the `src/uploads` folder, the `.htaccess` file (if you are using
+> In the Capistrano shared directory you should create the `uploads` folder, the `.htaccess` file (if you are using
 Apache), the `robots.txt` and the `wp-config-custom.php` files.
-
-## #Using W3 Total Cache
-If you install W3 Total Cache plugin, you should replace the `linked_dirs` and `linked_folders` variables in the
-`deploy.rb` as follows (check that it fits your needs):
-
-```
-set :linked_files, %w{wp-config-custom.php .htaccess robots.txt src/advanced-cache.php src/db.php src/object-cache.php src/plugins/w3tc-wp-loader.php}
-set :linked_dirs, %w{src/uploads src/cache src/w3tc-config}
-```
-
-> If you install another plugin like WP Super Cache, just replace the previous statement with the created files. You can
-use `git status` to check the created files.
 
 ### Downloading database dump
 
@@ -153,17 +119,10 @@ command must use the `-u user:password` given in the `dev1.rb` example file.
 [2]: http://lin3s.com
 [3]: https://getcomposer.org/
 [4]: http://php.net/manual/en/language.namespaces.php
-[5]: http://sass-lang.com/
-[6]: https://www.npmjs.com/
-[8]: http://gulpjs.com/
-[9]: http://twig.sensiolabs.org/
-[10]: http://upstatement.com/timber/
-[11]: http://capistranorb.com/
-[12]: https://github.com/LIN3S/WPRouting
-[13]: https://github.com/LIN3S/WPFoundation
-[14]: https://github.com/LIN3S/CS
+[5]: http://capistranorb.com/
+[6]: https://github.com/LIN3S/WPFoundation
+[7]: https://github.com/LIN3S/CS
 [15]: http://php.net
 [16]: http://dev.mysql.com/downloads/
 [17]: https://www.ruby-lang.org/en/downloads/
-[18]: https://nodejs.org/download/
 [20]: http://httpd.apache.org/

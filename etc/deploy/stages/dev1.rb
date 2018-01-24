@@ -7,23 +7,12 @@
 #
 # @author Gorka Laucirica <gorka.lauzirika@gmail.com>
 # @author Beñat Espiña <benatespina@gmail.com>
+# @author Jon Torrado <jontorrado@gmail.com>
 
-/.editorconfig
-/.htaccess
-/.lin3s_cs.yml
-/advanced-cache.php
-/cache
-/core
-/db.php
-/languages
-/object-cache.php
-/plugins
-!/plugins/app
-/robots.txt
-/themes
-!/themes/app
-/uploads
-/vendor
-/w3tc-config
-/wp-config-custom.php
+server "dev.company.com", user: "sshuser", roles: %w{web}
+set :deploy_to, "/path/to/your/deployment/directory"
+set :env,  "dev"
+set :cache_opts, "-u user:password"
+set :domain, "http://devwebsite.domain.com"
 
+set :branch, "master"
