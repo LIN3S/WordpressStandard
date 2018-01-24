@@ -9,16 +9,14 @@
  * file that was distributed with this source code.
  */
 
-namespace AppTheme\PostTypes;
+declare(strict_types=1);
+
+namespace App\PostTypes;
 
 use LIN3S\WPFoundation\Configuration\Translations\Translations;
 use LIN3S\WPFoundation\PostTypes\PostType;
 
 /**
- * Very basic example of PostType class. If you want more info about custom post
- * types, rewrite rules and custom fields you can check self explanatory examples
- * of our WPFoundation library: https://github.com/LIN3S/WPFoundation#posttype
- *
  * @author Gorka Laucirica <gorka.lauzirika@gmail.com>
  * @author Beñat Espiña <benatespina@gmail.com>
  */

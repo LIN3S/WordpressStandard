@@ -8,22 +8,24 @@
 # @author Gorka Laucirica <gorka.lauzirika@gmail.com>
 # @author Beñat Espiña <benatespina@gmail.com>
 
-.editorconfig
-.htaccess
-.lin3s_cs.yml
+/.editorconfig
+/.htaccess
+/.lin3s_cs.yml
 /bin
 /core
+/plugins
+!/plugins/app
 /robots.txt
+/src/advanced-cache.php
+/src/db.php
+/src/cache
+/src/languages
+/src/object-cache.php
 /src/plugins
 /src/uploads
-/src/languages
+/src/w3tc-config
+/themes
+!/themes/app
 /vendor
 /wp-config-custom.php
-/src/advanced-cache.php
-# Capistrano
-/log
-# W3TC
-/src/cache
-/src/db.php
-/src/object-cache.php
-/src/w3tc-config
+

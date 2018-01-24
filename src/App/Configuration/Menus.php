@@ -9,28 +9,25 @@
  * file that was distributed with this source code.
  */
 
-namespace AppTheme\Configuration;
+declare(strict_types=1);
+
+namespace App\Configuration;
 
 use LIN3S\WPFoundation\Configuration\Menus\Menus as BaseMenus;
 use LIN3S\WPFoundation\Configuration\Translations\Translations;
 
 /**
- * Final Menu class. With menus method are registered the different menus.
- *
  * @author Gorka Laucirica <gorka.lauzirika@gmail.com>
  * @author Beñat Espiña <benatespina@gmail.com>
  */
 final class Menus extends BaseMenus
 {
-    const MENU_HEADER = 'header-menu';
+    private const MAIN = 'main-menu';
 
-    /**
-     * @inheritdoc}
-     */
-    public function menus()
+    public function menus() : void
     {
         register_nav_menus([
-            self::MENU_HEADER => Translations::trans('Header menu')
+            self::MAIN => Translations::trans('Main menu'),
         ]);
     }
 }
