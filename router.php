@@ -7,9 +7,9 @@
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
- *
- * @author Jon Torrado <jontorrado@gmail.com>
  */
+
+declare(strict_types=1);
 
 $root = $_SERVER['DOCUMENT_ROOT'];
 chdir($root);
