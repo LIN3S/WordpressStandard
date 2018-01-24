@@ -11,7 +11,7 @@
 
 declare(strict_types=1);
 
-include WP_CONTENT_DIR . '/../vendor/autoload.php';
+include WP_CONTENT_DIR . '/vendor/autoload.php';
 
 \Timber\Timber::$locations = [
     get_template_directory() . '/Resources/views',
