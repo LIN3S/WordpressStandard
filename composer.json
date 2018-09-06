@@ -22,12 +22,13 @@
         "koodimonni-language/es_Es": "^4.9",
         "lin3s/distribution": "^4.3",
         "lin3s/wp-foundation": "^1.6",
-        "marceldillen/wordpress-headless-theme": "^1.0",
-        "wpackagist-plugin/wordpress-seo": "^3.9",
+
+        "wpackagist-plugin/wordpress-seo": "^7.0",
         "wpackagist-plugin/wp-api-yoast-meta": "^1.2",
         "wpackagist-plugin/wp-smushit": "^2.7",
-        "wpackagist-theme/twentyseventeen": "^1.4",
-        "wpackagist-plugin/w3-total-cache": "^0.9.6"
+        "wpackagist-plugin/w3-total-cache": "^0.9.6",
+
+        "wpackagist-theme/twentyseventeen": "^1.4"
     },
     "require-dev": {
         "lin3s/cs": "^0.7.3",
@@ -94,10 +95,6 @@
         {
             "type": "composer",
             "url": "https://wp-languages.github.io"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/marceldillen/wordpress-headless-theme.git"
         }
     ],
     "scripts": {
