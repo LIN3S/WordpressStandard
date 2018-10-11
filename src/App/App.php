@@ -14,15 +14,27 @@ declare(strict_types=1);
 namespace App;
 
 use App\Configuration\Login;
-use App\Configuration\Menus;
+use LIN3S\WPFoundation\Configuration\Menus\Menus;
 use LIN3S\WPFoundation\Configuration\Theme\Theme;
+use LIN3S\WPFoundation\Configuration\Translations\Translations;
 
 class App extends Theme
 {
+
+    const MENU_MAIN = 'main_menu';
+    const FOOTER = 'footer';
+
     public function classes() : void
     {
         new Login();
-        new Menus();
+        new Menus([
+            App::MENU_MAIN => Translations::trans('Main menu'),
+            App::FOOTER => Translations::trans('Footer'),
+        ]);
+
+        new PostTypes();
+        new Fields();
+        new Taxonomies();
     }
 
     public function context(array $context) : array
@@ -32,6 +44,9 @@ class App extends Theme
 
     public function templates($templates)
     {
-        return $templates;
+        return array_merge($templates, [
+            'Frontpage'   => Translations::trans('Front Page'),
+            'Generic'     => Translations::trans('Generic'),
+        ]);
     }
 }
