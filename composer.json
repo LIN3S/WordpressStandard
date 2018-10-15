@@ -21,7 +21,7 @@
         "koodimonni-language/fi": "^4.9",
         "koodimonni-language/es_Es": "^4.9",
         "lin3s/distribution": "^4.3",
-        "lin3s/wp-foundation": "^1.6",
+        "lin3s/wp-foundation": "^1.7",
 
         "wpackagist-plugin/wordpress-seo": "^7.0",
         "wpackagist-plugin/wp-api-yoast-meta": "^1.2",

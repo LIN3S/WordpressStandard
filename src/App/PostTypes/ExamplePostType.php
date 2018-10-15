@@ -34,11 +34,11 @@ final class ExamplePostType extends PostType
             [
                 'labels'      => [
                     'name'          => Translations::trans('Example'),
-                    'singular_name' => Translations::trans('Example')
+                    'singular_name' => Translations::trans('Example'),
                 ],
                 'public'      => true,
                 'has_archive' => true,
-                'supports'    => ['title', 'editor', 'thumbnail', 'excerpt']
+                'supports'    => ['title', 'editor', 'thumbnail', 'excerpt'],
             ]
         );
     }
@@ -51,10 +51,10 @@ final class ExamplePostType extends PostType
         register_taxonomy(self::TAXONOMY_TYPE_CATEGORY, self::NAME, [
             'labels'       => [
                 'name'          => Translations::trans('Example category'),
-                'singular_name' => Translations::trans('Example category')
+                'singular_name' => Translations::trans('Example category'),
             ],
             'sort'         => true,
-            'hierarchical' => true
+            'hierarchical' => true,
         ]);
     }
 
