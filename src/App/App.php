@@ -14,7 +14,7 @@ declare(strict_types=1);
 namespace App;
 
 use App\Configuration\Login;
-use App\Configuration\Menus;
+use LIN3S\WPFoundation\Configuration\Menus\Menus;
 use LIN3S\WPFoundation\Configuration\Theme\Theme;
 use LIN3S\WPFoundation\Configuration\Translations\Translations;
 
@@ -28,7 +28,7 @@ class App extends Theme
         new Login();
         new Menus([
             App::MENU_MAIN => Translations::trans('Main menu'),
-            App::FOOTER    => Translations::trans('Footer'),
+            App::FOOTER => Translations::trans('Footer'),
         ]);
 
         new Fields();
