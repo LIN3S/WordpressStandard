@@ -21,14 +21,14 @@ use LIN3S\WPFoundation\Configuration\Translations\Translations;
 class App extends Theme
 {
     const MENU_MAIN = 'main_menu';
-    const FOOTER = 'footer';
+    const MENU_FOOTER = 'footer';
 
     public function classes() : void
     {
         new Login();
         new Menus([
             App::MENU_MAIN => Translations::trans('Main menu'),
-            App::FOOTER => Translations::trans('Footer'),
+            App::MENU_FOOTER => Translations::trans('Footer'),
         ]);
 
         new Fields();
