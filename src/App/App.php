@@ -16,13 +16,24 @@ namespace App;
 use App\Configuration\Login;
 use App\Configuration\Menus;
 use LIN3S\WPFoundation\Configuration\Theme\Theme;
+use LIN3S\WPFoundation\Configuration\Translations\Translations;
 
 class App extends Theme
 {
+    const MENU_MAIN = 'main_menu';
+    const FOOTER = 'footer';
+
     public function classes() : void
     {
         new Login();
-        new Menus();
+        new Menus([
+            App::MENU_MAIN => Translations::trans('Main menu'),
+            App::FOOTER    => Translations::trans('Footer'),
+        ]);
+
+        new Fields();
+        new PostTypes();
+        new Taxonomies();
     }
 
     public function context(array $context) : array
