@@ -24,6 +24,7 @@
     RewriteRule ^Gemfile - [F,L]
     RewriteRule ^router.php - [F,L]
     RewriteRule ^vendor/.*$ - [F,L]
+    RewriteRule ^wp-config-custom-sample.php - [F,L]
 
     # Make the admin still accessible from /wp-admin
     RewriteCond %{REQUEST_URI} ^/wp-admin/?(.*)
